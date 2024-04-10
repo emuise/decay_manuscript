@@ -1,5 +1,5 @@
 ---
-title: Explore Earthquakes
+title: Explore Earthquakes teststsststtsstts
 author: Charlotte Wickham
 ---
 
