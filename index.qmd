@@ -35,6 +35,7 @@ bibliography: references.bib
 citation:
   container-title: Earth and Space Science
 number-sections: true
+notebook-links: false
 ---
 
 ## Introduction asd
