@@ -41,14 +41,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -163,7 +177,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Spatially explicit mapping of conservation outcomes across a large region loladasdsa},
+  pdftitle={Spatially explicit mapping of ecological similarity across a large region using matching techniques.},
   pdfauthor={Evan Muise; Nicholas Coops},
   pdfkeywords={Protected areas, Matching methods, Coarsened exact
 matching, Essential Biodiversity Variables},
@@ -179,8 +193,8 @@ matching, Essential Biodiversity Variables},
 \draftfalse
 
 \begin{document}
-\title{Spatially explicit mapping of conservation outcomes across a
-large region loladasdsa}
+\title{Spatially explicit mapping of ecological similarity across a
+large region using matching techniques.}
 
 \authors{Evan Muise\affil{1}, Nicholas Coops\affil{1}}
 \affiliation{1}{Department of Forest Resource Management, University of
@@ -189,117 +203,90 @@ British Columbia, Vancouver, 2424 Main Mall, British Columbia, Canada, }
 
 
 \begin{abstract}
-In September 2021, a significant jump in seismic activity on the island
-of La Palma (Canary Islands, Spain) signaled the start of a volcanic
-crisis that still continues at the time of writing. Earthquake data is
-continually collected and published by the Instituto Geográphico
-Nacional (IGN). \ldots{}
+ABSTRACT
 \end{abstract}
 
 \section*{Plain Language Summary}
-Earthquake data for the island of La Palma from the September 2021
-eruption is found \ldots{}
+Probably am not doing a plain language summary
 
 
 
-\section{Introduction asd}\label{introduction-asd}
+\section{Introduction}\label{introduction}
 
-\phantomsection\label{cell-fig-timeline}
-\begin{figure}[H]
+A global biodiversity crisis is currently underway, driven by
+anthropogenic changes and pressures such as climate change, land-use
+changes, and invasive species, among others (Dirzo \& Raven, 2003).
+Protected areas have been demonstrated to be one of the most effective
+potential safeguards against these biodiversity losses (Chape et al.,
+2005). To assess the effectiveness of protected areas, it is necessary
+to collect data across entire jurisdictions and compare them to similar
+ecosystems that are not protected. However, collecting direct,
+field-derived information on biodiversity across large regions is simply
+not feasible due to financial and temporal constraints.
 
-\centering{
+Remote sensing data, however, can provide a time-efficient,
+cost-effective alternative to field data, and can be used to generate
+Essential Biodiversity Variables (EBVs) which are comparable,
+standardized datasets capable of measuring biodiversity change across
+large spatial extents through time (Pereira et al., 2013; Skidmore et
+al., 2021). Two EBV classes are particularly well suited to be used at
+regional to national scales; ecosystem structure and ecosystem function.
+Ecosystem structure is defined as the physical organization of biotic
+and abiotic materials in the system, and is commonly assessed as land
+cover and forest structural attributes using remote sensing (Noss,
+1990). Ecosystem function are attributes related to ecosystem
+performance, such as the inflows or outflows of energy/nutrients
+(Pettorelli et al., 2018). Remote sensing of ecosystem function commonly
+includes productivity metrics such as GPP (Pettorelli et al., 2005,
+2018). Remote sensing-derived EBVs provide suitable spatial coverage,
+temporal depth, and temporal frequency to be used for biodiversity
+monitoring (Skidmore et al., 2021), and thus, protected area
+effectiveness assessments.
 
-\includegraphics{index_files/figure-pdf/fig-timeline-1.pdf}
+The use of impact assessment techniques such as matching is becoming
+increasingly prevalent in studies of the effectiveness of protected
+areas (Ferraro, 2009). Matching methods generally work by creating a
+counterfactual scenario in which conservation outcomes are compared
+between the protected area and what those outcomes would be if the given
+area were not protected (Ribas et al., 2021). This is achieved by
+comparing a given protected area to an unprotected area with similar
+covariates, such as climate, topography, and various anthropogenic data.
+Propensity score matching uses the covariates and protected status with
+a logit regression to create a propensity score, which is then used to
+match the protected area to an unprotected area (Austin, 2011).
+Coarsened exact matching (CEM) initially coarsens the covariates into
+bins (percentiles) and then performs exact matching on these bins, while
+retaining the original, uncoarsened data (Iacus et al., 2012). Other
+matching methods exist (see Schleicher et al., 2020), but one common
+issue common to these methods is that many data samples are dropped
+because there is no suitable match to be found. This can be problematic
+when attempting to create spatial counterfactuals, such as when
+evaluating the efficacy of protected areas across large regions, as it
+can lead to a loss of spatial coverage.
 
-}
-
-\caption{\label{fig-timeline}Timeline of recent earthquakes on La Palma}
-
-\end{figure}%
-
-Based on data up to and including 1971, eruptions on La Palma happen
-every 79.8 years on average.
-
-Studies of the magma systems feeding the volcano, such as Marrero et al.
-(2019), have proposed that there are two main magma reservoirs feeding
-the Cumbre Vieja volcano; one in the mantle (30-40km depth) which
-charges and in turn feeds a shallower crustal reservoir (10-20km depth).
-
-Eight eruptions have been recorded since the late 1400s
-(Figure~\ref{fig-timeline}).
-
-Data and methods are discussed in Section~\ref{sec-data-methods}.
-Marrero et al. (2019)
-
-Let \(x\) denote the number of eruptions in a year. Then, \(x\) can be
-modeled by a Poisson distribution
-
-\begin{equation}\phantomsection\label{eq-poisson}{
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-}\end{equation}
-
-where \(\lambda\) is the rate of eruptions per year. Using
-Equation~\ref{eq-poisson}, the probability of an eruption in the next
-\(t\) years can be calculated.
-
-\begin{longtable}[]{@{}ll@{}}
-\caption{Recent historic eruptions on La
-Palma}\label{tbl-history}\tabularnewline
-\toprule\noalign{}
-Name & Year \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-Name & Year \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Current & 2021 \\
-Teneguía & 1971 \\
-Nambroque & 1949 \\
-El Charco & 1712 \\
-Volcán San Antonio & 1677 \\
-Volcán San Martin & 1646 \\
-Tajuya near El Paso & 1585 \\
-Montaña Quemada & 1492 \\
-\end{longtable}
-
-Table~\ref{tbl-history} summarises the eruptions recorded since the
-colonization of the islands by Europeans in the late 1400s.
-
-\begin{figure}
-
-\centering{
-
-\includegraphics{images/la-palma-map.png}
-
-}
-
-\caption{\label{fig-map}Map of La Palma}
-
-\end{figure}%
-
-La Palma is one of the west most islands in the Volcanic Archipelago of
-the Canary Islands (Figure~\ref{fig-map}).
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{index_files/figure-latex/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png}
-
-}
-
-\caption{\label{fig-spatial-plot}Locations of earthquakes on La Palma
-since 2017}
-
-\end{figure}%
-
-Figure~\ref{fig-spatial-plot} shows the location of recent Earthquakes
-on La Palma.
+In this study, we seek to enhance the spatial coverage of CEM using a
+two-step approach. Firstly, we coarsen the covariates into bins, and
+then perform exact matching on these bins. In the event that no suitable
+match can be found, a KNN (k = 1) approach is used to identify the
+nearest match. This two-step approach allows for a more comprehensive
+assessment of the effectiveness of protected areas, where no
+observations are discarded. This method is applied to the forested
+regions of British Columbia, Canada, and the effectiveness of protected
+areas to is compared to similar ecosystems that are not protected. We
+compare the spatial coverage of standard CEM method and our expanded CEM
+method, and also apply both methods for assessing protected area
+effectiveness at conserving two EBV classes; ecosystem structure and
+ecosystem function. Further, we generate bootstrap confidence intervals
+for each CEM bin for our two EBV classes and compare every forested area
+in BC to their respective confidence interval. This allows for the
+respatialization of the results, allowing for managers to identify
+regions in need of restoration (outside the confidence interval, in
+protected areas), or protection (inside the confidence interval, outside
+of protected areas).
 
 \section{Data \& Methods}\label{sec-data-methods}
+
+\section{Results}\label{results}
 
 \section{Conclusion}\label{conclusion}
 
@@ -310,12 +297,77 @@ on La Palma.
 \begin{CSLReferences}{1}{0}
 \vspace{1em}
 
-\bibitem[\citeproctext]{ref-marrero2019}
-Marrero, J., García, A., Berrocoso, M., Llinares, Á., Rodríguez-Losada,
-A., \& Ortiz, R. (2019). Strategies for the development of volcanic
-hazard maps in monogenetic volcanic fields: The example of {La} {Palma}
-({Canary} {Islands}). \emph{Journal of Applied Volcanology}, \emph{8}.
-\url{https://doi.org/10.1186/s13617-019-0085-5}
+\bibitem[\citeproctext]{ref-austin2011}
+Austin, P. C. (2011). An introduction to propensity score methods for
+reducing the effects of confounding in observational studies.
+\emph{Multivariate Behavioral Research}, \emph{46}(3), 399--424.
+\url{https://doi.org/10.1080/00273171.2011.568786}
+
+\bibitem[\citeproctext]{ref-chape2005}
+Chape, S., Harrison, J., Spalding, M., \& Lysenko, I. (2005). Measuring
+the extent and effectiveness of protected areas as an indicator for
+meeting global biodiversity targets. \emph{Philosophical Transactions of
+the Royal Society B: Biological Sciences}, \emph{360}(1454), 443455.
+\url{https://doi.org/10.1098/rstb.2004.1592}
+
+\bibitem[\citeproctext]{ref-dirzo2003}
+Dirzo, R., \& Raven, P. H. (2003). Global State of Biodiversity and
+Loss. \emph{Annual Review of Environment and Resources},
+\emph{28}(Volume 28, 2003), 137--167.
+\url{https://doi.org/10.1146/annurev.energy.28.050302.105532}
+
+\bibitem[\citeproctext]{ref-ferraro2009}
+Ferraro, P. J. (2009). Counterfactual thinking and impact evaluation in
+environmental policy. \emph{New Directions for Evaluation},
+\emph{2009}(122), 75--84. \url{https://doi.org/10.1002/ev.297}
+
+\bibitem[\citeproctext]{ref-iacus2012}
+Iacus, S. M., King, G., \& Porro, G. (2012). Causal Inference without
+Balance Checking: Coarsened Exact Matching. \emph{Political Analysis},
+\emph{20}(1), 1--24. \url{https://doi.org/10.1093/pan/mpr013}
+
+\bibitem[\citeproctext]{ref-noss1990}
+Noss, R. F. (1990). Indicators for Monitoring Biodiversity: A
+Hierarchical Approach. \emph{Conservation Biology}, \emph{4}(4),
+355--364. \url{https://doi.org/10.1111/j.1523-1739.1990.tb00309.x}
+
+\bibitem[\citeproctext]{ref-pereira2013}
+Pereira, H. M., Ferrier, S., Walters, M., Geller, G. N., Jongman, R. H.
+G., Scholes, R. J., et al. (2013). Essential Biodiversity Variables.
+\emph{Science}, \emph{339}(6117), 277--278.
+\url{https://doi.org/10.1126/science.1229931}
+
+\bibitem[\citeproctext]{ref-pettorelli2005}
+Pettorelli, N., Vik, J. O., Mysterud, A., Gaillard, J.-M., Tucker, C.
+J., \& Stenseth, N. Chr. (2005). Using the satellite-derived NDVI to
+assess ecological responses to environmental change. \emph{Trends in
+Ecology \& Evolution}, \emph{20}(9), 503--510.
+\url{https://doi.org/10.1016/j.tree.2005.05.011}
+
+\bibitem[\citeproctext]{ref-pettorelli2018}
+Pettorelli, N., Schulte to Bühne, H., Tulloch, A., Dubois, G.,
+Macinnis-Ng, C., Queirós, A. M., et al. (2018). Satellite remote sensing
+of ecosystem functions: opportunities, challenges and way forward.
+\emph{Remote Sensing in Ecology and Conservation}, \emph{4}(2), 71--93.
+\url{https://doi.org/10.1002/rse2.59}
+
+\bibitem[\citeproctext]{ref-ribas2021}
+Ribas, L. G. S., Pressey, R. L., \& Bini, L. M. (2021). Estimating
+counterfactuals for evaluation of ecological and conservation impact: an
+introduction to matching methods. \emph{Biological Reviews},
+\emph{96}(4), 1186--1204. \url{https://doi.org/10.1111/brv.12697}
+
+\bibitem[\citeproctext]{ref-schleicher2020}
+Schleicher, J., Eklund, J., D. Barnes, M., Geldmann, J., Oldekop, J. A.,
+\& Jones, J. P. G. (2020). Statistical matching for conservation
+science. \emph{Conservation Biology}, \emph{34}(3), 538--549.
+\url{https://doi.org/10.1111/cobi.13448}
+
+\bibitem[\citeproctext]{ref-skidmore2021}
+Skidmore, A. K., Coops, N. C., Neinavaz, E., Ali, A., Schaepman, M. E.,
+Paganini, M., et al. (2021). Priority list of biodiversity metrics to
+observe from space. \emph{Nature Ecology \& Evolution}.
+\url{https://doi.org/10.1038/s41559-021-01451-x}
 
 \end{CSLReferences}
 

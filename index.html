@@ -2,16 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.29">
+<meta name="generator" content="quarto-1.5.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Evan Muise">
 <meta name="author" content="Nicholas Coops">
-<meta name="dcterms.date" content="2024-04-11">
+<meta name="dcterms.date" content="2024-04-25">
 <meta name="keywords" content="Protected areas, Matching methods, Coarsened exact matching, Essential Biodiversity Variables">
 
-<title>Spatially explicit mapping of conservation outcomes across a large region loladasdsa</title>
+<title>Spatially explicit mapping of ecological similarity across a large region using matching techniques.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,9 +57,6 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -67,49 +64,32 @@ div.csl-indent {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta name="citation_title" content="Spatially explicit mapping of conservation outcomes across a large region loladasdsa">
-<meta name="citation_abstract" content="In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). ...
+<meta name="citation_title" content="Spatially explicit mapping of ecological similarity across a large region using matching techniques.">
+<meta name="citation_abstract" content="ABSTRACT
 ">
 <meta name="citation_keywords" content="Protected areas,Matching methods,Coarsened exact matching,Essential Biodiversity Variables">
 <meta name="citation_author" content="Evan Muise">
 <meta name="citation_author" content="Nicholas Coops">
-<meta name="citation_publication_date" content="2024-04-11">
-<meta name="citation_cover_date" content="2024-04-11">
+<meta name="citation_publication_date" content="2024-04-25">
+<meta name="citation_cover_date" content="2024-04-25">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-04-11">
+<meta name="citation_online_date" content="2024-04-25">
 <meta name="citation_language" content="en">
 <meta name="citation_journal_title" content="Earth and Space Science">
 <meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
+<meta name="citation_reference" content="citation_title=Priority list of biodiversity metrics to observe from space;,citation_author=Andrew K. Skidmore;,citation_author=Nicholas C. Coops;,citation_author=Elnaz Neinavaz;,citation_author=Abebe Ali;,citation_author=Michael E. Schaepman;,citation_author=Marc Paganini;,citation_author=W. Daniel Kissling;,citation_author=Petteri Vihervaara;,citation_author=Roshanak Darvishzadeh;,citation_author=Hannes Feilhauer;,citation_author=Miguel Fernandez;,citation_author=Néstor Fernández;,citation_author=Noel Gorelick;,citation_author=Ilse Geijzendorffer;,citation_author=Uta Heiden;,citation_author=Marco Heurich;,citation_author=Donald Hobern;,citation_author=Stefanie Holzwarth;,citation_author=Frank E. Muller-Karger;,citation_author=Ruben Van De Kerchove;,citation_author=Angela Lausch;,citation_author=Pedro J. Leitão;,citation_author=Marcelle C. Lock;,citation_author=Caspar A. Mücher;,citation_author=Brian O’Connor;,citation_author=Duccio Rocchini;,citation_author=Woody Turner;,citation_author=Jan Kees Vis;,citation_author=Tiejun Wang;,citation_author=Martin Wegmann;,citation_author=Vladimir Wingate;,citation_publication_date=2021-05-13;,citation_cover_date=2021-05-13;,citation_year=2021;,citation_fulltext_html_url=http://www.nature.com/articles/s41559-021-01451-x;,citation_doi=10.1038/s41559-021-01451-x;,citation_language=en;,citation_journal_title=Nature Ecology &amp;amp;amp; Evolution;">
+<meta name="citation_reference" content="citation_title=Essential Biodiversity Variables;,citation_author=H. M. Pereira;,citation_author=S. Ferrier;,citation_author=M. Walters;,citation_author=G. N. Geller;,citation_author=R. H. G. Jongman;,citation_author=R. J. Scholes;,citation_author=M. W. Bruford;,citation_author=N. Brummitt;,citation_author=S. H. M. Butchart;,citation_author=A. C. Cardoso;,citation_author=N. C. Coops;,citation_author=E. Dulloo;,citation_author=D. P. Faith;,citation_author=J. Freyhof;,citation_author=R. D. Gregory;,citation_author=C. Heip;,citation_author=R. Hoft;,citation_author=G. Hurtt;,citation_author=W. Jetz;,citation_author=D. S. Karp;,citation_author=M. A. McGeoch;,citation_author=D. Obura;,citation_author=Y. Onoda;,citation_author=N. Pettorelli;,citation_author=B. Reyers;,citation_author=R. Sayre;,citation_author=J. P. W. Scharlemann;,citation_author=S. N. Stuart;,citation_author=E. Turak;,citation_author=M. Walpole;,citation_author=M. Wegmann;,citation_publication_date=2013-01-18;,citation_cover_date=2013-01-18;,citation_year=2013;,citation_fulltext_html_url=https://www.sciencemag.org/lookup/doi/10.1126/science.1229931;,citation_issue=6117;,citation_doi=10.1126/science.1229931;,citation_volume=339;,citation_language=en;,citation_journal_title=Science;">
+<meta name="citation_reference" content="citation_title=Indicators for Monitoring Biodiversity: A Hierarchical Approach;,citation_author=Reed F. Noss;,citation_publication_date=1990;,citation_cover_date=1990;,citation_year=1990;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.1990.tb00309.x;,citation_issue=4;,citation_doi=10.1111/j.1523-1739.1990.tb00309.x;,citation_volume=4;,citation_language=en;,citation_journal_title=Conservation Biology;">
+<meta name="citation_reference" content="citation_title=Satellite remote sensing of ecosystem functions: opportunities, challenges and way forward;,citation_author=Nathalie Pettorelli;,citation_author=Henrike Schulte to Bühne;,citation_author=Ayesha Tulloch;,citation_author=Grégoire Dubois;,citation_author=Cate Macinnis-Ng;,citation_author=Ana M. Queirós;,citation_author=David A. Keith;,citation_author=Martin Wegmann;,citation_author=Franziska Schrodt;,citation_author=Marion Stellmes;,citation_author=Ruth Sonnenschein;,citation_author=Gary N. Geller;,citation_author=Shovonlal Roy;,citation_author=Ben Somers;,citation_author=Nicholas Murray;,citation_author=Lucie Bland;,citation_author=Ilse Geijzendorffer;,citation_author=Jeremy T. Kerr;,citation_author=Stefanie Broszeit;,citation_author=Pedro J. Leitão;,citation_author=Clare Duncan;,citation_author=Ghada El Serafy;,citation_author=Kate S. He;,citation_author=Julia L. Blanchard;,citation_author=Richard Lucas;,citation_author=Paola Mairota;,citation_author=Thomas J. Webb;,citation_author=Emily Nicholson;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1002/rse2.59;,citation_issue=2;,citation_doi=10.1002/rse2.59;,citation_volume=4;,citation_language=en;,citation_journal_title=Remote Sensing in Ecology and Conservation;">
+<meta name="citation_reference" content="citation_title=Measuring the extent and effectiveness of protected areas as an indicator for meeting global biodiversity targets;,citation_author=S Chape;,citation_author=J Harrison;,citation_author=M Spalding;,citation_author=I Lysenko;,citation_publication_date=2005-02;,citation_cover_date=2005-02;,citation_year=2005;,citation_fulltext_html_url=https://royalsocietypublishing.org/doi/10.1098/rstb.2004.1592;,citation_issue=1454;,citation_doi=10.1098/rstb.2004.1592;,citation_volume=360;,citation_journal_title=Philosophical Transactions of the Royal Society B: Biological Sciences;">
+<meta name="citation_reference" content="citation_title=Global State of Biodiversity and Loss;,citation_author=Rodolfo Dirzo;,citation_author=Peter H. Raven;,citation_publication_date=2003-11-01;,citation_cover_date=2003-11-01;,citation_year=2003;,citation_fulltext_html_url=https://www.annualreviews.org/content/journals/10.1146/annurev.energy.28.050302.105532;,citation_issue=Volume 28, 2003;,citation_doi=10.1146/annurev.energy.28.050302.105532;,citation_volume=28;,citation_language=en;,citation_journal_title=Annual Review of Environment and Resources;">
+<meta name="citation_reference" content="citation_title=Using the satellite-derived NDVI to assess ecological responses to environmental change;,citation_author=Nathalie Pettorelli;,citation_author=Jon Olav Vik;,citation_author=Atle Mysterud;,citation_author=Jean-Michel Gaillard;,citation_author=Compton J. Tucker;,citation_author=Nils Chr. Stenseth;,citation_publication_date=2005-09-01;,citation_cover_date=2005-09-01;,citation_year=2005;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S016953470500162X;,citation_issue=9;,citation_doi=10.1016/j.tree.2005.05.011;,citation_volume=20;,citation_language=en;,citation_journal_title=Trends in Ecology &amp;amp;amp; Evolution;">
+<meta name="citation_reference" content="citation_title=Counterfactual thinking and impact evaluation in environmental policy;,citation_author=Paul J. Ferraro;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1002/ev.297;,citation_issue=122;,citation_doi=10.1002/ev.297;,citation_volume=2009;,citation_language=en;,citation_journal_title=New Directions for Evaluation;">
+<meta name="citation_reference" content="citation_title=Statistical matching for conservation science;,citation_author=Judith Schleicher;,citation_author=Johanna Eklund;,citation_author=Megan D. Barnes;,citation_author=Jonas Geldmann;,citation_author=Johan A. Oldekop;,citation_author=Julia P. G. Jones;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1111/cobi.13448;,citation_issue=3;,citation_doi=10.1111/cobi.13448;,citation_volume=34;,citation_language=en;,citation_journal_title=Conservation Biology;">
+<meta name="citation_reference" content="citation_title=Estimating counterfactuals for evaluation of ecological and conservation impact: an introduction to matching methods;,citation_author=Luiz G. S. Ribas;,citation_author=Robert L. Pressey;,citation_author=Luis M. Bini;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12697;,citation_issue=4;,citation_doi=10.1111/brv.12697;,citation_volume=96;,citation_language=en;,citation_journal_title=Biological Reviews;">
+<meta name="citation_reference" content="citation_title=Causal Inference without Balance Checking: Coarsened Exact Matching;,citation_author=Stefano M. Iacus;,citation_author=Gary King;,citation_author=Giuseppe Porro;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_fulltext_html_url=https://www.cambridge.org/core/product/identifier/S1047198700012985/type/journal_article;,citation_issue=1;,citation_doi=10.1093/pan/mpr013;,citation_volume=20;,citation_language=en;,citation_journal_title=Political Analysis;">
+<meta name="citation_reference" content="citation_title=An introduction to propensity score methods for reducing the effects of confounding in observational studies;,citation_author=Peter C. Austin;,citation_publication_date=2011-05;,citation_cover_date=2011-05;,citation_year=2011;,citation_fulltext_html_url=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/;,citation_issue=3;,citation_doi=10.1080/00273171.2011.568786;,citation_volume=46;,citation_journal_title=Multivariate Behavioral Research;">
 </head>
 
 <body>
@@ -117,7 +97,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Spatially explicit mapping of conservation outcomes across a large region loladasdsa</h1>
+      <h1 class="title">Spatially explicit mapping of ecological similarity across a large region using matching techniques.</h1>
           </div>
 
     
@@ -151,7 +131,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">April 11, 2024</p>
+              <p class="date">April 25, 2024</p>
             </div>
           </div>
           
@@ -165,7 +145,7 @@ window.Quarto = {
     <div>
       <div class="abstract">
         <div class="block-title">Abstract</div>
-        <p>In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). …</p>
+        <p>ABSTRACT</p>
       </div>
     </div>
 
@@ -184,9 +164,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-asd" id="toc-introduction-asd" class="nav-link active" data-scroll-target="#introduction-asd"><span class="header-section-number">1</span> Introduction asd</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
   <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">3</span> Results</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -200,143 +181,76 @@ window.Quarto = {
   
 
 
-<section id="introduction-asd" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction-asd"><span class="header-section-number">1</span> Introduction asd</h2>
-<div id="cell-fig-timeline" class="cell">
-<div class="cell-output-display">
-<div id="fig-timeline" class="quarto-figure quarto-figure-center quarto-float anchored" alt="An event plot of the years of the last 8 eruptions on La Palma.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-timeline-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Timeline of recent earthquakes on La Palma"><img src="index_files/figure-html/fig-timeline-1.png" class="img-fluid figure-img" alt="An event plot of the years of the last 8 eruptions on La Palma." width="576"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Timeline of recent earthquakes on La Palma
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Based on data up to and including 1971, eruptions on La Palma happen every 79.8 years on average.</p>
-<p>Studies of the magma systems feeding the volcano, such as <span class="citation" data-cites="marrero2019">Marrero et al. (<a href="#ref-marrero2019" role="doc-biblioref">2019</a>)</span>, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-<p>Eight eruptions have been recorded since the late 1400s (<a href="#fig-timeline" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<p>Data and methods are discussed in <a href="#sec-data-methods" class="quarto-xref">Section&nbsp;2</a>. <span class="citation" data-cites="marrero2019">Marrero et al. (<a href="#ref-marrero2019" role="doc-biblioref">2019</a>)</span></p>
-<p>Let <span class="math inline">\(x\)</span> denote the number of eruptions in a year. Then, <span class="math inline">\(x\)</span> can be modeled by a Poisson distribution</p>
-<p><span id="eq-poisson"><span class="math display">\[
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-\tag{1}\]</span></span></p>
-<p>where <span class="math inline">\(\lambda\)</span> is the rate of eruptions per year. Using <a href="#eq-poisson" class="quarto-xref">Equation&nbsp;1</a>, the probability of an eruption in the next <span class="math inline">\(t\)</span> years can be calculated.</p>
-<div id="tbl-history" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-history-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Recent historic eruptions on La Palma
-</figcaption>
-<div aria-describedby="tbl-history-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Year</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Current</td>
-<td>2021</td>
-</tr>
-<tr class="even">
-<td>Teneguía</td>
-<td>1971</td>
-</tr>
-<tr class="odd">
-<td>Nambroque</td>
-<td>1949</td>
-</tr>
-<tr class="even">
-<td>El Charco</td>
-<td>1712</td>
-</tr>
-<tr class="odd">
-<td>Volcán San Antonio</td>
-<td>1677</td>
-</tr>
-<tr class="even">
-<td>Volcán San Martin</td>
-<td>1646</td>
-</tr>
-<tr class="odd">
-<td>Tajuya near El Paso</td>
-<td>1585</td>
-</tr>
-<tr class="even">
-<td>Montaña Quemada</td>
-<td>1492</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p><a href="#tbl-history" class="quarto-xref">Table&nbsp;1</a> summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.</p>
-<div id="fig-map" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/la-palma-map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Map of La Palma"><img src="images/la-palma-map.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Map of La Palma
-</figcaption>
-</figure>
-</div>
-<p>La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (<a href="#fig-map" class="quarto-xref">Figure&nbsp;2</a>).</p>
-<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/decay_manuscript/decay_manuscript/notebooks/explore-earthquakes.qmd" data-notebook-title="Explore Earthquakes teststsststtsstts" data-notebook-cellid="cell-fig-spatial-plot">
-<div id="cell-fig-spatial-plot" class="cell">
-<div class="cell-output cell-output-display">
-<div id="fig-spatial-plot" class="quarto-figure quarto-figure-center quarto-float anchored" alt="A scatterplot of earthquake locations plotting latitude against longitude.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Locations of earthquakes on La Palma since 2017"><img src="index_files/figure-html/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" alt="A scatterplot of earthquake locations plotting latitude against longitude." width="672" height="480" class="figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Locations of earthquakes on La Palma since 2017
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><a href="#fig-spatial-plot" class="quarto-xref">Figure&nbsp;3</a> shows the location of recent Earthquakes on La Palma.</p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>A global biodiversity crisis is currently underway, driven by anthropogenic changes and pressures such as climate change, land-use changes, and invasive species, among others <span class="citation" data-cites="dirzo2003">(<a href="#ref-dirzo2003" role="doc-biblioref">Dirzo and Raven 2003</a>)</span>. Protected areas have been demonstrated to be one of the most effective potential safeguards against these biodiversity losses <span class="citation" data-cites="chape2005">(<a href="#ref-chape2005" role="doc-biblioref">Chape et al. 2005</a>)</span>. To assess the effectiveness of protected areas, it is necessary to collect data across entire jurisdictions and compare them to similar ecosystems that are not protected. However, collecting direct, field-derived information on biodiversity across large regions is simply not feasible due to financial and temporal constraints.</p>
+<p>Remote sensing data, however, can provide a time-efficient, cost-effective alternative to field data, and can be used to generate Essential Biodiversity Variables (EBVs) which are comparable, standardized datasets capable of measuring biodiversity change across large spatial extents through time <span class="citation" data-cites="skidmore2021 pereira2013">(<a href="#ref-skidmore2021" role="doc-biblioref">Skidmore et al. 2021</a>; <a href="#ref-pereira2013" role="doc-biblioref">Pereira et al. 2013</a>)</span>. Two EBV classes are particularly well suited to be used at regional to national scales; ecosystem structure and ecosystem function. Ecosystem structure is defined as the physical organization of biotic and abiotic materials in the system, and is commonly assessed as land cover and forest structural attributes using remote sensing <span class="citation" data-cites="noss1990">(<a href="#ref-noss1990" role="doc-biblioref">Noss 1990</a>)</span>. Ecosystem function are attributes related to ecosystem performance, such as the inflows or outflows of energy/nutrients <span class="citation" data-cites="pettorelli2018">(<a href="#ref-pettorelli2018" role="doc-biblioref">Pettorelli et al. 2018</a>)</span>. Remote sensing of ecosystem function commonly includes productivity metrics such as GPP <span class="citation" data-cites="pettorelli2005 pettorelli2018">(<a href="#ref-pettorelli2005" role="doc-biblioref">Pettorelli et al. 2005</a>, <a href="#ref-pettorelli2018" role="doc-biblioref">2018</a>)</span>. Remote sensing-derived EBVs provide suitable spatial coverage, temporal depth, and temporal frequency to be used for biodiversity monitoring <span class="citation" data-cites="skidmore2021">(<a href="#ref-skidmore2021" role="doc-biblioref">Skidmore et al. 2021</a>)</span>, and thus, protected area effectiveness assessments.</p>
+<p>The use of impact assessment techniques such as matching is becoming increasingly prevalent in studies of the effectiveness of protected areas <span class="citation" data-cites="ferraro2009">(<a href="#ref-ferraro2009" role="doc-biblioref">Ferraro 2009</a>)</span>. Matching methods generally work by creating a counterfactual scenario in which conservation outcomes are compared between the protected area and what those outcomes would be if the given area were not protected <span class="citation" data-cites="ribas2021">(<a href="#ref-ribas2021" role="doc-biblioref">Ribas, Pressey, and Bini 2021</a>)</span>. This is achieved by comparing a given protected area to an unprotected area with similar covariates, such as climate, topography, and various anthropogenic data. Propensity score matching uses the covariates and protected status with a logit regression to create a propensity score, which is then used to match the protected area to an unprotected area <span class="citation" data-cites="austin2011">(<a href="#ref-austin2011" role="doc-biblioref">Austin 2011</a>)</span>. Coarsened exact matching (CEM) initially coarsens the covariates into bins (percentiles) and then performs exact matching on these bins, while retaining the original, uncoarsened data <span class="citation" data-cites="iacus2012">(<a href="#ref-iacus2012" role="doc-biblioref">Iacus, King, and Porro 2012</a>)</span>. Other matching methods exist <span class="citation" data-cites="schleicher2020">(see <a href="#ref-schleicher2020" role="doc-biblioref">Schleicher et al. 2020</a>)</span>, but one common issue common to these methods is that many data samples are dropped because there is no suitable match to be found. This can be problematic when attempting to create spatial counterfactuals, such as when evaluating the efficacy of protected areas across large regions, as it can lead to a loss of spatial coverage.</p>
+<p>In this study, we seek to enhance the spatial coverage of CEM using a two-step approach. Firstly, we coarsen the covariates into bins, and then perform exact matching on these bins. In the event that no suitable match can be found, a KNN (k = 1) approach is used to identify the nearest match. This two-step approach allows for a more comprehensive assessment of the effectiveness of protected areas, where no observations are discarded. This method is applied to the forested regions of British Columbia, Canada, and the effectiveness of protected areas to is compared to similar ecosystems that are not protected. We compare the spatial coverage of standard CEM method and our expanded CEM method, and also apply both methods for assessing protected area effectiveness at conserving two EBV classes; ecosystem structure and ecosystem function. Further, we generate bootstrap confidence intervals for each CEM bin for our two EBV classes and compare every forested area in BC to their respective confidence interval. This allows for the respatialization of the results, allowing for managers to identify regions in need of restoration (outside the confidence interval, in protected areas), or protection (inside the confidence interval, outside of protected areas).</p>
 </section>
 <section id="sec-data-methods" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</h2>
 </section>
-<section id="conclusion" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3</span> Conclusion</h2>
+<section id="results" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="results"><span class="header-section-number">3</span> Results</h2>
+</section>
+<section id="conclusion" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">4</span> Conclusion</h2>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-marrero2019" class="csl-entry" role="listitem">
-Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares, Antonio Rodríguez-Losada, and R. Ortiz. 2019. <span>“Strategies for the Development of Volcanic Hazard Maps in Monogenetic Volcanic Fields: The Example of <span>La</span> <span>Palma</span> (<span>Canary</span> <span>Islands</span>).”</span> <em>Journal of Applied Volcanology</em> 8 (July). <a href="https://doi.org/10.1186/s13617-019-0085-5">https://doi.org/10.1186/s13617-019-0085-5</a>.
+<div id="ref-austin2011" class="csl-entry" role="listitem">
+Austin, Peter C. 2011. <span>“An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies.”</span> <em>Multivariate Behavioral Research</em> 46 (3): 399–424. <a href="https://doi.org/10.1080/00273171.2011.568786">https://doi.org/10.1080/00273171.2011.568786</a>.
+</div>
+<div id="ref-chape2005" class="csl-entry" role="listitem">
+Chape, S, J Harrison, M Spalding, and I Lysenko. 2005. <span>“Measuring the Extent and Effectiveness of Protected Areas as an Indicator for Meeting Global Biodiversity Targets.”</span> <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 360 (1454): 443455. <a href="https://doi.org/10.1098/rstb.2004.1592">https://doi.org/10.1098/rstb.2004.1592</a>.
+</div>
+<div id="ref-dirzo2003" class="csl-entry" role="listitem">
+Dirzo, Rodolfo, and Peter H. Raven. 2003. <span>“Global State of Biodiversity and Loss.”</span> <em>Annual Review of Environment and Resources</em> 28 (Volume 28, 2003): 137–67. <a href="https://doi.org/10.1146/annurev.energy.28.050302.105532">https://doi.org/10.1146/annurev.energy.28.050302.105532</a>.
+</div>
+<div id="ref-ferraro2009" class="csl-entry" role="listitem">
+Ferraro, Paul J. 2009. <span>“Counterfactual Thinking and Impact Evaluation in Environmental Policy.”</span> <em>New Directions for Evaluation</em> 2009 (122): 75–84. <a href="https://doi.org/10.1002/ev.297">https://doi.org/10.1002/ev.297</a>.
+</div>
+<div id="ref-iacus2012" class="csl-entry" role="listitem">
+Iacus, Stefano M., Gary King, and Giuseppe Porro. 2012. <span>“Causal Inference Without Balance Checking: Coarsened Exact Matching.”</span> <em>Political Analysis</em> 20 (1): 1–24. <a href="https://doi.org/10.1093/pan/mpr013">https://doi.org/10.1093/pan/mpr013</a>.
+</div>
+<div id="ref-noss1990" class="csl-entry" role="listitem">
+Noss, Reed F. 1990. <span>“Indicators for Monitoring Biodiversity: A Hierarchical Approach.”</span> <em>Conservation Biology</em> 4 (4): 355–64. <a href="https://doi.org/10.1111/j.1523-1739.1990.tb00309.x">https://doi.org/10.1111/j.1523-1739.1990.tb00309.x</a>.
+</div>
+<div id="ref-pereira2013" class="csl-entry" role="listitem">
+Pereira, H. M., S. Ferrier, M. Walters, G. N. Geller, R. H. G. Jongman, R. J. Scholes, M. W. Bruford, et al. 2013. <span>“Essential Biodiversity Variables.”</span> <em>Science</em> 339 (6117): 277–78. <a href="https://doi.org/10.1126/science.1229931">https://doi.org/10.1126/science.1229931</a>.
+</div>
+<div id="ref-pettorelli2018" class="csl-entry" role="listitem">
+Pettorelli, Nathalie, Henrike Schulte to Bühne, Ayesha Tulloch, Grégoire Dubois, Cate Macinnis-Ng, Ana M. Queirós, David A. Keith, et al. 2018. <span>“Satellite Remote Sensing of Ecosystem Functions: Opportunities, Challenges and Way Forward.”</span> <em>Remote Sensing in Ecology and Conservation</em> 4 (2): 71–93. <a href="https://doi.org/10.1002/rse2.59">https://doi.org/10.1002/rse2.59</a>.
+</div>
+<div id="ref-pettorelli2005" class="csl-entry" role="listitem">
+Pettorelli, Nathalie, Jon Olav Vik, Atle Mysterud, Jean-Michel Gaillard, Compton J. Tucker, and Nils Chr. Stenseth. 2005. <span>“Using the Satellite-Derived NDVI to Assess Ecological Responses to Environmental Change.”</span> <em>Trends in Ecology &amp; Evolution</em> 20 (9): 503–10. <a href="https://doi.org/10.1016/j.tree.2005.05.011">https://doi.org/10.1016/j.tree.2005.05.011</a>.
+</div>
+<div id="ref-ribas2021" class="csl-entry" role="listitem">
+Ribas, Luiz G. S., Robert L. Pressey, and Luis M. Bini. 2021. <span>“Estimating Counterfactuals for Evaluation of Ecological and Conservation Impact: An Introduction to Matching Methods.”</span> <em>Biological Reviews</em> 96 (4): 1186–1204. <a href="https://doi.org/10.1111/brv.12697">https://doi.org/10.1111/brv.12697</a>.
+</div>
+<div id="ref-schleicher2020" class="csl-entry" role="listitem">
+Schleicher, Judith, Johanna Eklund, Megan D. Barnes, Jonas Geldmann, Johan A. Oldekop, and Julia P. G. Jones. 2020. <span>“Statistical Matching for Conservation Science.”</span> <em>Conservation Biology</em> 34 (3): 538–49. <a href="https://doi.org/10.1111/cobi.13448">https://doi.org/10.1111/cobi.13448</a>.
+</div>
+<div id="ref-skidmore2021" class="csl-entry" role="listitem">
+Skidmore, Andrew K., Nicholas C. Coops, Elnaz Neinavaz, Abebe Ali, Michael E. Schaepman, Marc Paganini, W. Daniel Kissling, et al. 2021. <span>“Priority List of Biodiversity Metrics to Observe from Space.”</span> <em>Nature Ecology &amp; Evolution</em>, May. <a href="https://doi.org/10.1038/s41559-021-01451-x">https://doi.org/10.1038/s41559-021-01451-x</a>.
 </div>
 </div>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{muise2024,
   author = {Muise, Evan and Coops, Nicholas},
-  title = {Spatially Explicit Mapping of Conservation Outcomes Across a
-    Large Region Loladasdsa},
-  date = {2024-04-11},
+  title = {Spatially Explicit Mapping of Ecological Similarity Across a
+    Large Region Using Matching Techniques.},
+  date = {2024-04-25},
   langid = {en},
-  abstract = {In September 2021, a significant jump in seismic activity
-    on the island of La Palma (Canary Islands, Spain) signaled the start
-    of a volcanic crisis that still continues at the time of writing.
-    Earthquake data is continually collected and published by the
-    Instituto Geográphico Nacional (IGN). ...}
+  abstract = {ABSTRACT}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-muise2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Muise, Evan, and Nicholas Coops. 2024. <span>“Spatially Explicit Mapping
-of Conservation Outcomes Across a Large Region Loladasdsa.”</span> Earth
-and Space Science. April 11, 2024.
+of Ecological Similarity Across a Large Region Using Matching
+Techniques.”</span> Earth and Space Science. April 25, 2024.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -760,31 +674,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

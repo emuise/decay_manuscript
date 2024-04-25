@@ -23,8 +23,8 @@ and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
 
 
 <title-group>
-<article-title>Spatially explicit mapping of conservation outcomes
-across a large region loladasdsa</article-title>
+<article-title>Spatially explicit mapping of ecological similarity
+across a large region using matching techniques.</article-title>
 </title-group>
 
 <contrib-group>
@@ -38,9 +38,6 @@ across a large region loladasdsa</article-title>
 
 <email>evanmuis@student.ubc.ca</email>
 <role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
-<role vocab="https://credit.niso.org" vocab-term="project
-administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
-administration</role>
 <role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
 <role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
 <xref ref-type="aff" rid="aff-1">a</xref>
@@ -54,6 +51,9 @@ administration</role>
 </name>
 <string-name>Nicholas Coops</string-name>
 
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
 <xref ref-type="aff" rid="aff-1">a</xref>
 </contrib>
 </contrib-group>
@@ -75,10 +75,10 @@ Canada</institution>
 <corresp id="cor-1">evanmuis@student.ubc.ca</corresp>
 </author-notes>
 
-<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-04-11">
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-04-25">
 <year>2024</year>
 <month>4</month>
-<day>11</day>
+<day>25</day>
 </pub-date>
 
 
@@ -91,11 +91,7 @@ Canada</institution>
 
 
 <abstract>
-<p>In September 2021, a significant jump in seismic activity on the
-island of La Palma (Canary Islands, Spain) signaled the start of a
-volcanic crisis that still continues at the time of writing. Earthquake
-data is continually collected and published by the Instituto Geográphico
-Nacional (IGN). …</p>
+<p>ABSTRACT</p>
 </abstract>
 <kwd-group kwd-group-type="author">
 <kwd>Protected areas</kwd>
@@ -112,461 +108,409 @@ Nacional (IGN). …</p>
 </front>
 
 <body>
-<sec id="introduction-asd">
-  <title>1 Introduction asd</title>
-  <fig id="fig-timeline">
-    <caption><p>Figure 1: Timeline of recent earthquakes on La
-    Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-timeline-1.png" />
-  </fig>
-  <p>Based on data up to and including 1971, eruptions on La Palma
-  happen every 79.8 years on average.</p>
-  <p>Studies of the magma systems feeding the volcano, such as Marrero
-  et al.
-  (<xref alt="2019" rid="ref-marrero2019" ref-type="bibr">2019</xref>),
-  have proposed that there are two main magma reservoirs feeding the
-  Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
-  and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-  <p>Eight eruptions have been recorded since the late 1400s
-  (<xref alt="Figure 1" rid="fig-timeline">Figure 1</xref>).</p>
-  <p>Data and methods are discussed in
-  <xref alt="Section 2" rid="sec-data-methods">Section 2</xref>. Marrero
-  et al.
-  (<xref alt="2019" rid="ref-marrero2019" ref-type="bibr">2019</xref>)</p>
-  <p>Let <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  denote the number of eruptions in a year. Then,
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  can be modeled by a Poisson distribution</p>
-  <p><styled-content id="eq-poisson"><disp-formula><alternatives>
-  <tex-math><![CDATA[
-  p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-   \qquad(1)]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
-  <p>where <inline-formula><alternatives>
-  <tex-math><![CDATA[\lambda]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
-  is the rate of eruptions per year. Using
-  <xref alt="Equation 1" rid="eq-poisson">Equation 1</xref>, the
-  probability of an eruption in the next <inline-formula><alternatives>
-  <tex-math><![CDATA[t]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
-  years can be calculated.</p>
-  <fig id="tbl-history">
-    <caption><p>Table 1: Recent historic eruptions on La
-    Palma</p></caption>
-    <table-wrap>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Current</td>
-            <td>2021</td>
-          </tr>
-          <tr>
-            <td>Teneguía</td>
-            <td>1971</td>
-          </tr>
-          <tr>
-            <td>Nambroque</td>
-            <td>1949</td>
-          </tr>
-          <tr>
-            <td>El Charco</td>
-            <td>1712</td>
-          </tr>
-          <tr>
-            <td>Volcán San Antonio</td>
-            <td>1677</td>
-          </tr>
-          <tr>
-            <td>Volcán San Martin</td>
-            <td>1646</td>
-          </tr>
-          <tr>
-            <td>Tajuya near El Paso</td>
-            <td>1585</td>
-          </tr>
-          <tr>
-            <td>Montaña Quemada</td>
-            <td>1492</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
-  </fig>
-  <p><xref alt="Table 1" rid="tbl-history">Table 1</xref> summarises the
-  eruptions recorded since the colonization of the islands by Europeans
-  in the late 1400s.</p>
-  <fig id="fig-map">
-    <caption><p>Figure 2: Map of La Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
-  </fig>
-  <p>La Palma is one of the west most islands in the Volcanic
-  Archipelago of the Canary Islands
-  (<xref alt="Figure 2" rid="fig-map">Figure 2</xref>).</p>
-  <fig id="fig-spatial-plot">
-    <caption><p>Figure 3: Locations of earthquakes on La Palma since
-    2017</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
-  </fig>
-  <p><xref alt="Figure 3" rid="fig-spatial-plot">Figure 3</xref> shows
-  the location of recent Earthquakes on La Palma.</p>
+<sec id="introduction">
+  <title>1 Introduction</title>
+  <p>A global biodiversity crisis is currently underway, driven by
+  anthropogenic changes and pressures such as climate change, land-use
+  changes, and invasive species, among others
+  (<xref alt="Dirzo and Raven 2003" rid="ref-dirzo2003" ref-type="bibr">Dirzo
+  and Raven 2003</xref>). Protected areas have been demonstrated to be
+  one of the most effective potential safeguards against these
+  biodiversity losses
+  (<xref alt="Chape et al. 2005" rid="ref-chape2005" ref-type="bibr">Chape
+  et al. 2005</xref>). To assess the effectiveness of protected areas,
+  it is necessary to collect data across entire jurisdictions and
+  compare them to similar ecosystems that are not protected. However,
+  collecting direct, field-derived information on biodiversity across
+  large regions is simply not feasible due to financial and temporal
+  constraints.</p>
+  <p>Remote sensing data, however, can provide a time-efficient,
+  cost-effective alternative to field data, and can be used to generate
+  Essential Biodiversity Variables (EBVs) which are comparable,
+  standardized datasets capable of measuring biodiversity change across
+  large spatial extents through time
+  (<xref alt="Skidmore et al. 2021" rid="ref-skidmore2021" ref-type="bibr">Skidmore
+  et al. 2021</xref>;
+  <xref alt="Pereira et al. 2013" rid="ref-pereira2013" ref-type="bibr">Pereira
+  et al. 2013</xref>). Two EBV classes are particularly well suited to
+  be used at regional to national scales; ecosystem structure and
+  ecosystem function. Ecosystem structure is defined as the physical
+  organization of biotic and abiotic materials in the system, and is
+  commonly assessed as land cover and forest structural attributes using
+  remote sensing
+  (<xref alt="Noss 1990" rid="ref-noss1990" ref-type="bibr">Noss
+  1990</xref>). Ecosystem function are attributes related to ecosystem
+  performance, such as the inflows or outflows of energy/nutrients
+  (<xref alt="Pettorelli et al. 2018" rid="ref-pettorelli2018" ref-type="bibr">Pettorelli
+  et al. 2018</xref>). Remote sensing of ecosystem function commonly
+  includes productivity metrics such as GPP
+  (<xref alt="Pettorelli et al. 2005" rid="ref-pettorelli2005" ref-type="bibr">Pettorelli
+  et al. 2005</xref>,
+  <xref alt="2018" rid="ref-pettorelli2018" ref-type="bibr">2018</xref>).
+  Remote sensing-derived EBVs provide suitable spatial coverage,
+  temporal depth, and temporal frequency to be used for biodiversity
+  monitoring
+  (<xref alt="Skidmore et al. 2021" rid="ref-skidmore2021" ref-type="bibr">Skidmore
+  et al. 2021</xref>), and thus, protected area effectiveness
+  assessments.</p>
+  <p>The use of impact assessment techniques such as matching is
+  becoming increasingly prevalent in studies of the effectiveness of
+  protected areas
+  (<xref alt="Ferraro 2009" rid="ref-ferraro2009" ref-type="bibr">Ferraro
+  2009</xref>). Matching methods generally work by creating a
+  counterfactual scenario in which conservation outcomes are compared
+  between the protected area and what those outcomes would be if the
+  given area were not protected
+  (<xref alt="Ribas, Pressey, and Bini 2021" rid="ref-ribas2021" ref-type="bibr">Ribas,
+  Pressey, and Bini 2021</xref>). This is achieved by comparing a given
+  protected area to an unprotected area with similar covariates, such as
+  climate, topography, and various anthropogenic data. Propensity score
+  matching uses the covariates and protected status with a logit
+  regression to create a propensity score, which is then used to match
+  the protected area to an unprotected area
+  (<xref alt="Austin 2011" rid="ref-austin2011" ref-type="bibr">Austin
+  2011</xref>). Coarsened exact matching (CEM) initially coarsens the
+  covariates into bins (percentiles) and then performs exact matching on
+  these bins, while retaining the original, uncoarsened data
+  (<xref alt="Iacus, King, and Porro 2012" rid="ref-iacus2012" ref-type="bibr">Iacus,
+  King, and Porro 2012</xref>). Other matching methods exist (see
+  <xref alt="Schleicher et al. 2020" rid="ref-schleicher2020" ref-type="bibr">Schleicher
+  et al. 2020</xref>), but one common issue common to these methods is
+  that many data samples are dropped because there is no suitable match
+  to be found. This can be problematic when attempting to create spatial
+  counterfactuals, such as when evaluating the efficacy of protected
+  areas across large regions, as it can lead to a loss of spatial
+  coverage.</p>
+  <p>In this study, we seek to enhance the spatial coverage of CEM using
+  a two-step approach. Firstly, we coarsen the covariates into bins, and
+  then perform exact matching on these bins. In the event that no
+  suitable match can be found, a KNN (k = 1) approach is used to
+  identify the nearest match. This two-step approach allows for a more
+  comprehensive assessment of the effectiveness of protected areas,
+  where no observations are discarded. This method is applied to the
+  forested regions of British Columbia, Canada, and the effectiveness of
+  protected areas to is compared to similar ecosystems that are not
+  protected. We compare the spatial coverage of standard CEM method and
+  our expanded CEM method, and also apply both methods for assessing
+  protected area effectiveness at conserving two EBV classes; ecosystem
+  structure and ecosystem function. Further, we generate bootstrap
+  confidence intervals for each CEM bin for our two EBV classes and
+  compare every forested area in BC to their respective confidence
+  interval. This allows for the respatialization of the results,
+  allowing for managers to identify regions in need of restoration
+  (outside the confidence interval, in protected areas), or protection
+  (inside the confidence interval, outside of protected areas).</p>
 </sec>
 <sec id="sec-data-methods">
   <title>2 Data &amp; Methods</title>
 </sec>
+<sec id="results">
+  <title>3 Results</title>
+</sec>
 <sec id="conclusion">
-  <title>3 Conclusion</title>
+  <title>4 Conclusion</title>
 </sec>
 </body>
 
 <back>
 <ref-list>
   <title>References</title>
-  <ref id="ref-marrero2019">
+  <ref id="ref-skidmore2021">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
-        <name><surname>Marrero</surname><given-names>José</given-names></name>
-        <name><surname>García</surname><given-names>Alicia</given-names></name>
-        <name><surname>Berrocoso</surname><given-names>Manuel</given-names></name>
-        <name><surname>Llinares</surname><given-names>Ángeles</given-names></name>
-        <name><surname>Rodríguez-Losada</surname><given-names>Antonio</given-names></name>
-        <name><surname>Ortiz</surname><given-names>R.</given-names></name>
+        <name><surname>Skidmore</surname><given-names>Andrew K.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Neinavaz</surname><given-names>Elnaz</given-names></name>
+        <name><surname>Ali</surname><given-names>Abebe</given-names></name>
+        <name><surname>Schaepman</surname><given-names>Michael E.</given-names></name>
+        <name><surname>Paganini</surname><given-names>Marc</given-names></name>
+        <name><surname>Kissling</surname><given-names>W. Daniel</given-names></name>
+        <name><surname>Vihervaara</surname><given-names>Petteri</given-names></name>
+        <name><surname>Darvishzadeh</surname><given-names>Roshanak</given-names></name>
+        <name><surname>Feilhauer</surname><given-names>Hannes</given-names></name>
+        <name><surname>Fernandez</surname><given-names>Miguel</given-names></name>
+        <name><surname>Fernández</surname><given-names>Néstor</given-names></name>
+        <name><surname>Gorelick</surname><given-names>Noel</given-names></name>
+        <name><surname>Geijzendorffer</surname><given-names>Ilse</given-names></name>
+        <name><surname>Heiden</surname><given-names>Uta</given-names></name>
+        <name><surname>Heurich</surname><given-names>Marco</given-names></name>
+        <name><surname>Hobern</surname><given-names>Donald</given-names></name>
+        <name><surname>Holzwarth</surname><given-names>Stefanie</given-names></name>
+        <name><surname>Muller-Karger</surname><given-names>Frank E.</given-names></name>
+        <name><surname>Van De Kerchove</surname><given-names>Ruben</given-names></name>
+        <name><surname>Lausch</surname><given-names>Angela</given-names></name>
+        <name><surname>Leitão</surname><given-names>Pedro J.</given-names></name>
+        <name><surname>Lock</surname><given-names>Marcelle C.</given-names></name>
+        <name><surname>Mücher</surname><given-names>Caspar A.</given-names></name>
+        <name><surname>O’Connor</surname><given-names>Brian</given-names></name>
+        <name><surname>Rocchini</surname><given-names>Duccio</given-names></name>
+        <name><surname>Turner</surname><given-names>Woody</given-names></name>
+        <name><surname>Vis</surname><given-names>Jan Kees</given-names></name>
+        <name><surname>Wang</surname><given-names>Tiejun</given-names></name>
+        <name><surname>Wegmann</surname><given-names>Martin</given-names></name>
+        <name><surname>Wingate</surname><given-names>Vladimir</given-names></name>
       </person-group>
-      <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-      <source>Journal of Applied Volcanology</source>
-      <year iso-8601-date="2019-07">2019</year><month>07</month>
-      <volume>8</volume>
-      <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-      <fpage></fpage>
+      <article-title>Priority list of biodiversity metrics to observe from space</article-title>
+      <source>Nature Ecology &amp; Evolution</source>
+      <year iso-8601-date="2021-05-13">2021</year><month>05</month><day>13</day>
+      <uri>http://www.nature.com/articles/s41559-021-01451-x</uri>
+      <pub-id pub-id-type="doi">10.1038/s41559-021-01451-x</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-pereira2013">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pereira</surname><given-names>H. M.</given-names></name>
+        <name><surname>Ferrier</surname><given-names>S.</given-names></name>
+        <name><surname>Walters</surname><given-names>M.</given-names></name>
+        <name><surname>Geller</surname><given-names>G. N.</given-names></name>
+        <name><surname>Jongman</surname><given-names>R. H. G.</given-names></name>
+        <name><surname>Scholes</surname><given-names>R. J.</given-names></name>
+        <name><surname>Bruford</surname><given-names>M. W.</given-names></name>
+        <name><surname>Brummitt</surname><given-names>N.</given-names></name>
+        <name><surname>Butchart</surname><given-names>S. H. M.</given-names></name>
+        <name><surname>Cardoso</surname><given-names>A. C.</given-names></name>
+        <name><surname>Coops</surname><given-names>N. C.</given-names></name>
+        <name><surname>Dulloo</surname><given-names>E.</given-names></name>
+        <name><surname>Faith</surname><given-names>D. P.</given-names></name>
+        <name><surname>Freyhof</surname><given-names>J.</given-names></name>
+        <name><surname>Gregory</surname><given-names>R. D.</given-names></name>
+        <name><surname>Heip</surname><given-names>C.</given-names></name>
+        <name><surname>Hoft</surname><given-names>R.</given-names></name>
+        <name><surname>Hurtt</surname><given-names>G.</given-names></name>
+        <name><surname>Jetz</surname><given-names>W.</given-names></name>
+        <name><surname>Karp</surname><given-names>D. S.</given-names></name>
+        <name><surname>McGeoch</surname><given-names>M. A.</given-names></name>
+        <name><surname>Obura</surname><given-names>D.</given-names></name>
+        <name><surname>Onoda</surname><given-names>Y.</given-names></name>
+        <name><surname>Pettorelli</surname><given-names>N.</given-names></name>
+        <name><surname>Reyers</surname><given-names>B.</given-names></name>
+        <name><surname>Sayre</surname><given-names>R.</given-names></name>
+        <name><surname>Scharlemann</surname><given-names>J. P. W.</given-names></name>
+        <name><surname>Stuart</surname><given-names>S. N.</given-names></name>
+        <name><surname>Turak</surname><given-names>E.</given-names></name>
+        <name><surname>Walpole</surname><given-names>M.</given-names></name>
+        <name><surname>Wegmann</surname><given-names>M.</given-names></name>
+      </person-group>
+      <article-title>Essential Biodiversity Variables</article-title>
+      <source>Science</source>
+      <year iso-8601-date="2013-01-18">2013</year><month>01</month><day>18</day>
+      <volume>339</volume>
+      <issue>6117</issue>
+      <uri>https://www.sciencemag.org/lookup/doi/10.1126/science.1229931</uri>
+      <pub-id pub-id-type="doi">10.1126/science.1229931</pub-id>
+      <fpage>277</fpage>
+      <lpage>278</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-noss1990">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Noss</surname><given-names>Reed F.</given-names></name>
+      </person-group>
+      <article-title>Indicators for Monitoring Biodiversity: A Hierarchical Approach</article-title>
+      <source>Conservation Biology</source>
+      <year iso-8601-date="1990">1990</year>
+      <volume>4</volume>
+      <issue>4</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.1990.tb00309.x</uri>
+      <pub-id pub-id-type="doi">10.1111/j.1523-1739.1990.tb00309.x</pub-id>
+      <fpage>355</fpage>
+      <lpage>364</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pettorelli2018">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pettorelli</surname><given-names>Nathalie</given-names></name>
+        <name><surname>Schulte to Bühne</surname><given-names>Henrike</given-names></name>
+        <name><surname>Tulloch</surname><given-names>Ayesha</given-names></name>
+        <name><surname>Dubois</surname><given-names>Grégoire</given-names></name>
+        <name><surname>Macinnis-Ng</surname><given-names>Cate</given-names></name>
+        <name><surname>Queirós</surname><given-names>Ana M.</given-names></name>
+        <name><surname>Keith</surname><given-names>David A.</given-names></name>
+        <name><surname>Wegmann</surname><given-names>Martin</given-names></name>
+        <name><surname>Schrodt</surname><given-names>Franziska</given-names></name>
+        <name><surname>Stellmes</surname><given-names>Marion</given-names></name>
+        <name><surname>Sonnenschein</surname><given-names>Ruth</given-names></name>
+        <name><surname>Geller</surname><given-names>Gary N.</given-names></name>
+        <name><surname>Roy</surname><given-names>Shovonlal</given-names></name>
+        <name><surname>Somers</surname><given-names>Ben</given-names></name>
+        <name><surname>Murray</surname><given-names>Nicholas</given-names></name>
+        <name><surname>Bland</surname><given-names>Lucie</given-names></name>
+        <name><surname>Geijzendorffer</surname><given-names>Ilse</given-names></name>
+        <name><surname>Kerr</surname><given-names>Jeremy T.</given-names></name>
+        <name><surname>Broszeit</surname><given-names>Stefanie</given-names></name>
+        <name><surname>Leitão</surname><given-names>Pedro J.</given-names></name>
+        <name><surname>Duncan</surname><given-names>Clare</given-names></name>
+        <name><surname>El Serafy</surname><given-names>Ghada</given-names></name>
+        <name><surname>He</surname><given-names>Kate S.</given-names></name>
+        <name><surname>Blanchard</surname><given-names>Julia L.</given-names></name>
+        <name><surname>Lucas</surname><given-names>Richard</given-names></name>
+        <name><surname>Mairota</surname><given-names>Paola</given-names></name>
+        <name><surname>Webb</surname><given-names>Thomas J.</given-names></name>
+        <name><surname>Nicholson</surname><given-names>Emily</given-names></name>
+      </person-group>
+      <article-title>Satellite remote sensing of ecosystem functions: opportunities, challenges and way forward</article-title>
+      <source>Remote Sensing in Ecology and Conservation</source>
+      <year iso-8601-date="2018">2018</year>
+      <volume>4</volume>
+      <issue>2</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/rse2.59</uri>
+      <pub-id pub-id-type="doi">10.1002/rse2.59</pub-id>
+      <fpage>71</fpage>
+      <lpage>93</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-chape2005">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Chape</surname><given-names>S</given-names></name>
+        <name><surname>Harrison</surname><given-names>J</given-names></name>
+        <name><surname>Spalding</surname><given-names>M</given-names></name>
+        <name><surname>Lysenko</surname><given-names>I</given-names></name>
+      </person-group>
+      <article-title>Measuring the extent and effectiveness of protected areas as an indicator for meeting global biodiversity targets</article-title>
+      <source>Philosophical Transactions of the Royal Society B: Biological Sciences</source>
+      <year iso-8601-date="2005-02">2005</year><month>02</month>
+      <volume>360</volume>
+      <issue>1454</issue>
+      <uri>https://royalsocietypublishing.org/doi/10.1098/rstb.2004.1592</uri>
+      <pub-id pub-id-type="doi">10.1098/rstb.2004.1592</pub-id>
+      <fpage>443455</fpage>
       <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-dirzo2003">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Dirzo</surname><given-names>Rodolfo</given-names></name>
+        <name><surname>Raven</surname><given-names>Peter H.</given-names></name>
+      </person-group>
+      <article-title>Global State of Biodiversity and Loss</article-title>
+      <source>Annual Review of Environment and Resources</source>
+      <year iso-8601-date="2003-11-01">2003</year><month>11</month><day>01</day>
+      <volume>28</volume>
+      <issue>Volume 28, 2003</issue>
+      <uri>https://www.annualreviews.org/content/journals/10.1146/annurev.energy.28.050302.105532</uri>
+      <pub-id pub-id-type="doi">10.1146/annurev.energy.28.050302.105532</pub-id>
+      <fpage>137</fpage>
+      <lpage>167</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pettorelli2005">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pettorelli</surname><given-names>Nathalie</given-names></name>
+        <name><surname>Vik</surname><given-names>Jon Olav</given-names></name>
+        <name><surname>Mysterud</surname><given-names>Atle</given-names></name>
+        <name><surname>Gaillard</surname><given-names>Jean-Michel</given-names></name>
+        <name><surname>Tucker</surname><given-names>Compton J.</given-names></name>
+        <name><surname>Stenseth</surname><given-names>Nils Chr.</given-names></name>
+      </person-group>
+      <article-title>Using the satellite-derived NDVI to assess ecological responses to environmental change</article-title>
+      <source>Trends in Ecology &amp; Evolution</source>
+      <year iso-8601-date="2005-09-01">2005</year><month>09</month><day>01</day>
+      <volume>20</volume>
+      <issue>9</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S016953470500162X</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tree.2005.05.011</pub-id>
+      <fpage>503</fpage>
+      <lpage>510</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ferraro2009">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ferraro</surname><given-names>Paul J.</given-names></name>
+      </person-group>
+      <article-title>Counterfactual thinking and impact evaluation in environmental policy</article-title>
+      <source>New Directions for Evaluation</source>
+      <year iso-8601-date="2009">2009</year>
+      <volume>2009</volume>
+      <issue>122</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/ev.297</uri>
+      <pub-id pub-id-type="doi">10.1002/ev.297</pub-id>
+      <fpage>75</fpage>
+      <lpage>84</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-schleicher2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Schleicher</surname><given-names>Judith</given-names></name>
+        <name><surname>Eklund</surname><given-names>Johanna</given-names></name>
+        <name><surname>D. Barnes</surname><given-names>Megan</given-names></name>
+        <name><surname>Geldmann</surname><given-names>Jonas</given-names></name>
+        <name><surname>Oldekop</surname><given-names>Johan A.</given-names></name>
+        <name><surname>Jones</surname><given-names>Julia P. G.</given-names></name>
+      </person-group>
+      <article-title>Statistical matching for conservation science</article-title>
+      <source>Conservation Biology</source>
+      <year iso-8601-date="2020">2020</year>
+      <volume>34</volume>
+      <issue>3</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/cobi.13448</uri>
+      <pub-id pub-id-type="doi">10.1111/cobi.13448</pub-id>
+      <fpage>538</fpage>
+      <lpage>549</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ribas2021">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ribas</surname><given-names>Luiz G. S.</given-names></name>
+        <name><surname>Pressey</surname><given-names>Robert L.</given-names></name>
+        <name><surname>Bini</surname><given-names>Luis M.</given-names></name>
+      </person-group>
+      <article-title>Estimating counterfactuals for evaluation of ecological and conservation impact: an introduction to matching methods</article-title>
+      <source>Biological Reviews</source>
+      <year iso-8601-date="2021">2021</year>
+      <volume>96</volume>
+      <issue>4</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12697</uri>
+      <pub-id pub-id-type="doi">10.1111/brv.12697</pub-id>
+      <fpage>1186</fpage>
+      <lpage>1204</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-iacus2012">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Iacus</surname><given-names>Stefano M.</given-names></name>
+        <name><surname>King</surname><given-names>Gary</given-names></name>
+        <name><surname>Porro</surname><given-names>Giuseppe</given-names></name>
+      </person-group>
+      <article-title>Causal Inference without Balance Checking: Coarsened Exact Matching</article-title>
+      <source>Political Analysis</source>
+      <year iso-8601-date="2012">2012</year>
+      <volume>20</volume>
+      <issue>1</issue>
+      <uri>https://www.cambridge.org/core/product/identifier/S1047198700012985/type/journal_article</uri>
+      <pub-id pub-id-type="doi">10.1093/pan/mpr013</pub-id>
+      <fpage>1</fpage>
+      <lpage>24</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-austin2011">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Austin</surname><given-names>Peter C.</given-names></name>
+      </person-group>
+      <article-title>An introduction to propensity score methods for reducing the effects of confounding in observational studies</article-title>
+      <source>Multivariate Behavioral Research</source>
+      <year iso-8601-date="2011-05">2011</year><month>05</month>
+      <volume>46</volume>
+      <issue>3</issue>
+      <uri>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/</uri>
+      <pub-id pub-id-type="doi">10.1080/00273171.2011.568786</pub-id>
+      <fpage>399</fpage>
+      <lpage>424</lpage>
     </element-citation>
   </ref>
 </ref-list>
 </back>
 
-<sub-article article-type="notebook" id="nb-8-nb-article">
-<front-stub>
-<title-group>
-<article-title>Spatially explicit mapping of conservation outcomes
-across a large region loladasdsa</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author" corresp="yes">
-<contrib-id contrib-id-type="orcid">0000-0003-3404-3220</contrib-id>
-<name>
-<surname>Muise</surname>
-<given-names>Evan</given-names>
-</name>
-<string-name>Evan Muise</string-name>
 
-<email>evanmuis@student.ubc.ca</email>
-<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
-<role vocab="https://credit.niso.org" vocab-term="project
-administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
-administration</role>
-<role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
-<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
-<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
-<xref ref-type="corresp" rid="cor-1-nb-article">&#x002A;</xref>
-</contrib>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
-<name>
-<surname>Coops</surname>
-<given-names>Nicholas</given-names>
-</name>
-<string-name>Nicholas Coops</string-name>
-
-<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
-</contrib>
-</contrib-group>
-<aff id="aff-1-nb-article">
-<institution-wrap>
-<institution>Department of Forest Resource Management, University of
-British Columbia, Vancouver, 2424 Main Mall, British Columbia,
-Canada</institution>
-</institution-wrap>
-
-
-
-
-
-
-
-</aff>
-<author-notes>
-<corresp id="cor-1-nb-article">evanmuis@student.ubc.ca</corresp>
-</author-notes>
-<abstract>
-<p>In September 2021, a significant jump in seismic activity on the
-island of La Palma (Canary Islands, Spain) signaled the start of a
-volcanic crisis that still continues at the time of writing. Earthquake
-data is continually collected and published by the Instituto Geográphico
-Nacional (IGN). …</p>
-</abstract>
-</front-stub>
-
-<body>
-<sec id="introduction-asd-nb-article">
-  <title>1 Introduction asd</title>
-  <sec id="nb-code-cell-1-nb-article" specific-use="notebook-code">
-  <code language="r script">eruptions &lt;- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions &lt;- length(eruptions)</code>
-  </sec>
-  <sec id="cell-fig-timeline-nb-article" specific-use="notebook-code">
-  <code language="r script">par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = &quot;|&quot;, axes = FALSE)
-axis(1)
-box()</code>
-  <fig id="fig-timeline-nb-article">
-    <caption><p>Figure 1: Timeline of recent earthquakes on La
-    Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-timeline-1.png" />
-  </fig>
-  </sec>
-  <sec id="nb-code-cell-2-nb-article" specific-use="notebook-code">
-  <code language="r script">avg_years_between_eruptions &lt;- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions</code>
-  <sec id="nb-code-cell-2-output-0-nb-article" specific-use="notebook-output">
-  <preformat>[1] 79.83333</preformat>
-  </sec>
-  </sec>
-  <p>Based on data up to and including 1971, eruptions on La Palma
-  happen every 79.8 years on average.</p>
-  <p>Studies of the magma systems feeding the volcano, such as Marrero
-  et al.
-  (<xref alt="2019" rid="ref-marrero2019-nb-article" ref-type="bibr">2019</xref>),
-  have proposed that there are two main magma reservoirs feeding the
-  Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
-  and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-  <p>Eight eruptions have been recorded since the late 1400s
-  (<xref alt="Figure 1" rid="fig-timeline-nb-article">Figure 1</xref>).</p>
-  <p>Data and methods are discussed in
-  <xref alt="Section 2" rid="sec-data-methods-nb-article">Section 2</xref>. Marrero
-  et al.
-  (<xref alt="2019" rid="ref-marrero2019-nb-article" ref-type="bibr">2019</xref>)</p>
-  <p>Let <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  denote the number of eruptions in a year. Then,
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  can be modeled by a Poisson distribution</p>
-  <p><styled-content id="eq-poisson-nb-article"><disp-formula><alternatives>
-  <tex-math><![CDATA[
-  p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-   \qquad(1)]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
-  <p>where <inline-formula><alternatives>
-  <tex-math><![CDATA[\lambda]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
-  is the rate of eruptions per year. Using
-  <xref alt="Equation 1" rid="eq-poisson-nb-article">Equation 1</xref>, the
-  probability of an eruption in the next <inline-formula><alternatives>
-  <tex-math><![CDATA[t]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
-  years can be calculated.</p>
-  <fig id="tbl-history-nb-article">
-    <caption><p>Table 1: Recent historic eruptions on La
-    Palma</p></caption>
-    <table-wrap>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Current</td>
-            <td>2021</td>
-          </tr>
-          <tr>
-            <td>Teneguía</td>
-            <td>1971</td>
-          </tr>
-          <tr>
-            <td>Nambroque</td>
-            <td>1949</td>
-          </tr>
-          <tr>
-            <td>El Charco</td>
-            <td>1712</td>
-          </tr>
-          <tr>
-            <td>Volcán San Antonio</td>
-            <td>1677</td>
-          </tr>
-          <tr>
-            <td>Volcán San Martin</td>
-            <td>1646</td>
-          </tr>
-          <tr>
-            <td>Tajuya near El Paso</td>
-            <td>1585</td>
-          </tr>
-          <tr>
-            <td>Montaña Quemada</td>
-            <td>1492</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
-  </fig>
-  <p><xref alt="Table 1" rid="tbl-history-nb-article">Table 1</xref> summarises the
-  eruptions recorded since the colonization of the islands by Europeans
-  in the late 1400s.</p>
-  <fig id="fig-map-nb-article">
-    <caption><p>Figure 2: Map of La Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
-  </fig>
-  <p>La Palma is one of the west most islands in the Volcanic
-  Archipelago of the Canary Islands
-  (<xref alt="Figure 2" rid="fig-map-nb-article">Figure 2</xref>).</p>
-  <sec id="cell-fig-spatial-plot-nb-article" specific-use="notebook-code">
-  <code language="python">la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()</code>
-  <sec id="cell-fig-spatial-plot-output-0-nb-article" specific-use="notebook-output">
-  <fig id="fig-spatial-plot-nb-article">
-    <caption><p>Figure 3: Locations of earthquakes on La Palma since
-    2017</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
-  </fig>
-  </sec>
-  </sec>
-  <p><xref alt="Figure 3" rid="fig-spatial-plot-nb-article">Figure 3</xref> shows
-  the location of recent Earthquakes on La Palma.</p>
-</sec>
-<sec id="sec-data-methods-nb-article">
-  <title>2 Data &amp; Methods</title>
-</sec>
-<sec id="conclusion-nb-article">
-  <title>3 Conclusion</title>
-</sec>
-</body>
-
-
-
-<back>
-<ref-list>
-  <title>References</title>
-  <ref id="ref-marrero2019-nb-article">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Marrero</surname><given-names>José</given-names></name>
-        <name><surname>García</surname><given-names>Alicia</given-names></name>
-        <name><surname>Berrocoso</surname><given-names>Manuel</given-names></name>
-        <name><surname>Llinares</surname><given-names>Ángeles</given-names></name>
-        <name><surname>Rodríguez-Losada</surname><given-names>Antonio</given-names></name>
-        <name><surname>Ortiz</surname><given-names>R.</given-names></name>
-      </person-group>
-      <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-      <source>Journal of Applied Volcanology</source>
-      <year iso-8601-date="2019-07">2019</year><month>07</month>
-      <volume>8</volume>
-      <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-      <fpage></fpage>
-      <lpage></lpage>
-    </element-citation>
-  </ref>
-</ref-list>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-4-nb-1">
-<front-stub>
-<title-group>
-<article-title>Explore Earthquakes teststsststtsstts</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author">
-<name>
-<surname>Wickham</surname>
-<given-names>Charlotte</given-names>
-</name>
-<string-name>Charlotte Wickham</string-name>
-
-</contrib>
-</contrib-group>
-</front-stub>
-
-<body>
-<sec id="nb-code-cell-1-nb-1" specific-use="notebook-code">
-<code language="r script">library(tidyverse)
-</code>
-<sec id="nb-code-cell-1-output-0-nb-1" specific-use="notebook-output">
-<preformat>Warning: package 'tidyverse' was built under R version 4.3.3</preformat>
-</sec>
-<sec id="nb-code-cell-1-output-1-nb-1" specific-use="notebook-output">
-<preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
-</sec>
-</sec>
-<p>Read a clean version of data:</p>
-<sec id="nb-code-cell-2-nb-1" specific-use="notebook-code">
-<code language="r script">la_palma &lt;- read_csv(&quot;la-palma.csv&quot;)
-</code>
-<sec id="nb-code-cell-2-output-0-nb-1" specific-use="notebook-output">
-<preformat>Rows: 11347 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-dbl  (4): Longitude, Latitude, Depth(km), Magnitude
-dttm (1): DateTime
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-</sec>
-</sec>
-<p>Create spatial plot:</p>
-<sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-code">
-<code language="r script">#|   against longitude.&quot;
-la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()
-</code>
-<fig id="fig-spatial-plot-nb-1">
-  <caption><p>Locations of earthquakes on La Palma since
-  2017</p></caption>
-  <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png" />
-</fig>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
 
 </article>
