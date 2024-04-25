@@ -1,5 +1,5 @@
 ---
-title: Spatially explicit mapping of conservation outcomes across a large region loladasdsa
+title: Spatially explicit mapping of ecological similarity across a large region using matching techniques.
 author:
   - name: Evan Muise
     orcid: 0000-0003-3404-3220
@@ -7,7 +7,6 @@ author:
     email: evanmuis@student.ubc.ca
     roles:
       - Investigation
-      - Project administration
       - Software
       - Visualization
     affiliations:
@@ -15,7 +14,8 @@ author:
   - name: Nicholas Coops
     orcid: 0000-0002-7859-8394
     corresponding: false
-    roles: []
+    roles: 
+      - Project administration
     affiliations:
       - Department of Forest Resource Management, University of British Columbia, Vancouver, 2424 Main Mall, British Columbia, Canada
 keywords:
@@ -24,86 +24,35 @@ keywords:
   - Coarsened exact matching
   - Essential Biodiversity Variables
 abstract: |
-  In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). ...
+  ABSTRACT
 plain-language-summary: |
-  Earthquake data for the island of La Palma from the September 2021 eruption is found ...
+  Probably am not doing a plain language summary
 key-points:
-  - A web scraping script was developed to pull data from the Instituto Geogràphico Nacional into a machine-readable form for analysis
-  - Earthquake events on La Palma are consistent with the presence of both mantle and crustal reservoirs.
+  - We expanded on coarsened exact matching (CEM) methods to avoid dropping samples, expanding the spatial coverage of the matching technique.
+  - We compare our expanded method to normal CEM, and find...
+  - 
 date: last-modified
 bibliography: references.bib
 citation:
   container-title: Earth and Space Science
 number-sections: true
 notebook-links: false
+reference-doc: my-styles.docx
 ---
 
-## Introduction asd
+## Introduction
 
-```{r}
-eruptions <- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions <- length(eruptions)
-```
+A global biodiversity crisis is currently underway, driven by anthropogenic changes and pressures such as climate change, land-use changes, and invasive species, among others [@dirzo2003]. Protected areas have been demonstrated to be one of the most effective potential safeguards against these biodiversity losses [@chape2005]. To assess the effectiveness of protected areas, it is necessary to collect data across entire jurisdictions and compare them to similar ecosystems that are not protected. However, collecting direct, field-derived information on biodiversity across large regions is simply not feasible due to financial and temporal constraints.
 
-```{r}
-#| label: fig-timeline
-#| fig-cap: Timeline of recent earthquakes on La Palma
-#| fig-alt: An event plot of the years of the last 8 eruptions on La Palma.
-#| fig-height: 1.5
-#| fig-width: 6
-par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = "|", axes = FALSE)
-axis(1)
-box()
-```
+Remote sensing data, however, can provide a time-efficient, cost-effective alternative to field data, and can be used to generate Essential Biodiversity Variables (EBVs) which are comparable, standardized datasets capable of measuring biodiversity change across large spatial extents through time [@skidmore2021; @pereira2013]. Two EBV classes are particularly well suited to be used at regional to national scales; ecosystem structure and ecosystem function. Ecosystem structure is defined as the physical organization of biotic and abiotic materials in the system, and is commonly assessed as land cover and forest structural attributes using remote sensing [@noss1990]. Ecosystem function are attributes related to ecosystem performance, such as the inflows or outflows of energy/nutrients [@pettorelli2018]. Remote sensing of ecosystem function commonly includes productivity metrics such as GPP [@pettorelli2005; @pettorelli2018]. Remote sensing-derived EBVs provide suitable spatial coverage, temporal depth, and temporal frequency to be used for biodiversity monitoring [@skidmore2021], and thus, protected area effectiveness assessments.
 
-```{r}
-#| output: false
-avg_years_between_eruptions <- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions
-```
+The use of impact assessment techniques such as matching is becoming increasingly prevalent in studies of the effectiveness of protected areas [@ferraro2009]. Matching methods generally work by creating a counterfactual scenario in which conservation outcomes are compared between the protected area and what those outcomes would be if the given area were not protected [@ribas2021]. This is achieved by comparing a given protected area to an unprotected area with similar covariates, such as climate, topography, and various anthropogenic data. Propensity score matching uses the covariates and protected status with a logit regression to create a propensity score, which is then used to match the protected area to an unprotected area [@austin2011]. Coarsened exact matching (CEM) initially coarsens the covariates into bins (percentiles) and then performs exact matching on these bins, while retaining the original, uncoarsened data [@iacus2012]. Other matching methods exist [see @schleicher2020], but one common issue common to these methods is that many data samples are dropped because there is no suitable match to be found. This can be problematic when attempting to create spatial counterfactuals, such as when evaluating the efficacy of protected areas across large regions, as it can lead to a loss of spatial coverage.
 
-Based on data up to and including 1971, eruptions on La Palma happen every `r round(avg_years_between_eruptions, 1)` years on average.
-
-Studies of the magma systems feeding the volcano, such as @marrero2019, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).
-
-Eight eruptions have been recorded since the late 1400s (@fig-timeline).
-
-Data and methods are discussed in @sec-data-methods. @marrero2019
-
-Let $x$ denote the number of eruptions in a year. Then, $x$ can be modeled by a Poisson distribution
-
-$$
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-$$ {#eq-poisson}
-
-where $\lambda$ is the rate of eruptions per year. Using @eq-poisson, the probability of an eruption in the next $t$ years can be calculated.
-
-| Name                | Year |
-|---------------------|------|
-| Current             | 2021 |
-| Teneguía            | 1971 |
-| Nambroque           | 1949 |
-| El Charco           | 1712 |
-| Volcán San Antonio  | 1677 |
-| Volcán San Martin   | 1646 |
-| Tajuya near El Paso | 1585 |
-| Montaña Quemada     | 1492 |
-
-: Recent historic eruptions on La Palma {#tbl-history}
-
-@tbl-history summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.
-
-![Map of La Palma](images/la-palma-map.png){#fig-map}
-
-La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (@fig-map).
-
-{{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}}
-
-@fig-spatial-plot shows the location of recent Earthquakes on La Palma.
+In this study, we seek to enhance the spatial coverage of CEM using a two-step approach. Firstly, we coarsen the covariates into bins, and then perform exact matching on these bins. In the event that no suitable match can be found, a KNN (k = 1) approach is used to identify the nearest match. This two-step approach allows for a more comprehensive assessment of the effectiveness of protected areas, where no observations are discarded. This method is applied to the forested regions of British Columbia, Canada, and the effectiveness of protected areas to is compared to similar ecosystems that are not protected. We compare the spatial coverage of standard CEM method and our expanded CEM method, and also apply both methods for assessing protected area effectiveness at conserving two EBV classes; ecosystem structure and ecosystem function. Further, we generate bootstrap confidence intervals for each CEM bin for our two EBV classes and compare every forested area in BC to their respective confidence interval. This allows for the respatialization of the results, allowing for managers to identify regions in need of restoration (outside the confidence interval, in protected areas), or protection (inside the confidence interval, outside of protected areas).
 
 ## Data & Methods {#sec-data-methods}
+
+## Results
 
 ## Conclusion
 
