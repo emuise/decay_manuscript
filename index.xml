@@ -9,7 +9,7 @@ and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
 <journal-id></journal-id>
 
 <journal-title-group>
-<journal-title>Earth and Space Science</journal-title>
+<journal-title>Conservation Biology</journal-title>
 </journal-title-group>
 <issn></issn>
 
@@ -75,10 +75,10 @@ Canada</institution>
 <corresp id="cor-1">evanmuis@student.ubc.ca</corresp>
 </author-notes>
 
-<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-04-25">
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-06-06">
 <year>2024</year>
-<month>4</month>
-<day>25</day>
+<month>6</month>
+<day>6</day>
 </pub-date>
 
 
@@ -111,104 +111,263 @@ Canada</institution>
 <sec id="introduction">
   <title>1 Introduction</title>
   <p>A global biodiversity crisis is currently underway, driven by
-  anthropogenic changes and pressures such as climate change, land-use
-  changes, and invasive species, among others
+  anthropogenic changes
   (<xref alt="Dirzo and Raven 2003" rid="ref-dirzo2003" ref-type="bibr">Dirzo
-  and Raven 2003</xref>). Protected areas have been demonstrated to be
-  one of the most effective potential safeguards against these
-  biodiversity losses
-  (<xref alt="Chape et al. 2005" rid="ref-chape2005" ref-type="bibr">Chape
-  et al. 2005</xref>). To assess the effectiveness of protected areas,
-  it is necessary to collect data across entire jurisdictions and
-  compare them to similar ecosystems that are not protected. However,
-  collecting direct, field-derived information on biodiversity across
-  large regions is simply not feasible due to financial and temporal
-  constraints.</p>
-  <p>Remote sensing data, however, can provide a time-efficient,
-  cost-effective alternative to field data, and can be used to generate
-  Essential Biodiversity Variables (EBVs) which are comparable,
-  standardized datasets capable of measuring biodiversity change across
-  large spatial extents through time
+  and Raven 2003</xref>). Pressures such as climate change, land-use
+  changes, and invasive species, are leading to species extinctions
+  (<xref alt="Thomas et al. 2004" rid="ref-thomas2004" ref-type="bibr">Thomas
+  et al. 2004</xref>;
+  <xref alt="Urban 2015" rid="ref-urban2015" ref-type="bibr">Urban
+  2015</xref>) and the homogenization of biological communities
+  (<xref alt="McGill et al. 2015" rid="ref-mcgill2015" ref-type="bibr">McGill
+  et al. 2015</xref>). The Kunming-Montreal Global Biodiversity
+  Framework (GBF) has been adopted as of December 2022, with the goal of
+  restoring global biodiversity
+  (<xref alt="“Report of the Conference of the Parties to the Convention on Biological Diversity on the Second Part of Its Fifteenth Meeting” 2023" rid="ref-reporto2023" ref-type="bibr">“Report
+  of the Conference of the Parties to the Convention on Biological
+  Diversity on the Second Part of Its Fifteenth Meeting” 2023</xref>).
+  Targets within this framework include restoring 30% of all degraded
+  ecosystems, and protecting 30% of of Earth’s terrestrial, inland
+  water, and marine areas
+  (<xref alt="“Report of the Conference of the Parties to the Convention on Biological Diversity on the Second Part of Its Fifteenth Meeting” 2023" rid="ref-reporto2023" ref-type="bibr">“Report
+  of the Conference of the Parties to the Convention on Biological
+  Diversity on the Second Part of Its Fifteenth Meeting” 2023</xref>).
+  In the terrestrial environment, forest biomes have been shown to
+  harbour the largest amount of biodiversity
+  (<xref alt="Myers 1988" rid="ref-myers1988" ref-type="bibr">Myers
+  1988</xref>;
+  <xref alt="Pimm and Raven 2000" rid="ref-pimm2000" ref-type="bibr">Pimm
+  and Raven 2000</xref>;
+  <xref alt="Cardinale et al. 2012" rid="ref-cardinale2012" ref-type="bibr">Cardinale
+  et al. 2012</xref>), and provide key ecosystem services
+  (<xref alt="Thompson et al. 2009" rid="ref-thompson2009" ref-type="bibr">Thompson
+  et al. 2009</xref>). To provide these services, it is integral that
+  these forest ecosystems are in good ecological condition, as
+  represented by natural or near-natural levels of forest structure,
+  forest function, and forest composition
+  (<xref alt="Marín et al. 2021" rid="ref-marín2021" ref-type="bibr">Marín
+  et al. 2021</xref>).</p>
+  <p>While understanding forest condition is a key aspect of
+  understanding biodiversity and the provision of ecosystem services due
+  to their inherent linkages
+  (<xref alt="Marín et al. 2021" rid="ref-marín2021" ref-type="bibr">Marín
+  et al. 2021</xref>;
+  <xref alt="Cardinale et al. 2012" rid="ref-cardinale2012" ref-type="bibr">Cardinale
+  et al. 2012</xref>), it is difficult to acquire suitable field-derived
+  data across wide expanses of land due to the extreme financial and
+  temporal costs associated with field campaigns. Remote sensing data,
+  however, can provide a time-efficient, cost-effective alternative to
+  field data, providing access to new spatially explicit and exhaustive
+  datasets that can be linked to ecological condition, with additional
+  metrics being proposed at a rapid pace
   (<xref alt="Skidmore et al. 2021" rid="ref-skidmore2021" ref-type="bibr">Skidmore
   et al. 2021</xref>;
   <xref alt="Pereira et al. 2013" rid="ref-pereira2013" ref-type="bibr">Pereira
-  et al. 2013</xref>). Two EBV classes are particularly well suited to
-  be used at regional to national scales; ecosystem structure and
-  ecosystem function. Ecosystem structure is defined as the physical
-  organization of biotic and abiotic materials in the system, and is
-  commonly assessed as land cover and forest structural attributes using
-  remote sensing
-  (<xref alt="Noss 1990" rid="ref-noss1990" ref-type="bibr">Noss
-  1990</xref>). Ecosystem function are attributes related to ecosystem
-  performance, such as the inflows or outflows of energy/nutrients
-  (<xref alt="Pettorelli et al. 2018" rid="ref-pettorelli2018" ref-type="bibr">Pettorelli
-  et al. 2018</xref>). Remote sensing of ecosystem function commonly
-  includes productivity metrics such as GPP
+  et al. 2013</xref>;
+  <xref alt="Volker C. Radeloff et al. 2024" rid="ref-radeloff2024" ref-type="bibr">Volker
+  C. Radeloff et al. 2024</xref>). Advances in lidar technologies and
+  modelling methods are allowing wall-to-wall estimates of forest stand
+  structure to be generated across entire countries
+  (<xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. 2018" rid="ref-matasci2018" ref-type="bibr">Matasci,
+  Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. 2018</xref>;
+  <xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018" rid="ref-matasci2018b" ref-type="bibr">Matasci,
+  Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018</xref>;
+  <xref alt="Becker et al. 2023" rid="ref-becker2023" ref-type="bibr">Becker
+  et al. 2023</xref>), serving as a finer scale indicator of ecosystem
+  structure than the often previously used landscape fragmentation
+  metrics
+  (<xref alt="Andrew, Wulder, and Coops 2012" rid="ref-andrew2012" ref-type="bibr">Andrew,
+  Wulder, and Coops 2012</xref>). Productivity metrics have been used as
+  a proxy for ecosystem function for many years
   (<xref alt="Pettorelli et al. 2005" rid="ref-pettorelli2005" ref-type="bibr">Pettorelli
   et al. 2005</xref>,
-  <xref alt="2018" rid="ref-pettorelli2018" ref-type="bibr">2018</xref>).
-  Remote sensing-derived EBVs provide suitable spatial coverage,
-  temporal depth, and temporal frequency to be used for biodiversity
-  monitoring
-  (<xref alt="Skidmore et al. 2021" rid="ref-skidmore2021" ref-type="bibr">Skidmore
-  et al. 2021</xref>), and thus, protected area effectiveness
-  assessments.</p>
-  <p>The use of impact assessment techniques such as matching is
-  becoming increasingly prevalent in studies of the effectiveness of
-  protected areas
-  (<xref alt="Ferraro 2009" rid="ref-ferraro2009" ref-type="bibr">Ferraro
-  2009</xref>). Matching methods generally work by creating a
-  counterfactual scenario in which conservation outcomes are compared
-  between the protected area and what those outcomes would be if the
-  given area were not protected
-  (<xref alt="Ribas, Pressey, and Bini 2021" rid="ref-ribas2021" ref-type="bibr">Ribas,
-  Pressey, and Bini 2021</xref>). This is achieved by comparing a given
-  protected area to an unprotected area with similar covariates, such as
-  climate, topography, and various anthropogenic data. Propensity score
-  matching uses the covariates and protected status with a logit
-  regression to create a propensity score, which is then used to match
-  the protected area to an unprotected area
-  (<xref alt="Austin 2011" rid="ref-austin2011" ref-type="bibr">Austin
-  2011</xref>). Coarsened exact matching (CEM) initially coarsens the
-  covariates into bins (percentiles) and then performs exact matching on
-  these bins, while retaining the original, uncoarsened data
-  (<xref alt="Iacus, King, and Porro 2012" rid="ref-iacus2012" ref-type="bibr">Iacus,
-  King, and Porro 2012</xref>). Other matching methods exist (see
-  <xref alt="Schleicher et al. 2020" rid="ref-schleicher2020" ref-type="bibr">Schleicher
-  et al. 2020</xref>), but one common issue common to these methods is
-  that many data samples are dropped because there is no suitable match
-  to be found. This can be problematic when attempting to create spatial
-  counterfactuals, such as when evaluating the efficacy of protected
-  areas across large regions, as it can lead to a loss of spatial
-  coverage.</p>
-  <p>In this study, we seek to enhance the spatial coverage of CEM using
-  a two-step approach. Firstly, we coarsen the covariates into bins, and
-  then perform exact matching on these bins. In the event that no
-  suitable match can be found, a KNN (k = 1) approach is used to
-  identify the nearest match. This two-step approach allows for a more
-  comprehensive assessment of the effectiveness of protected areas,
-  where no observations are discarded. This method is applied to the
-  forested regions of British Columbia, Canada, and the effectiveness of
-  protected areas to is compared to similar ecosystems that are not
-  protected. We compare the spatial coverage of standard CEM method and
-  our expanded CEM method, and also apply both methods for assessing
-  protected area effectiveness at conserving two EBV classes; ecosystem
-  structure and ecosystem function. Further, we generate bootstrap
-  confidence intervals for each CEM bin for our two EBV classes and
-  compare every forested area in BC to their respective confidence
-  interval. This allows for the respatialization of the results,
-  allowing for managers to identify regions in need of restoration
-  (outside the confidence interval, in protected areas), or protection
-  (inside the confidence interval, outside of protected areas).</p>
+  <xref alt="2018" rid="ref-pettorelli2018" ref-type="bibr">2018</xref>),
+  with new Landsat derived datasets providing integrative annual
+  estimates of energy availability at a 30 m spatial
+  resolution(<xref alt="Volker C. Radeloff et al. 2024" rid="ref-radeloff2024" ref-type="bibr">Volker
+  C. Radeloff et al. 2024</xref>;
+  <xref alt="V. C. Radeloff et al. 2019" rid="ref-radeloff2019" ref-type="bibr">V.
+  C. Radeloff et al. 2019</xref>;
+  <xref alt="Razenkova et al., n.d." rid="ref-razenkova" ref-type="bibr">Razenkova
+  et al., n.d.</xref>). Remote sensing is quickly providing access to a
+  plethora of datasets suitable monitoring the various facets of
+  biodiversity and ecological condition
+  (<xref alt="Noss 1990" rid="ref-noss1990" ref-type="bibr">Noss
+  1990</xref>). Using these datasets in conjunction with information on
+  the location of known or assumed natural forests can allow researchers
+  to identify similar forest stands or ecosystems, thus locating high
+  quality forests across entire jurisdictions, even when they are facing
+  anthropogenic pressures.</p>
+  <p>However, identifying natural forests is not a simple task. There
+  are many definitions of what constitutes ‘naturalness’ in forest
+  environments
+  (<xref alt="Winter 2012" rid="ref-winter2012" ref-type="bibr">Winter
+  2012</xref>), and these difficulties are compounded by shifting
+  baseline syndrome
+  (<xref alt="Pinnegar and Engelhard 2008" rid="ref-pinnegar2008" ref-type="bibr">Pinnegar
+  and Engelhard 2008</xref>) and a lack of comprehensive historical data
+  to generate reference states
+  (<xref alt="Balaguer et al. 2014" rid="ref-balaguer2014" ref-type="bibr">Balaguer
+  et al. 2014</xref>). Other proposed methods to delineate baseline
+  conditions include protected areas
+  (<xref alt="Arcese and Sinclair 1997" rid="ref-arcese1997" ref-type="bibr">Arcese
+  and Sinclair 1997</xref>), and empirical estimates of the reference
+  state, generated by modelling outcomes (oftentimes species abundances
+  and occurrence) in the absence of anthropogenic disturbance
+  (<xref alt="Nielsen et al. 2007" rid="ref-nielsen2007" ref-type="bibr">Nielsen
+  et al. 2007</xref>).</p>
+  <p>In this study, we seek to identify natural forests of good
+  ecological condition at a 30 m spatial resolution across British
+  Columbia, Canada. We first identify reference states for ecosystems
+  across the province as protected areas with little-to-no anthropogenic
+  disturbances. We then use an expanded coarsened exact matching (CEM)
+  approach to compare the entire forested landscape of British Columbia
+  to a reference state which accounts for forest type as well as
+  topographic and climatic information. We expand the CEM technique to
+  allow for the the spatially explicit reconstruction of natural
+  ecosystem similarity, even when a perfect match is not available. We
+  further examine how the coverage of natural forest areas varies
+  between protected and unprotected areas in British Columbia. These
+  methods will allow managers to identify regions in need of
+  restoration, or that could be suitable for protection, and could be
+  expanded to other regions.</p>
 </sec>
 <sec id="sec-data-methods">
-  <title>2 Data &amp; Methods</title>
+  <title>2 Methods</title>
+  <sec id="data">
+    <title>2.1 Data</title>
+    <sec id="natural-forests">
+      <title>2.1.1 Natural forests</title>
+      <p>We defined natural forests as forests under formal protection
+      with little-to-no anthropogenic pressure. We obtained boundaries
+      for the protected areas of British Columbia using the
+      <bold>wdpar</bold> R package
+      (<xref alt="Hanson 2022" rid="ref-wdpar2022a" ref-type="bibr">Hanson
+      2022</xref> version 1.3.7), and filtered these protected areas
+      larger than 100 ha and in the IUCN categories Ia, Ib, II, and IV
+      Muise et al.
+      (<xref alt="2022" rid="ref-muise2022" ref-type="bibr">2022</xref>).
+      We use the Canadian Human Footprint generated by Hirsh-Pearson et
+      al.
+      (<xref alt="2022" rid="ref-hirsh-pearson2022" ref-type="bibr">2022</xref>),
+      a 300 m estimating of anthropogenic pressures across the entirety
+      of Canada, which accounts for pressures included in the global
+      human footprint
+      (<xref alt="Venter et al. 2016" rid="ref-venter2016" ref-type="bibr">Venter
+      et al. 2016</xref>), as well as pressures specific to the Canadian
+      environment. The Canadian Human Footprint considers built
+      environments, crop land, pasture land, human population density,
+      nighttime lights, railways, roads, navigable waterways, dams and
+      associated reservoirs, mining activity, oil and gas, and forestry
+      pressures
+      (<xref alt="Hirsh-Pearson et al. 2022" rid="ref-hirsh-pearson2022" ref-type="bibr">Hirsh-Pearson
+      et al. 2022</xref>). We consider any pixel within our protected
+      area criteria with a Canadian Human Footprint score below four as
+      representative of natural ecosystems, which balances the tradeoff
+      between having a suitable number of high-quality pixels, and low
+      anthropogenic pressures being represented in the natural
+      areas.</p>
+    </sec>
+    <sec id="forest-ecosystem-structure">
+      <title>2.1.2 Forest Ecosystem Structure</title>
+      <p>Wall-to-wall, 30 m forest structure metrics (canopy height,
+      canopy cover, structural complexity, and aboveground biomass) were
+      generated by Matasci, Hermosilla, Wulder, White, Coops, Hobart,
+      Bolton, et al.
+      (<xref alt="2018" rid="ref-matasci2018" ref-type="bibr">2018</xref>)
+      for 2015 across the forested landscape of British Columbia. This
+      data was generated by using a random forest-kNN approach, imputing
+      airborne laser scanning derived forest structural attributes
+      across the entirety of Canada using Landsat-derived
+      best-available-pixel (BAP) composites
+      (<xref alt="White et al. 2014" rid="ref-white2014" ref-type="bibr">White
+      et al. 2014</xref>;
+      <xref alt="Hermosilla et al. 2016" rid="ref-hermosilla2016" ref-type="bibr">Hermosilla
+      et al. 2016</xref>) and topographic information
+      (<xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. 2018" rid="ref-matasci2018" ref-type="bibr">Matasci,
+      Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al.
+      2018</xref>;
+      <xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018" rid="ref-matasci2018b" ref-type="bibr">Matasci,
+      Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018</xref>).
+      The BAP composites were derived by selecting optical observations
+      from the Landsat archive (including Landsat-5 Thematic Mapper,
+      Landsat-7 Enhanced Thematic Mapper Plus, and Landsat-8 Operational
+      Land Imager imagery) over the course of the growing season,
+      considering atmospheric effects (haze, clouds, cloud shadows) and
+      distance from the desired composite date (in this case, August
+      31st). Details on the pixel scoring method can be found in White
+      et al.
+      (<xref alt="2014" rid="ref-white2014" ref-type="bibr">2014</xref>).
+      The BAP composites were further refined by using a spectral trend
+      analysis on the normalized burn ratio to remove noise, and missing
+      pixels are infilled using temporally-interpolated values. This
+      procedure results in gap-free, surface-reflectance image
+      composites
+      (<xref alt="Hermosilla et al. 2015" rid="ref-hermosilla2015" ref-type="bibr">Hermosilla
+      et al. 2015</xref>).</p>
+    </sec>
+    <sec id="forest-ecosystem-function">
+      <title>2.1.3 Forest Ecosystem Function</title>
+      <p>Landsat DHIs</p>
+    </sec>
+    <sec id="auxiliary-datasets">
+      <title>2.1.4 Auxiliary Datasets</title>
+      <p>In our matching procedure (see Section ) we use two core
+      datasets as our covariates. Firstly, we use a 30 m digital
+      elevation model and derived slope dataset from the Advanced
+      Spaceborne Thermal Emission and Reflection Radiometer (ASTER)
+      Version 2 GDEM product
+      (<xref alt="Tachikawa et al. 2011" rid="ref-tachikawa2011" ref-type="bibr">Tachikawa
+      et al. 2011</xref>). We also match on four climate variables; mean
+      annual precipitation (MAP), mean annual temperature (MAT), mean
+      warmest month temperature (MWMT), and mean coldest month
+      temperature (MCMT) calculated from 1990-2020 climate normals using
+      the ClimateNA software package at a 1 km spatial resolution, and
+      downsampled to 30 m using cubic spline resampling in the
+      <bold>terra</bold> R package
+      (<xref alt="Hijmans 2024" rid="ref-R-terra" ref-type="bibr">Hijmans
+      2024</xref> version 1.7-71) in R
+      (<xref alt="R Core Team 2024" rid="ref-R-base" ref-type="bibr">R
+      Core Team 2024</xref> version 4.4.0).</p>
+    </sec>
+  </sec>
+  <sec id="sec-matching">
+    <title>2.2 Matching</title>
+    <p>To identify natural forests across the province, we implement an
+    expanded coarsened exact matching (CEM) technique
+    (<xref alt="Iacus, King, and Porro 2012" rid="ref-iacus2012" ref-type="bibr">Iacus,
+    King, and Porro 2012</xref>). This allows us to assess the
+    similarity of all forested pixels in the province to known natural
+    forests, while controlling for covariates such as climate and
+    topography. CEM creates comparable groups of observation among
+    covariates by first coarsening the covariates into meaningful bins.
+    In our case, we coarsen all six of our covariates into 10
+    quantile-based bins. As an example, elevation observations in the
+    0-10th percentile would be grouped into elevation bin one, the
+    10th-20th percentile of observations into bin two, and so on.
+    Following the binning procedure, CEM performs exact matching on the
+    coarsened covariates, and discards any unmatched samples. We diverge
+    from this method by not dropping unmatched samples. Instead, we
+    group our unmatched strata with their nearest neighbour in quartile
+    space, up to a minimum of 30 samples, while minimizing the overall
+    nearest neighbour distance. This method combines the advantages of
+    CEM [no bias checking, simple computation; Iacus, King, and Porro
+    (<xref alt="2012" rid="ref-iacus2012" ref-type="bibr">2012</xref>)],
+    with the ability to generate wall-to-wall comparisons of our treated
+    cells to all other cells in the province.</p>
+  </sec>
+  <sec id="analysis">
+    <title>2.3 Analysis</title>
+  </sec>
 </sec>
 <sec id="results">
   <title>3 Results</title>
 </sec>
+<sec id="discussion">
+  <title>4 Discussion</title>
+</sec>
 <sec id="conclusion">
-  <title>4 Conclusion</title>
+  <title>5 Conclusion</title>
 </sec>
 </body>
 
@@ -362,25 +521,6 @@ Canada</institution>
       <lpage>93</lpage>
     </element-citation>
   </ref>
-  <ref id="ref-chape2005">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Chape</surname><given-names>S</given-names></name>
-        <name><surname>Harrison</surname><given-names>J</given-names></name>
-        <name><surname>Spalding</surname><given-names>M</given-names></name>
-        <name><surname>Lysenko</surname><given-names>I</given-names></name>
-      </person-group>
-      <article-title>Measuring the extent and effectiveness of protected areas as an indicator for meeting global biodiversity targets</article-title>
-      <source>Philosophical Transactions of the Royal Society B: Biological Sciences</source>
-      <year iso-8601-date="2005-02">2005</year><month>02</month>
-      <volume>360</volume>
-      <issue>1454</issue>
-      <uri>https://royalsocietypublishing.org/doi/10.1098/rstb.2004.1592</uri>
-      <pub-id pub-id-type="doi">10.1098/rstb.2004.1592</pub-id>
-      <fpage>443455</fpage>
-      <lpage></lpage>
-    </element-citation>
-  </ref>
   <ref id="ref-dirzo2003">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -419,61 +559,6 @@ Canada</institution>
       <lpage>510</lpage>
     </element-citation>
   </ref>
-  <ref id="ref-ferraro2009">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Ferraro</surname><given-names>Paul J.</given-names></name>
-      </person-group>
-      <article-title>Counterfactual thinking and impact evaluation in environmental policy</article-title>
-      <source>New Directions for Evaluation</source>
-      <year iso-8601-date="2009">2009</year>
-      <volume>2009</volume>
-      <issue>122</issue>
-      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/ev.297</uri>
-      <pub-id pub-id-type="doi">10.1002/ev.297</pub-id>
-      <fpage>75</fpage>
-      <lpage>84</lpage>
-    </element-citation>
-  </ref>
-  <ref id="ref-schleicher2020">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Schleicher</surname><given-names>Judith</given-names></name>
-        <name><surname>Eklund</surname><given-names>Johanna</given-names></name>
-        <name><surname>D. Barnes</surname><given-names>Megan</given-names></name>
-        <name><surname>Geldmann</surname><given-names>Jonas</given-names></name>
-        <name><surname>Oldekop</surname><given-names>Johan A.</given-names></name>
-        <name><surname>Jones</surname><given-names>Julia P. G.</given-names></name>
-      </person-group>
-      <article-title>Statistical matching for conservation science</article-title>
-      <source>Conservation Biology</source>
-      <year iso-8601-date="2020">2020</year>
-      <volume>34</volume>
-      <issue>3</issue>
-      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/cobi.13448</uri>
-      <pub-id pub-id-type="doi">10.1111/cobi.13448</pub-id>
-      <fpage>538</fpage>
-      <lpage>549</lpage>
-    </element-citation>
-  </ref>
-  <ref id="ref-ribas2021">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Ribas</surname><given-names>Luiz G. S.</given-names></name>
-        <name><surname>Pressey</surname><given-names>Robert L.</given-names></name>
-        <name><surname>Bini</surname><given-names>Luis M.</given-names></name>
-      </person-group>
-      <article-title>Estimating counterfactuals for evaluation of ecological and conservation impact: an introduction to matching methods</article-title>
-      <source>Biological Reviews</source>
-      <year iso-8601-date="2021">2021</year>
-      <volume>96</volume>
-      <issue>4</issue>
-      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12697</uri>
-      <pub-id pub-id-type="doi">10.1111/brv.12697</pub-id>
-      <fpage>1186</fpage>
-      <lpage>1204</lpage>
-    </element-citation>
-  </ref>
   <ref id="ref-iacus2012">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -492,25 +577,1852 @@ Canada</institution>
       <lpage>24</lpage>
     </element-citation>
   </ref>
-  <ref id="ref-austin2011">
+  <ref id="ref-thomas2004">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
-        <name><surname>Austin</surname><given-names>Peter C.</given-names></name>
+        <name><surname>Thomas</surname><given-names>Chris D</given-names></name>
+        <name><surname>Cameron</surname><given-names>Alison</given-names></name>
+        <name><surname>Green</surname><given-names>Rhys E</given-names></name>
+        <name><surname>Bakkenes</surname><given-names>Michel</given-names></name>
+        <name><surname>Beaumont</surname><given-names>Linda J</given-names></name>
+        <name><surname>Collingham</surname><given-names>Yvonne C</given-names></name>
+        <name><surname>Erasmus</surname><given-names>Barend F N</given-names></name>
+        <name><surname>Siqueira</surname><given-names>Marinez Ferreira de</given-names></name>
+        <name><surname>Grainger</surname><given-names>Alan</given-names></name>
+        <name><surname>Hannah</surname><given-names>Lee</given-names></name>
+        <name><surname>Hughes</surname><given-names>Lesley</given-names></name>
+        <name><surname>Huntley</surname><given-names>Brian</given-names></name>
+        <name><surname>Jaarsveld</surname><given-names>Albert S van</given-names></name>
+        <name><surname>Midgley</surname><given-names>Guy F</given-names></name>
+        <name><surname>Miles</surname><given-names>Lera</given-names></name>
+        <name><surname>Ortega-Huerta</surname><given-names>Miguel A</given-names></name>
+        <name><surname>Peterson</surname><given-names>A Townsend</given-names></name>
+        <name><surname>Phillips</surname><given-names>Oliver L</given-names></name>
+        <name><surname>Williams</surname><given-names>Stephen E</given-names></name>
       </person-group>
-      <article-title>An introduction to propensity score methods for reducing the effects of confounding in observational studies</article-title>
-      <source>Multivariate Behavioral Research</source>
-      <year iso-8601-date="2011-05">2011</year><month>05</month>
-      <volume>46</volume>
+      <article-title>Extinction risk from climate change</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2004">2004</year>
+      <volume>427</volume>
+      <fpage>5</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-urban2015">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Urban</surname><given-names>Mark C.</given-names></name>
+      </person-group>
+      <article-title>Accelerating extinction risk from climate change</article-title>
+      <source>Science</source>
+      <year iso-8601-date="2015-05-01">2015</year><month>05</month><day>01</day>
+      <volume>348</volume>
+      <issue>6234</issue>
+      <uri>https://www.science.org/doi/10.1126/science.aaa4984</uri>
+      <pub-id pub-id-type="doi">10.1126/science.aaa4984</pub-id>
+      <fpage>571</fpage>
+      <lpage>573</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-mcgill2015">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>McGill</surname><given-names>Brian J.</given-names></name>
+        <name><surname>Dornelas</surname><given-names>Maria</given-names></name>
+        <name><surname>Gotelli</surname><given-names>Nicholas J.</given-names></name>
+        <name><surname>Magurran</surname><given-names>Anne E.</given-names></name>
+      </person-group>
+      <article-title>Fifteen forms of biodiversity trend in the Anthropocene</article-title>
+      <source>Trends in Ecology &amp; Evolution</source>
+      <year iso-8601-date="2015-02-01">2015</year><month>02</month><day>01</day>
+      <volume>30</volume>
+      <issue>2</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0169534714002456</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tree.2014.11.006</pub-id>
+      <fpage>104</fpage>
+      <lpage>113</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-muise2022">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Muise</surname><given-names>Evan R.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Ban</surname><given-names>Stephen S.</given-names></name>
+      </person-group>
+      <article-title>Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas</article-title>
+      <source>Ecological Applications</source>
+      <year iso-8601-date="2022">2022</year>
+      <volume>32</volume>
+      <issue>5</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/eap.2603</uri>
+      <pub-id pub-id-type="doi">10.1002/eap.2603</pub-id>
+      <fpage>e2603</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-andrew2012">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Andrew</surname><given-names>Margaret E.</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+      </person-group>
+      <article-title>Identification of de facto protected areas in boreal canada</article-title>
+      <source>Biological Conservation</source>
+      <year iso-8601-date="2012-02-01">2012</year><month>02</month><day>01</day>
+      <volume>146</volume>
+      <issue>1</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0006320711004587</uri>
+      <pub-id pub-id-type="doi">10.1016/j.biocon.2011.11.029</pub-id>
+      <fpage>97</fpage>
+      <lpage>107</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-matasci2018">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Matasci</surname><given-names>Giona</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+        <name><surname>Bolton</surname><given-names>Douglas K.</given-names></name>
+        <name><surname>Tompalski</surname><given-names>Piotr</given-names></name>
+        <name><surname>Bater</surname><given-names>Christopher W.</given-names></name>
+      </person-group>
+      <article-title>Three decades of forest structural dynamics over canada’s forested ecosystems using landsat time-series and lidar plots</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2018-10">2018</year><month>10</month>
+      <volume>216</volume>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0034425718303572</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2018.07.024</pub-id>
+      <fpage>697714</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-radeloff2019">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Radeloff</surname><given-names>V. C.</given-names></name>
+        <name><surname>Dubinin</surname><given-names>M.</given-names></name>
+        <name><surname>Coops</surname><given-names>N. C.</given-names></name>
+        <name><surname>Allen</surname><given-names>A. M.</given-names></name>
+        <name><surname>Brooks</surname><given-names>T. M.</given-names></name>
+        <name><surname>Clayton</surname><given-names>M. K.</given-names></name>
+        <name><surname>Costa</surname><given-names>G. C.</given-names></name>
+        <name><surname>Graham</surname><given-names>C. H.</given-names></name>
+        <name><surname>Helmers</surname><given-names>D. P.</given-names></name>
+        <name><surname>Ives</surname><given-names>A. R.</given-names></name>
+        <name><surname>Kolesov</surname><given-names>D.</given-names></name>
+        <name><surname>Pidgeon</surname><given-names>A. M.</given-names></name>
+        <name><surname>Rapacciuolo</surname><given-names>G.</given-names></name>
+        <name><surname>Razenkova</surname><given-names>E.</given-names></name>
+        <name><surname>Suttidate</surname><given-names>N.</given-names></name>
+        <name><surname>Young</surname><given-names>B. E.</given-names></name>
+        <name><surname>Zhu</surname><given-names>L.</given-names></name>
+        <name><surname>Hobi</surname><given-names>M. L.</given-names></name>
+      </person-group>
+      <article-title>The Dynamic Habitat Indices (DHIs) from MODIS and global biodiversity</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2019-03-01">2019</year><month>03</month><day>01</day>
+      <volume>222</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0034425718305625</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2018.12.009</pub-id>
+      <fpage>204</fpage>
+      <lpage>214</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-radeloff2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Radeloff</surname><given-names>Volker C.</given-names></name>
+        <name><surname>Roy</surname><given-names>David P.</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>Anderson</surname><given-names>Martha</given-names></name>
+        <name><surname>Cook</surname><given-names>Bruce</given-names></name>
+        <name><surname>Crawford</surname><given-names>Christopher J.</given-names></name>
+        <name><surname>Friedl</surname><given-names>Mark</given-names></name>
+        <name><surname>Gao</surname><given-names>Feng</given-names></name>
+        <name><surname>Gorelick</surname><given-names>Noel</given-names></name>
+        <name><surname>Hansen</surname><given-names>Matthew</given-names></name>
+        <name><surname>Healey</surname><given-names>Sean</given-names></name>
+        <name><surname>Hostert</surname><given-names>Patrick</given-names></name>
+        <name><surname>Hulley</surname><given-names>Glynn</given-names></name>
+        <name><surname>Huntington</surname><given-names>Justin L.</given-names></name>
+        <name><surname>Johnson</surname><given-names>David M.</given-names></name>
+        <name><surname>Neigh</surname><given-names>Chris</given-names></name>
+        <name><surname>Lyapustin</surname><given-names>Alexei</given-names></name>
+        <name><surname>Lymburner</surname><given-names>Leo</given-names></name>
+        <name><surname>Pahlevan</surname><given-names>Nima</given-names></name>
+        <name><surname>Pekel</surname><given-names>Jean-Francois</given-names></name>
+        <name><surname>Scambos</surname><given-names>Theodore A.</given-names></name>
+        <name><surname>Schaaf</surname><given-names>Crystal</given-names></name>
+        <name><surname>Strobl</surname><given-names>Peter</given-names></name>
+        <name><surname>Woodcock</surname><given-names>Curtis E.</given-names></name>
+        <name><surname>Zhang</surname><given-names>Hankui K.</given-names></name>
+        <name><surname>Zhu</surname><given-names>Zhe</given-names></name>
+      </person-group>
+      <article-title>Need and vision for global medium-resolution landsat and sentinel-2 data products</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2024-01-01">2024</year><month>01</month><day>01</day>
+      <volume>300</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0034425723004704</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2023.113918</pub-id>
+      <fpage>113918</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-matasci2018b">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Matasci</surname><given-names>Giona</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+        <name><surname>Zald</surname><given-names>Harold S. J.</given-names></name>
+      </person-group>
+      <article-title>Large-area mapping of Canadian boreal forest cover, height, biomass and other structural attributes using Landsat composites and lidar plots</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2018-05-01">2018</year><month>05</month><day>01</day>
+      <volume>209</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0034425717305953</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2017.12.020</pub-id>
+      <fpage>90</fpage>
+      <lpage>106</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-razenkova">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Razenkova</surname><given-names>Elena</given-names></name>
+        <name><surname>Lewińska</surname><given-names>Katarzyna E</given-names></name>
+        <name><surname>Yin</surname><given-names>He</given-names></name>
+        <name><surname>Farwell</surname><given-names>Laura S</given-names></name>
+        <name><surname>Pidgeon</surname><given-names>Anna M</given-names></name>
+        <name><surname>Hostert</surname><given-names>Patrick</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C</given-names></name>
+        <name><surname>Radeloff</surname><given-names>Volker C.</given-names></name>
+      </person-group>
+      <article-title>Medium-resolution dynamic habitat indices from landsat satellite imagery</article-title>
+      <source>Remote Sensing of Environment</source>
+    </element-citation>
+  </ref>
+  <ref id="ref-becker2023">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Becker</surname><given-names>Alexander</given-names></name>
+        <name><surname>Russo</surname><given-names>Stefania</given-names></name>
+        <name><surname>Puliti</surname><given-names>Stefano</given-names></name>
+        <name><surname>Lang</surname><given-names>Nico</given-names></name>
+        <name><surname>Schindler</surname><given-names>Konrad</given-names></name>
+        <name><surname>Wegner</surname><given-names>Jan Dirk</given-names></name>
+      </person-group>
+      <article-title>Country-wide retrieval of forest structure from optical and SAR satellite imagery with deep ensembles</article-title>
+      <source>ISPRS Journal of Photogrammetry and Remote Sensing</source>
+      <year iso-8601-date="2023-01-01">2023</year><month>01</month><day>01</day>
+      <volume>195</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0924271622003045</uri>
+      <pub-id pub-id-type="doi">10.1016/j.isprsjprs.2022.11.011</pub-id>
+      <fpage>269</fpage>
+      <lpage>286</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-reporto2023">
+    <element-citation publication-type="report">
+      <article-title>Report of the conference of the parties to the convention on biological diversity on the second part of its fifteenth meeting</article-title>
+      <year iso-8601-date="2023">2023</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-venter2016">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Venter</surname><given-names>Oscar</given-names></name>
+        <name><surname>Sanderson</surname><given-names>Eric W.</given-names></name>
+        <name><surname>Magrach</surname><given-names>Ainhoa</given-names></name>
+        <name><surname>Allan</surname><given-names>James R.</given-names></name>
+        <name><surname>Beher</surname><given-names>Jutta</given-names></name>
+        <name><surname>Jones</surname><given-names>Kendall R.</given-names></name>
+        <name><surname>Possingham</surname><given-names>Hugh P.</given-names></name>
+        <name><surname>Laurance</surname><given-names>William F.</given-names></name>
+        <name><surname>Wood</surname><given-names>Peter</given-names></name>
+        <name><surname>Fekete</surname><given-names>Balázs M.</given-names></name>
+        <name><surname>Levy</surname><given-names>Marc A.</given-names></name>
+        <name><surname>Watson</surname><given-names>James E. M.</given-names></name>
+      </person-group>
+      <article-title>Sixteen years of change in the global terrestrial human footprint and implications for biodiversity conservation</article-title>
+      <source>Nature Communications</source>
+      <year iso-8601-date="2016-08-23">2016</year><month>08</month><day>23</day>
+      <volume>7</volume>
+      <issue>1</issue>
+      <uri>https://www.nature.com/articles/ncomms12558</uri>
+      <pub-id pub-id-type="doi">10.1038/ncomms12558</pub-id>
+      <fpage>12558</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-myers1988">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Myers</surname><given-names>Norman</given-names></name>
+      </person-group>
+      <article-title>Threatened biotas: &quot;Hot spots&quot; in tropical forests</article-title>
+      <source>Environmentalist</source>
+      <year iso-8601-date="1988-09-01">1988</year><month>09</month><day>01</day>
+      <volume>8</volume>
       <issue>3</issue>
-      <uri>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/</uri>
-      <pub-id pub-id-type="doi">10.1080/00273171.2011.568786</pub-id>
-      <fpage>399</fpage>
-      <lpage>424</lpage>
+      <uri>https://doi.org/10.1007/BF02240252</uri>
+      <pub-id pub-id-type="doi">10.1007/BF02240252</pub-id>
+      <fpage>187</fpage>
+      <lpage>208</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pimm2000">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pimm</surname><given-names>Stuart L.</given-names></name>
+        <name><surname>Raven</surname><given-names>Peter</given-names></name>
+      </person-group>
+      <article-title>Extinction by numbers</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2000-02">2000</year><month>02</month>
+      <volume>403</volume>
+      <issue>6772</issue>
+      <uri>https://www.nature.com/articles/35002708</uri>
+      <pub-id pub-id-type="doi">10.1038/35002708</pub-id>
+      <fpage>843</fpage>
+      <lpage>845</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-cardinale2012">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Cardinale</surname><given-names>Bradley J.</given-names></name>
+        <name><surname>Duffy</surname><given-names>J. Emmett</given-names></name>
+        <name><surname>Gonzalez</surname><given-names>Andrew</given-names></name>
+        <name><surname>Hooper</surname><given-names>David U.</given-names></name>
+        <name><surname>Perrings</surname><given-names>Charles</given-names></name>
+        <name><surname>Venail</surname><given-names>Patrick</given-names></name>
+        <name><surname>Narwani</surname><given-names>Anita</given-names></name>
+        <name><surname>Mace</surname><given-names>Georgina M.</given-names></name>
+        <name><surname>Tilman</surname><given-names>David</given-names></name>
+        <name><surname>Wardle</surname><given-names>David A.</given-names></name>
+        <name><surname>Kinzig</surname><given-names>Ann P.</given-names></name>
+        <name><surname>Daily</surname><given-names>Gretchen C.</given-names></name>
+        <name><surname>Loreau</surname><given-names>Michel</given-names></name>
+        <name><surname>Grace</surname><given-names>James B.</given-names></name>
+        <name><surname>Larigauderie</surname><given-names>Anne</given-names></name>
+        <name><surname>Srivastava</surname><given-names>Diane S.</given-names></name>
+        <name><surname>Naeem</surname><given-names>Shahid</given-names></name>
+      </person-group>
+      <article-title>Biodiversity loss and its impact on humanity</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2012-06">2012</year><month>06</month>
+      <volume>486</volume>
+      <issue>7401</issue>
+      <uri>https://www.nature.com/articles/nature11148</uri>
+      <pub-id pub-id-type="doi">10.1038/nature11148</pub-id>
+      <fpage>59</fpage>
+      <lpage>67</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-thompson2009">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <name><surname>Thompson</surname><given-names>Ian D.</given-names></name>
+        <name><surname>Mackey</surname><given-names>Brendan</given-names></name>
+        <name><surname>McNulty</surname><given-names>Steven</given-names></name>
+        <name><surname>Mosseler</surname><given-names>Alex</given-names></name>
+      </person-group>
+      <source>Forest resilience, biodiversity, and climate change: a synthesis of the biodiversity / resiliende / stability relationship in forest ecosystems</source>
+      <publisher-name>Secretariat of the Convention on Biological Diversity</publisher-name>
+      <publisher-loc>Montreal</publisher-loc>
+      <year iso-8601-date="2009">2009</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-marín2021">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Marín</surname><given-names>Ana Isabel</given-names></name>
+        <name><surname>Abdul Malak</surname><given-names>Dania</given-names></name>
+        <name><surname>Bastrup-Birk</surname><given-names>Annemarie</given-names></name>
+        <name><surname>Chirici</surname><given-names>Gherardo</given-names></name>
+        <name><surname>Barbati</surname><given-names>Anna</given-names></name>
+        <name><surname>Kleeschulte</surname><given-names>Stefan</given-names></name>
+      </person-group>
+      <article-title>Mapping forest condition in europe: Methodological developments in support to forest biodiversity assessments</article-title>
+      <source>Ecological Indicators</source>
+      <year iso-8601-date="2021-09-01">2021</year><month>09</month><day>01</day>
+      <volume>128</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1470160X21005045</uri>
+      <pub-id pub-id-type="doi">10.1016/j.ecolind.2021.107839</pub-id>
+      <fpage>107839</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pinnegar2008">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pinnegar</surname><given-names>John K.</given-names></name>
+        <name><surname>Engelhard</surname><given-names>Georg H.</given-names></name>
+      </person-group>
+      <article-title>The ‘shifting baseline’ phenomenon: a global perspective</article-title>
+      <source>Reviews in Fish Biology and Fisheries</source>
+      <year iso-8601-date="2008-02">2008</year><month>02</month>
+      <volume>18</volume>
+      <issue>1</issue>
+      <uri>https://link.springer.com/10.1007/s11160-007-9058-6</uri>
+      <pub-id pub-id-type="doi">10.1007/s11160-007-9058-6</pub-id>
+      <fpage>1</fpage>
+      <lpage>16</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-nielsen2007">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Nielsen</surname><given-names>S. E.</given-names></name>
+        <name><surname>Bayne</surname><given-names>E. M.</given-names></name>
+        <name><surname>Schieck</surname><given-names>J.</given-names></name>
+        <name><surname>Herbers</surname><given-names>J.</given-names></name>
+        <name><surname>Boutin</surname><given-names>S.</given-names></name>
+      </person-group>
+      <article-title>A new method to estimate species and biodiversity intactness using empirically derived reference conditions</article-title>
+      <source>Biological Conservation</source>
+      <year iso-8601-date="2007-07">2007</year><month>07</month>
+      <volume>137</volume>
+      <issue>3</issue>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0006320707000912</uri>
+      <pub-id pub-id-type="doi">10.1016/j.biocon.2007.02.024</pub-id>
+      <fpage>403</fpage>
+      <lpage>414</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-winter2012">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Winter</surname><given-names>S.</given-names></name>
+      </person-group>
+      <article-title>Forest naturalness assessment as a component of biodiversity monitoring and conservation management</article-title>
+      <source>Forestry</source>
+      <year iso-8601-date="2012-04-01">2012</year><month>04</month><day>01</day>
+      <volume>85</volume>
+      <issue>2</issue>
+      <uri>https://academic.oup.com/forestry/article-lookup/doi/10.1093/forestry/cps004</uri>
+      <pub-id pub-id-type="doi">10.1093/forestry/cps004</pub-id>
+      <fpage>293</fpage>
+      <lpage>304</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hirsh-pearson2022">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hirsh-Pearson</surname><given-names>Kristen</given-names></name>
+        <name><surname>Johnson</surname><given-names>Chris J.</given-names></name>
+        <name><surname>Schuster</surname><given-names>Richard</given-names></name>
+        <name><surname>Wheate</surname><given-names>Roger D.</given-names></name>
+        <name><surname>Venter</surname><given-names>Oscar</given-names></name>
+      </person-group>
+      <article-title>Canada’s human footprint reveals large intact areas juxtaposed against areas under immense anthropogenic pressure</article-title>
+      <source>FACETS</source>
+      <year iso-8601-date="2022-01">2022</year><month>01</month>
+      <volume>7</volume>
+      <uri>https://www.facetsjournal.com/doi/10.1139/facets-2021-0063</uri>
+      <pub-id pub-id-type="doi">10.1139/facets-2021-0063</pub-id>
+      <fpage>398</fpage>
+      <lpage>419</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-tachikawa2011">
+    <element-citation publication-type="report">
+      <person-group person-group-type="author">
+        <name><surname>Tachikawa</surname><given-names>Tetushi</given-names></name>
+        <name><surname>Kaku</surname><given-names>Manabu</given-names></name>
+        <name><surname>Iwasaki</surname><given-names>Akira</given-names></name>
+        <name><surname>Gesch</surname><given-names>Dean B.</given-names></name>
+        <name><surname>Oimoen</surname><given-names>Michael J.</given-names></name>
+        <name><surname>Zhang</surname><given-names>Z.</given-names></name>
+        <name><surname>Danielson</surname><given-names>Jeffrey J.</given-names></name>
+        <name><surname>Krieger</surname><given-names>Tabatha</given-names></name>
+        <name><surname>Curtis</surname><given-names>Bill</given-names></name>
+        <name><surname>Haase</surname><given-names>Jeff</given-names></name>
+        <name><surname>Abrams</surname><given-names>Michael</given-names></name>
+        <name><surname>Carabajal</surname><given-names>C.</given-names></name>
+      </person-group>
+      <article-title>ASTER global digital elevation model version 2 - summary of validation results</article-title>
+      <year iso-8601-date="2011">2011</year>
+      <uri>http://pubs.er.usgs.gov/publication/70005960</uri>
+      <fpage>27</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-arcese1997">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Arcese</surname><given-names>Peter</given-names></name>
+        <name><surname>Sinclair</surname><given-names>A. R. E.</given-names></name>
+      </person-group>
+      <article-title>The role of protected areas as ecological baselines</article-title>
+      <source>The Journal of Wildlife Management</source>
+      <year iso-8601-date="1997">1997</year>
+      <volume>61</volume>
+      <issue>3</issue>
+      <uri>https://www.jstor.org/stable/3802167</uri>
+      <pub-id pub-id-type="doi">10.2307/3802167</pub-id>
+      <fpage>587</fpage>
+      <lpage>602</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-balaguer2014">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Balaguer</surname><given-names>Luis</given-names></name>
+        <name><surname>Escudero</surname><given-names>Adrián</given-names></name>
+        <name><surname>Martín-Duque</surname><given-names>José F.</given-names></name>
+        <name><surname>Mola</surname><given-names>Ignacio</given-names></name>
+        <name><surname>Aronson</surname><given-names>James</given-names></name>
+      </person-group>
+      <article-title>The historical reference in restoration ecology: Re-defining a cornerstone concept</article-title>
+      <source>Biological Conservation</source>
+      <year iso-8601-date="2014-08-01">2014</year><month>08</month><day>01</day>
+      <volume>176</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0006320714001955</uri>
+      <pub-id pub-id-type="doi">10.1016/j.biocon.2014.05.007</pub-id>
+      <fpage>12</fpage>
+      <lpage>20</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-white2014">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>White</surname><given-names>Joanne. C.</given-names></name>
+        <name><surname>Wulder</surname><given-names>M. A.</given-names></name>
+        <name><surname>Hobart</surname><given-names>G. W.</given-names></name>
+        <name><surname>Luther</surname><given-names>J. E.</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>T.</given-names></name>
+        <name><surname>Griffiths</surname><given-names>P.</given-names></name>
+        <name><surname>Coops</surname><given-names>N. C.</given-names></name>
+        <name><surname>Hall</surname><given-names>R. J.</given-names></name>
+        <name><surname>Hostert</surname><given-names>P.</given-names></name>
+        <name><surname>Dyk</surname><given-names>A.</given-names></name>
+        <name><surname>Guindon</surname><given-names>L.</given-names></name>
+      </person-group>
+      <article-title>Pixel-based image compositing for large-area dense time series applications and science</article-title>
+      <source>Canadian Journal of Remote Sensing</source>
+      <year iso-8601-date="2014-05">2014</year><month>05</month>
+      <volume>40</volume>
+      <issue>3</issue>
+      <uri>http://www.tandfonline.com/doi/full/10.1080/07038992.2014.945827</uri>
+      <pub-id pub-id-type="doi">10.1080/07038992.2014.945827</pub-id>
+      <fpage>192212</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hermosilla2016">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+        <name><surname>Campbell</surname><given-names>Lorraine B.</given-names></name>
+      </person-group>
+      <article-title>Mass data processing of time series landsat imagery: Pixels to data products for forest monitoring</article-title>
+      <source>International Journal of Digital Earth</source>
+      <year iso-8601-date="2016-11">2016</year><month>11</month>
+      <volume>9</volume>
+      <issue>11</issue>
+      <uri>https://www.tandfonline.com/doi/full/10.1080/17538947.2016.1187673</uri>
+      <pub-id pub-id-type="doi">10.1080/17538947.2016.1187673</pub-id>
+      <fpage>10351054</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hermosilla2015">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+      </person-group>
+      <article-title>Regional detection, characterization, and attribution of annual forest change from 1984 to 2012 using landsat-derived time-series metrics</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2015-12">2015</year><month>12</month>
+      <volume>170</volume>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0034425715301279</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2015.09.004</pub-id>
+      <fpage>121132</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-bolton2019">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bolton</surname><given-names>Douglas K.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Ferster</surname><given-names>Colin J.</given-names></name>
+      </person-group>
+      <article-title>Uncovering regional variability in disturbance trends between parks and greater park ecosystems across canada (19852015)</article-title>
+      <source>Scientific Reports</source>
+      <year iso-8601-date="2019-12">2019</year><month>12</month>
+      <volume>9</volume>
+      <issue>1</issue>
+      <uri>http://www.nature.com/articles/s41598-018-37265-4</uri>
+      <pub-id pub-id-type="doi">10.1038/s41598-018-37265-4</pub-id>
+      <fpage>1323</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-R-base">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <string-name>R Core Team</string-name>
+      </person-group>
+      <source>R: A language and environment for statistical computing</source>
+      <publisher-name>R Foundation for Statistical Computing</publisher-name>
+      <publisher-loc>Vienna, Austria</publisher-loc>
+      <year iso-8601-date="2024">2024</year>
+      <uri>https://www.R-project.org/</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-R-terra">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <name><surname>Hijmans</surname><given-names>Robert J.</given-names></name>
+      </person-group>
+      <source>Terra: Spatial data analysis</source>
+      <year iso-8601-date="2024">2024</year>
+      <uri>https://rspatial.org/</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-wdpar2022a">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hanson</surname><given-names>Jeffrey O</given-names></name>
+      </person-group>
+      <article-title>Wdpar: Interface to the world database on protected areas</article-title>
+      <source>Journal of Open Source Software</source>
+      <year iso-8601-date="2022">2022</year>
+      <volume>7</volume>
+      <pub-id pub-id-type="doi">10.21105/joss.04594</pub-id>
+      <fpage>4594</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+</ref-list>
+</back>
+
+<sub-article article-type="notebook" id="nb-4-nb-article">
+<front-stub>
+<title-group>
+<article-title>Spatially explicit mapping of ecological similarity
+across a large region using matching techniques.</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0003-3404-3220</contrib-id>
+<name>
+<surname>Muise</surname>
+<given-names>Evan</given-names>
+</name>
+<string-name>Evan Muise</string-name>
+
+<email>evanmuis@student.ubc.ca</email>
+<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
+<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
+<xref ref-type="corresp" rid="cor-1-nb-article">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
+<name>
+<surname>Coops</surname>
+<given-names>Nicholas</given-names>
+</name>
+<string-name>Nicholas Coops</string-name>
+
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
+<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1-nb-article">
+<institution-wrap>
+<institution>Department of Forest Resource Management, University of
+British Columbia, Vancouver, 2424 Main Mall, British Columbia,
+Canada</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1-nb-article">evanmuis@student.ubc.ca</corresp>
+</author-notes>
+<abstract>
+<p>ABSTRACT</p>
+</abstract>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script"># include all libraries required by the R chunks here
+
+library(terra)</code>
+<boxed-text>
+  <preformat>terra 1.7.78</preformat>
+</boxed-text>
+<code language="r script">library(bcmaps)</code>
+<boxed-text>
+  <preformat>Loading required package: sf</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Support for Spatial objects (`sp`) was removed in {bcmaps} v2.0.0. Please use `sf` objects with {bcmaps}.</preformat>
+</boxed-text>
+<code language="r script">library(wdpar)
+
+
+# generate package citations
+loaded_pkgs = (.packages())
+base_pkgs = getOption(&quot;defaultPackages&quot;)
+contrib_pkgs = loaded_pkgs[!(loaded_pkgs %in% base_pkgs)]
+pkgs_file = &quot;packages.bib&quot;
+knitr::write_bib(contrib_pkgs, pkgs_file)</code>
+</sec>
+<sec id="introduction-nb-article">
+  <title>1 Introduction</title>
+  <p>A global biodiversity crisis is currently underway, driven by
+  anthropogenic changes
+  (<xref alt="Dirzo and Raven 2003" rid="ref-dirzo2003-nb-article" ref-type="bibr">Dirzo
+  and Raven 2003</xref>). Pressures such as climate change, land-use
+  changes, and invasive species, are leading to species extinctions
+  (<xref alt="Thomas et al. 2004" rid="ref-thomas2004-nb-article" ref-type="bibr">Thomas
+  et al. 2004</xref>;
+  <xref alt="Urban 2015" rid="ref-urban2015-nb-article" ref-type="bibr">Urban
+  2015</xref>) and the homogenization of biological communities
+  (<xref alt="McGill et al. 2015" rid="ref-mcgill2015-nb-article" ref-type="bibr">McGill
+  et al. 2015</xref>). The Kunming-Montreal Global Biodiversity
+  Framework (GBF) has been adopted as of December 2022, with the goal of
+  restoring global biodiversity
+  (<xref alt="“Report of the Conference of the Parties to the Convention on Biological Diversity on the Second Part of Its Fifteenth Meeting” 2023" rid="ref-reporto2023-nb-article" ref-type="bibr">“Report
+  of the Conference of the Parties to the Convention on Biological
+  Diversity on the Second Part of Its Fifteenth Meeting” 2023</xref>).
+  Targets within this framework include restoring 30% of all degraded
+  ecosystems, and protecting 30% of of Earth’s terrestrial, inland
+  water, and marine areas
+  (<xref alt="“Report of the Conference of the Parties to the Convention on Biological Diversity on the Second Part of Its Fifteenth Meeting” 2023" rid="ref-reporto2023-nb-article" ref-type="bibr">“Report
+  of the Conference of the Parties to the Convention on Biological
+  Diversity on the Second Part of Its Fifteenth Meeting” 2023</xref>).
+  In the terrestrial environment, forest biomes have been shown to
+  harbour the largest amount of biodiversity
+  (<xref alt="Myers 1988" rid="ref-myers1988-nb-article" ref-type="bibr">Myers
+  1988</xref>;
+  <xref alt="Pimm and Raven 2000" rid="ref-pimm2000-nb-article" ref-type="bibr">Pimm
+  and Raven 2000</xref>;
+  <xref alt="Cardinale et al. 2012" rid="ref-cardinale2012-nb-article" ref-type="bibr">Cardinale
+  et al. 2012</xref>), and provide key ecosystem services
+  (<xref alt="Thompson et al. 2009" rid="ref-thompson2009-nb-article" ref-type="bibr">Thompson
+  et al. 2009</xref>). To provide these services, it is integral that
+  these forest ecosystems are in good ecological condition, as
+  represented by natural or near-natural levels of forest structure,
+  forest function, and forest composition
+  (<xref alt="Marín et al. 2021" rid="ref-marín2021-nb-article" ref-type="bibr">Marín
+  et al. 2021</xref>).</p>
+  <p>While understanding forest condition is a key aspect of
+  understanding biodiversity and the provision of ecosystem services due
+  to their inherent linkages
+  (<xref alt="Marín et al. 2021" rid="ref-marín2021-nb-article" ref-type="bibr">Marín
+  et al. 2021</xref>;
+  <xref alt="Cardinale et al. 2012" rid="ref-cardinale2012-nb-article" ref-type="bibr">Cardinale
+  et al. 2012</xref>), it is difficult to acquire suitable field-derived
+  data across wide expanses of land due to the extreme financial and
+  temporal costs associated with field campaigns. Remote sensing data,
+  however, can provide a time-efficient, cost-effective alternative to
+  field data, providing access to new spatially explicit and exhaustive
+  datasets that can be linked to ecological condition, with additional
+  metrics being proposed at a rapid pace
+  (<xref alt="Skidmore et al. 2021" rid="ref-skidmore2021-nb-article" ref-type="bibr">Skidmore
+  et al. 2021</xref>;
+  <xref alt="Pereira et al. 2013" rid="ref-pereira2013-nb-article" ref-type="bibr">Pereira
+  et al. 2013</xref>;
+  <xref alt="Volker C. Radeloff et al. 2024" rid="ref-radeloff2024-nb-article" ref-type="bibr">Volker
+  C. Radeloff et al. 2024</xref>). Advances in lidar technologies and
+  modelling methods are allowing wall-to-wall estimates of forest stand
+  structure to be generated across entire countries
+  (<xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. 2018" rid="ref-matasci2018-nb-article" ref-type="bibr">Matasci,
+  Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. 2018</xref>;
+  <xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018" rid="ref-matasci2018b-nb-article" ref-type="bibr">Matasci,
+  Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018</xref>;
+  <xref alt="Becker et al. 2023" rid="ref-becker2023-nb-article" ref-type="bibr">Becker
+  et al. 2023</xref>), serving as a finer scale indicator of ecosystem
+  structure than the often previously used landscape fragmentation
+  metrics
+  (<xref alt="Andrew, Wulder, and Coops 2012" rid="ref-andrew2012-nb-article" ref-type="bibr">Andrew,
+  Wulder, and Coops 2012</xref>). Productivity metrics have been used as
+  a proxy for ecosystem function for many years
+  (<xref alt="Pettorelli et al. 2005" rid="ref-pettorelli2005-nb-article" ref-type="bibr">Pettorelli
+  et al. 2005</xref>,
+  <xref alt="2018" rid="ref-pettorelli2018-nb-article" ref-type="bibr">2018</xref>),
+  with new Landsat derived datasets providing integrative annual
+  estimates of energy availability at a 30 m spatial
+  resolution(<xref alt="Volker C. Radeloff et al. 2024" rid="ref-radeloff2024-nb-article" ref-type="bibr">Volker
+  C. Radeloff et al. 2024</xref>;
+  <xref alt="V. C. Radeloff et al. 2019" rid="ref-radeloff2019-nb-article" ref-type="bibr">V.
+  C. Radeloff et al. 2019</xref>;
+  <xref alt="Razenkova et al., n.d." rid="ref-razenkova-nb-article" ref-type="bibr">Razenkova
+  et al., n.d.</xref>). Remote sensing is quickly providing access to a
+  plethora of datasets suitable monitoring the various facets of
+  biodiversity and ecological condition
+  (<xref alt="Noss 1990" rid="ref-noss1990-nb-article" ref-type="bibr">Noss
+  1990</xref>). Using these datasets in conjunction with information on
+  the location of known or assumed natural forests can allow researchers
+  to identify similar forest stands or ecosystems, thus locating high
+  quality forests across entire jurisdictions, even when they are facing
+  anthropogenic pressures.</p>
+  <p>However, identifying natural forests is not a simple task. There
+  are many definitions of what constitutes ‘naturalness’ in forest
+  environments
+  (<xref alt="Winter 2012" rid="ref-winter2012-nb-article" ref-type="bibr">Winter
+  2012</xref>), and these difficulties are compounded by shifting
+  baseline syndrome
+  (<xref alt="Pinnegar and Engelhard 2008" rid="ref-pinnegar2008-nb-article" ref-type="bibr">Pinnegar
+  and Engelhard 2008</xref>) and a lack of comprehensive historical data
+  to generate reference states
+  (<xref alt="Balaguer et al. 2014" rid="ref-balaguer2014-nb-article" ref-type="bibr">Balaguer
+  et al. 2014</xref>). Other proposed methods to delineate baseline
+  conditions include protected areas
+  (<xref alt="Arcese and Sinclair 1997" rid="ref-arcese1997-nb-article" ref-type="bibr">Arcese
+  and Sinclair 1997</xref>), and empirical estimates of the reference
+  state, generated by modelling outcomes (oftentimes species abundances
+  and occurrence) in the absence of anthropogenic disturbance
+  (<xref alt="Nielsen et al. 2007" rid="ref-nielsen2007-nb-article" ref-type="bibr">Nielsen
+  et al. 2007</xref>).</p>
+  <p>In this study, we seek to identify natural forests of good
+  ecological condition at a 30 m spatial resolution across British
+  Columbia, Canada. We first identify reference states for ecosystems
+  across the province as protected areas with little-to-no anthropogenic
+  disturbances. We then use an expanded coarsened exact matching (CEM)
+  approach to compare the entire forested landscape of British Columbia
+  to a reference state which accounts for forest type as well as
+  topographic and climatic information. We expand the CEM technique to
+  allow for the the spatially explicit reconstruction of natural
+  ecosystem similarity, even when a perfect match is not available. We
+  further examine how the coverage of natural forest areas varies
+  between protected and unprotected areas in British Columbia. These
+  methods will allow managers to identify regions in need of
+  restoration, or that could be suitable for protection, and could be
+  expanded to other regions.</p>
+</sec>
+<sec id="sec-data-methods-nb-article">
+  <title>2 Methods</title>
+  <sec id="data-nb-article">
+    <title>2.1 Data</title>
+    <sec id="natural-forests-nb-article">
+      <title>2.1.1 Natural forests</title>
+      <p>We defined natural forests as forests under formal protection
+      with little-to-no anthropogenic pressure. We obtained boundaries
+      for the protected areas of British Columbia using the
+      <bold>wdpar</bold> R package
+      (<xref alt="Hanson 2022" rid="ref-wdpar2022a-nb-article" ref-type="bibr">Hanson
+      2022</xref> version 1.3.7), and filtered these protected areas
+      larger than 100 ha and in the IUCN categories Ia, Ib, II, and IV
+      Muise et al.
+      (<xref alt="2022" rid="ref-muise2022-nb-article" ref-type="bibr">2022</xref>).
+      We use the Canadian Human Footprint generated by Hirsh-Pearson et
+      al.
+      (<xref alt="2022" rid="ref-hirsh-pearson2022-nb-article" ref-type="bibr">2022</xref>),
+      a 300 m estimating of anthropogenic pressures across the entirety
+      of Canada, which accounts for pressures included in the global
+      human footprint
+      (<xref alt="Venter et al. 2016" rid="ref-venter2016-nb-article" ref-type="bibr">Venter
+      et al. 2016</xref>), as well as pressures specific to the Canadian
+      environment. The Canadian Human Footprint considers built
+      environments, crop land, pasture land, human population density,
+      nighttime lights, railways, roads, navigable waterways, dams and
+      associated reservoirs, mining activity, oil and gas, and forestry
+      pressures
+      (<xref alt="Hirsh-Pearson et al. 2022" rid="ref-hirsh-pearson2022-nb-article" ref-type="bibr">Hirsh-Pearson
+      et al. 2022</xref>). We consider any pixel within our protected
+      area criteria with a Canadian Human Footprint score below four as
+      representative of natural ecosystems, which balances the tradeoff
+      between having a suitable number of high-quality pixels, and low
+      anthropogenic pressures being represented in the natural
+      areas.</p>
+    </sec>
+    <sec id="forest-ecosystem-structure-nb-article">
+      <title>2.1.2 Forest Ecosystem Structure</title>
+      <p>Wall-to-wall, 30 m forest structure metrics (canopy height,
+      canopy cover, structural complexity, and aboveground biomass) were
+      generated by Matasci, Hermosilla, Wulder, White, Coops, Hobart,
+      Bolton, et al.
+      (<xref alt="2018" rid="ref-matasci2018-nb-article" ref-type="bibr">2018</xref>)
+      for 2015 across the forested landscape of British Columbia. This
+      data was generated by using a random forest-kNN approach, imputing
+      airborne laser scanning derived forest structural attributes
+      across the entirety of Canada using Landsat-derived
+      best-available-pixel (BAP) composites
+      (<xref alt="White et al. 2014" rid="ref-white2014-nb-article" ref-type="bibr">White
+      et al. 2014</xref>;
+      <xref alt="Hermosilla et al. 2016" rid="ref-hermosilla2016-nb-article" ref-type="bibr">Hermosilla
+      et al. 2016</xref>) and topographic information
+      (<xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. 2018" rid="ref-matasci2018-nb-article" ref-type="bibr">Matasci,
+      Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al.
+      2018</xref>;
+      <xref alt="Matasci, Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018" rid="ref-matasci2018b-nb-article" ref-type="bibr">Matasci,
+      Hermosilla, Wulder, White, Coops, Hobart, and Zald 2018</xref>).
+      The BAP composites were derived by selecting optical observations
+      from the Landsat archive (including Landsat-5 Thematic Mapper,
+      Landsat-7 Enhanced Thematic Mapper Plus, and Landsat-8 Operational
+      Land Imager imagery) over the course of the growing season,
+      considering atmospheric effects (haze, clouds, cloud shadows) and
+      distance from the desired composite date (in this case, August
+      31st). Details on the pixel scoring method can be found in White
+      et al.
+      (<xref alt="2014" rid="ref-white2014-nb-article" ref-type="bibr">2014</xref>).
+      The BAP composites were further refined by using a spectral trend
+      analysis on the normalized burn ratio to remove noise, and missing
+      pixels are infilled using temporally-interpolated values. This
+      procedure results in gap-free, surface-reflectance image
+      composites
+      (<xref alt="Hermosilla et al. 2015" rid="ref-hermosilla2015-nb-article" ref-type="bibr">Hermosilla
+      et al. 2015</xref>).</p>
+    </sec>
+    <sec id="forest-ecosystem-function-nb-article">
+      <title>2.1.3 Forest Ecosystem Function</title>
+      <p>Landsat DHIs</p>
+    </sec>
+    <sec id="auxiliary-datasets-nb-article">
+      <title>2.1.4 Auxiliary Datasets</title>
+      <p>In our matching procedure (see Section ) we use two core
+      datasets as our covariates. Firstly, we use a 30 m digital
+      elevation model and derived slope dataset from the Advanced
+      Spaceborne Thermal Emission and Reflection Radiometer (ASTER)
+      Version 2 GDEM product
+      (<xref alt="Tachikawa et al. 2011" rid="ref-tachikawa2011-nb-article" ref-type="bibr">Tachikawa
+      et al. 2011</xref>). We also match on four climate variables; mean
+      annual precipitation (MAP), mean annual temperature (MAT), mean
+      warmest month temperature (MWMT), and mean coldest month
+      temperature (MCMT) calculated from 1990-2020 climate normals using
+      the ClimateNA software package at a 1 km spatial resolution, and
+      downsampled to 30 m using cubic spline resampling in the
+      <bold>terra</bold> R package
+      (<xref alt="Hijmans 2024" rid="ref-R-terra-nb-article" ref-type="bibr">Hijmans
+      2024</xref> version 1.7-71) in R
+      (<xref alt="R Core Team 2024" rid="ref-R-base-nb-article" ref-type="bibr">R
+      Core Team 2024</xref> version 4.4.0).</p>
+    </sec>
+  </sec>
+  <sec id="sec-matching-nb-article">
+    <title>2.2 Matching</title>
+    <p>To identify natural forests across the province, we implement an
+    expanded coarsened exact matching (CEM) technique
+    (<xref alt="Iacus, King, and Porro 2012" rid="ref-iacus2012-nb-article" ref-type="bibr">Iacus,
+    King, and Porro 2012</xref>). This allows us to assess the
+    similarity of all forested pixels in the province to known natural
+    forests, while controlling for covariates such as climate and
+    topography. CEM creates comparable groups of observation among
+    covariates by first coarsening the covariates into meaningful bins.
+    In our case, we coarsen all six of our covariates into 10
+    quantile-based bins. As an example, elevation observations in the
+    0-10th percentile would be grouped into elevation bin one, the
+    10th-20th percentile of observations into bin two, and so on.
+    Following the binning procedure, CEM performs exact matching on the
+    coarsened covariates, and discards any unmatched samples. We diverge
+    from this method by not dropping unmatched samples. Instead, we
+    group our unmatched strata with their nearest neighbour in quartile
+    space, up to a minimum of 30 samples, while minimizing the overall
+    nearest neighbour distance. This method combines the advantages of
+    CEM [no bias checking, simple computation; Iacus, King, and Porro
+    (<xref alt="2012" rid="ref-iacus2012-nb-article" ref-type="bibr">2012</xref>)],
+    with the ability to generate wall-to-wall comparisons of our treated
+    cells to all other cells in the province.</p>
+  </sec>
+  <sec id="analysis-nb-article">
+    <title>2.3 Analysis</title>
+  </sec>
+</sec>
+<sec id="results-nb-article">
+  <title>3 Results</title>
+</sec>
+<sec id="discussion-nb-article">
+  <title>4 Discussion</title>
+</sec>
+<sec id="conclusion-nb-article">
+  <title>5 Conclusion</title>
+</sec>
+</body>
+
+
+
+<back>
+<ref-list>
+  <title>References</title>
+  <ref id="ref-skidmore2021-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Skidmore</surname><given-names>Andrew K.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Neinavaz</surname><given-names>Elnaz</given-names></name>
+        <name><surname>Ali</surname><given-names>Abebe</given-names></name>
+        <name><surname>Schaepman</surname><given-names>Michael E.</given-names></name>
+        <name><surname>Paganini</surname><given-names>Marc</given-names></name>
+        <name><surname>Kissling</surname><given-names>W. Daniel</given-names></name>
+        <name><surname>Vihervaara</surname><given-names>Petteri</given-names></name>
+        <name><surname>Darvishzadeh</surname><given-names>Roshanak</given-names></name>
+        <name><surname>Feilhauer</surname><given-names>Hannes</given-names></name>
+        <name><surname>Fernandez</surname><given-names>Miguel</given-names></name>
+        <name><surname>Fernández</surname><given-names>Néstor</given-names></name>
+        <name><surname>Gorelick</surname><given-names>Noel</given-names></name>
+        <name><surname>Geijzendorffer</surname><given-names>Ilse</given-names></name>
+        <name><surname>Heiden</surname><given-names>Uta</given-names></name>
+        <name><surname>Heurich</surname><given-names>Marco</given-names></name>
+        <name><surname>Hobern</surname><given-names>Donald</given-names></name>
+        <name><surname>Holzwarth</surname><given-names>Stefanie</given-names></name>
+        <name><surname>Muller-Karger</surname><given-names>Frank E.</given-names></name>
+        <name><surname>Van De Kerchove</surname><given-names>Ruben</given-names></name>
+        <name><surname>Lausch</surname><given-names>Angela</given-names></name>
+        <name><surname>Leitão</surname><given-names>Pedro J.</given-names></name>
+        <name><surname>Lock</surname><given-names>Marcelle C.</given-names></name>
+        <name><surname>Mücher</surname><given-names>Caspar A.</given-names></name>
+        <name><surname>O’Connor</surname><given-names>Brian</given-names></name>
+        <name><surname>Rocchini</surname><given-names>Duccio</given-names></name>
+        <name><surname>Turner</surname><given-names>Woody</given-names></name>
+        <name><surname>Vis</surname><given-names>Jan Kees</given-names></name>
+        <name><surname>Wang</surname><given-names>Tiejun</given-names></name>
+        <name><surname>Wegmann</surname><given-names>Martin</given-names></name>
+        <name><surname>Wingate</surname><given-names>Vladimir</given-names></name>
+      </person-group>
+      <article-title>Priority list of biodiversity metrics to observe from space</article-title>
+      <source>Nature Ecology &amp; Evolution</source>
+      <year iso-8601-date="2021-05-13">2021</year><month>05</month><day>13</day>
+      <uri>http://www.nature.com/articles/s41559-021-01451-x</uri>
+      <pub-id pub-id-type="doi">10.1038/s41559-021-01451-x</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-pereira2013-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pereira</surname><given-names>H. M.</given-names></name>
+        <name><surname>Ferrier</surname><given-names>S.</given-names></name>
+        <name><surname>Walters</surname><given-names>M.</given-names></name>
+        <name><surname>Geller</surname><given-names>G. N.</given-names></name>
+        <name><surname>Jongman</surname><given-names>R. H. G.</given-names></name>
+        <name><surname>Scholes</surname><given-names>R. J.</given-names></name>
+        <name><surname>Bruford</surname><given-names>M. W.</given-names></name>
+        <name><surname>Brummitt</surname><given-names>N.</given-names></name>
+        <name><surname>Butchart</surname><given-names>S. H. M.</given-names></name>
+        <name><surname>Cardoso</surname><given-names>A. C.</given-names></name>
+        <name><surname>Coops</surname><given-names>N. C.</given-names></name>
+        <name><surname>Dulloo</surname><given-names>E.</given-names></name>
+        <name><surname>Faith</surname><given-names>D. P.</given-names></name>
+        <name><surname>Freyhof</surname><given-names>J.</given-names></name>
+        <name><surname>Gregory</surname><given-names>R. D.</given-names></name>
+        <name><surname>Heip</surname><given-names>C.</given-names></name>
+        <name><surname>Hoft</surname><given-names>R.</given-names></name>
+        <name><surname>Hurtt</surname><given-names>G.</given-names></name>
+        <name><surname>Jetz</surname><given-names>W.</given-names></name>
+        <name><surname>Karp</surname><given-names>D. S.</given-names></name>
+        <name><surname>McGeoch</surname><given-names>M. A.</given-names></name>
+        <name><surname>Obura</surname><given-names>D.</given-names></name>
+        <name><surname>Onoda</surname><given-names>Y.</given-names></name>
+        <name><surname>Pettorelli</surname><given-names>N.</given-names></name>
+        <name><surname>Reyers</surname><given-names>B.</given-names></name>
+        <name><surname>Sayre</surname><given-names>R.</given-names></name>
+        <name><surname>Scharlemann</surname><given-names>J. P. W.</given-names></name>
+        <name><surname>Stuart</surname><given-names>S. N.</given-names></name>
+        <name><surname>Turak</surname><given-names>E.</given-names></name>
+        <name><surname>Walpole</surname><given-names>M.</given-names></name>
+        <name><surname>Wegmann</surname><given-names>M.</given-names></name>
+      </person-group>
+      <article-title>Essential Biodiversity Variables</article-title>
+      <source>Science</source>
+      <year iso-8601-date="2013-01-18">2013</year><month>01</month><day>18</day>
+      <volume>339</volume>
+      <issue>6117</issue>
+      <uri>https://www.sciencemag.org/lookup/doi/10.1126/science.1229931</uri>
+      <pub-id pub-id-type="doi">10.1126/science.1229931</pub-id>
+      <fpage>277</fpage>
+      <lpage>278</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-noss1990-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Noss</surname><given-names>Reed F.</given-names></name>
+      </person-group>
+      <article-title>Indicators for Monitoring Biodiversity: A Hierarchical Approach</article-title>
+      <source>Conservation Biology</source>
+      <year iso-8601-date="1990">1990</year>
+      <volume>4</volume>
+      <issue>4</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.1990.tb00309.x</uri>
+      <pub-id pub-id-type="doi">10.1111/j.1523-1739.1990.tb00309.x</pub-id>
+      <fpage>355</fpage>
+      <lpage>364</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pettorelli2018-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pettorelli</surname><given-names>Nathalie</given-names></name>
+        <name><surname>Schulte to Bühne</surname><given-names>Henrike</given-names></name>
+        <name><surname>Tulloch</surname><given-names>Ayesha</given-names></name>
+        <name><surname>Dubois</surname><given-names>Grégoire</given-names></name>
+        <name><surname>Macinnis-Ng</surname><given-names>Cate</given-names></name>
+        <name><surname>Queirós</surname><given-names>Ana M.</given-names></name>
+        <name><surname>Keith</surname><given-names>David A.</given-names></name>
+        <name><surname>Wegmann</surname><given-names>Martin</given-names></name>
+        <name><surname>Schrodt</surname><given-names>Franziska</given-names></name>
+        <name><surname>Stellmes</surname><given-names>Marion</given-names></name>
+        <name><surname>Sonnenschein</surname><given-names>Ruth</given-names></name>
+        <name><surname>Geller</surname><given-names>Gary N.</given-names></name>
+        <name><surname>Roy</surname><given-names>Shovonlal</given-names></name>
+        <name><surname>Somers</surname><given-names>Ben</given-names></name>
+        <name><surname>Murray</surname><given-names>Nicholas</given-names></name>
+        <name><surname>Bland</surname><given-names>Lucie</given-names></name>
+        <name><surname>Geijzendorffer</surname><given-names>Ilse</given-names></name>
+        <name><surname>Kerr</surname><given-names>Jeremy T.</given-names></name>
+        <name><surname>Broszeit</surname><given-names>Stefanie</given-names></name>
+        <name><surname>Leitão</surname><given-names>Pedro J.</given-names></name>
+        <name><surname>Duncan</surname><given-names>Clare</given-names></name>
+        <name><surname>El Serafy</surname><given-names>Ghada</given-names></name>
+        <name><surname>He</surname><given-names>Kate S.</given-names></name>
+        <name><surname>Blanchard</surname><given-names>Julia L.</given-names></name>
+        <name><surname>Lucas</surname><given-names>Richard</given-names></name>
+        <name><surname>Mairota</surname><given-names>Paola</given-names></name>
+        <name><surname>Webb</surname><given-names>Thomas J.</given-names></name>
+        <name><surname>Nicholson</surname><given-names>Emily</given-names></name>
+      </person-group>
+      <article-title>Satellite remote sensing of ecosystem functions: opportunities, challenges and way forward</article-title>
+      <source>Remote Sensing in Ecology and Conservation</source>
+      <year iso-8601-date="2018">2018</year>
+      <volume>4</volume>
+      <issue>2</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/rse2.59</uri>
+      <pub-id pub-id-type="doi">10.1002/rse2.59</pub-id>
+      <fpage>71</fpage>
+      <lpage>93</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-dirzo2003-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Dirzo</surname><given-names>Rodolfo</given-names></name>
+        <name><surname>Raven</surname><given-names>Peter H.</given-names></name>
+      </person-group>
+      <article-title>Global State of Biodiversity and Loss</article-title>
+      <source>Annual Review of Environment and Resources</source>
+      <year iso-8601-date="2003-11-01">2003</year><month>11</month><day>01</day>
+      <volume>28</volume>
+      <issue>Volume 28, 2003</issue>
+      <uri>https://www.annualreviews.org/content/journals/10.1146/annurev.energy.28.050302.105532</uri>
+      <pub-id pub-id-type="doi">10.1146/annurev.energy.28.050302.105532</pub-id>
+      <fpage>137</fpage>
+      <lpage>167</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pettorelli2005-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pettorelli</surname><given-names>Nathalie</given-names></name>
+        <name><surname>Vik</surname><given-names>Jon Olav</given-names></name>
+        <name><surname>Mysterud</surname><given-names>Atle</given-names></name>
+        <name><surname>Gaillard</surname><given-names>Jean-Michel</given-names></name>
+        <name><surname>Tucker</surname><given-names>Compton J.</given-names></name>
+        <name><surname>Stenseth</surname><given-names>Nils Chr.</given-names></name>
+      </person-group>
+      <article-title>Using the satellite-derived NDVI to assess ecological responses to environmental change</article-title>
+      <source>Trends in Ecology &amp; Evolution</source>
+      <year iso-8601-date="2005-09-01">2005</year><month>09</month><day>01</day>
+      <volume>20</volume>
+      <issue>9</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S016953470500162X</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tree.2005.05.011</pub-id>
+      <fpage>503</fpage>
+      <lpage>510</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-iacus2012-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Iacus</surname><given-names>Stefano M.</given-names></name>
+        <name><surname>King</surname><given-names>Gary</given-names></name>
+        <name><surname>Porro</surname><given-names>Giuseppe</given-names></name>
+      </person-group>
+      <article-title>Causal Inference without Balance Checking: Coarsened Exact Matching</article-title>
+      <source>Political Analysis</source>
+      <year iso-8601-date="2012">2012</year>
+      <volume>20</volume>
+      <issue>1</issue>
+      <uri>https://www.cambridge.org/core/product/identifier/S1047198700012985/type/journal_article</uri>
+      <pub-id pub-id-type="doi">10.1093/pan/mpr013</pub-id>
+      <fpage>1</fpage>
+      <lpage>24</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-thomas2004-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Thomas</surname><given-names>Chris D</given-names></name>
+        <name><surname>Cameron</surname><given-names>Alison</given-names></name>
+        <name><surname>Green</surname><given-names>Rhys E</given-names></name>
+        <name><surname>Bakkenes</surname><given-names>Michel</given-names></name>
+        <name><surname>Beaumont</surname><given-names>Linda J</given-names></name>
+        <name><surname>Collingham</surname><given-names>Yvonne C</given-names></name>
+        <name><surname>Erasmus</surname><given-names>Barend F N</given-names></name>
+        <name><surname>Siqueira</surname><given-names>Marinez Ferreira de</given-names></name>
+        <name><surname>Grainger</surname><given-names>Alan</given-names></name>
+        <name><surname>Hannah</surname><given-names>Lee</given-names></name>
+        <name><surname>Hughes</surname><given-names>Lesley</given-names></name>
+        <name><surname>Huntley</surname><given-names>Brian</given-names></name>
+        <name><surname>Jaarsveld</surname><given-names>Albert S van</given-names></name>
+        <name><surname>Midgley</surname><given-names>Guy F</given-names></name>
+        <name><surname>Miles</surname><given-names>Lera</given-names></name>
+        <name><surname>Ortega-Huerta</surname><given-names>Miguel A</given-names></name>
+        <name><surname>Peterson</surname><given-names>A Townsend</given-names></name>
+        <name><surname>Phillips</surname><given-names>Oliver L</given-names></name>
+        <name><surname>Williams</surname><given-names>Stephen E</given-names></name>
+      </person-group>
+      <article-title>Extinction risk from climate change</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2004">2004</year>
+      <volume>427</volume>
+      <fpage>5</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-urban2015-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Urban</surname><given-names>Mark C.</given-names></name>
+      </person-group>
+      <article-title>Accelerating extinction risk from climate change</article-title>
+      <source>Science</source>
+      <year iso-8601-date="2015-05-01">2015</year><month>05</month><day>01</day>
+      <volume>348</volume>
+      <issue>6234</issue>
+      <uri>https://www.science.org/doi/10.1126/science.aaa4984</uri>
+      <pub-id pub-id-type="doi">10.1126/science.aaa4984</pub-id>
+      <fpage>571</fpage>
+      <lpage>573</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-mcgill2015-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>McGill</surname><given-names>Brian J.</given-names></name>
+        <name><surname>Dornelas</surname><given-names>Maria</given-names></name>
+        <name><surname>Gotelli</surname><given-names>Nicholas J.</given-names></name>
+        <name><surname>Magurran</surname><given-names>Anne E.</given-names></name>
+      </person-group>
+      <article-title>Fifteen forms of biodiversity trend in the Anthropocene</article-title>
+      <source>Trends in Ecology &amp; Evolution</source>
+      <year iso-8601-date="2015-02-01">2015</year><month>02</month><day>01</day>
+      <volume>30</volume>
+      <issue>2</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0169534714002456</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tree.2014.11.006</pub-id>
+      <fpage>104</fpage>
+      <lpage>113</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-muise2022-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Muise</surname><given-names>Evan R.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Ban</surname><given-names>Stephen S.</given-names></name>
+      </person-group>
+      <article-title>Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas</article-title>
+      <source>Ecological Applications</source>
+      <year iso-8601-date="2022">2022</year>
+      <volume>32</volume>
+      <issue>5</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/eap.2603</uri>
+      <pub-id pub-id-type="doi">10.1002/eap.2603</pub-id>
+      <fpage>e2603</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-andrew2012-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Andrew</surname><given-names>Margaret E.</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+      </person-group>
+      <article-title>Identification of de facto protected areas in boreal canada</article-title>
+      <source>Biological Conservation</source>
+      <year iso-8601-date="2012-02-01">2012</year><month>02</month><day>01</day>
+      <volume>146</volume>
+      <issue>1</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0006320711004587</uri>
+      <pub-id pub-id-type="doi">10.1016/j.biocon.2011.11.029</pub-id>
+      <fpage>97</fpage>
+      <lpage>107</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-matasci2018-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Matasci</surname><given-names>Giona</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+        <name><surname>Bolton</surname><given-names>Douglas K.</given-names></name>
+        <name><surname>Tompalski</surname><given-names>Piotr</given-names></name>
+        <name><surname>Bater</surname><given-names>Christopher W.</given-names></name>
+      </person-group>
+      <article-title>Three decades of forest structural dynamics over canada’s forested ecosystems using landsat time-series and lidar plots</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2018-10">2018</year><month>10</month>
+      <volume>216</volume>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0034425718303572</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2018.07.024</pub-id>
+      <fpage>697714</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-radeloff2019-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Radeloff</surname><given-names>V. C.</given-names></name>
+        <name><surname>Dubinin</surname><given-names>M.</given-names></name>
+        <name><surname>Coops</surname><given-names>N. C.</given-names></name>
+        <name><surname>Allen</surname><given-names>A. M.</given-names></name>
+        <name><surname>Brooks</surname><given-names>T. M.</given-names></name>
+        <name><surname>Clayton</surname><given-names>M. K.</given-names></name>
+        <name><surname>Costa</surname><given-names>G. C.</given-names></name>
+        <name><surname>Graham</surname><given-names>C. H.</given-names></name>
+        <name><surname>Helmers</surname><given-names>D. P.</given-names></name>
+        <name><surname>Ives</surname><given-names>A. R.</given-names></name>
+        <name><surname>Kolesov</surname><given-names>D.</given-names></name>
+        <name><surname>Pidgeon</surname><given-names>A. M.</given-names></name>
+        <name><surname>Rapacciuolo</surname><given-names>G.</given-names></name>
+        <name><surname>Razenkova</surname><given-names>E.</given-names></name>
+        <name><surname>Suttidate</surname><given-names>N.</given-names></name>
+        <name><surname>Young</surname><given-names>B. E.</given-names></name>
+        <name><surname>Zhu</surname><given-names>L.</given-names></name>
+        <name><surname>Hobi</surname><given-names>M. L.</given-names></name>
+      </person-group>
+      <article-title>The Dynamic Habitat Indices (DHIs) from MODIS and global biodiversity</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2019-03-01">2019</year><month>03</month><day>01</day>
+      <volume>222</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0034425718305625</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2018.12.009</pub-id>
+      <fpage>204</fpage>
+      <lpage>214</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-radeloff2024-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Radeloff</surname><given-names>Volker C.</given-names></name>
+        <name><surname>Roy</surname><given-names>David P.</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>Anderson</surname><given-names>Martha</given-names></name>
+        <name><surname>Cook</surname><given-names>Bruce</given-names></name>
+        <name><surname>Crawford</surname><given-names>Christopher J.</given-names></name>
+        <name><surname>Friedl</surname><given-names>Mark</given-names></name>
+        <name><surname>Gao</surname><given-names>Feng</given-names></name>
+        <name><surname>Gorelick</surname><given-names>Noel</given-names></name>
+        <name><surname>Hansen</surname><given-names>Matthew</given-names></name>
+        <name><surname>Healey</surname><given-names>Sean</given-names></name>
+        <name><surname>Hostert</surname><given-names>Patrick</given-names></name>
+        <name><surname>Hulley</surname><given-names>Glynn</given-names></name>
+        <name><surname>Huntington</surname><given-names>Justin L.</given-names></name>
+        <name><surname>Johnson</surname><given-names>David M.</given-names></name>
+        <name><surname>Neigh</surname><given-names>Chris</given-names></name>
+        <name><surname>Lyapustin</surname><given-names>Alexei</given-names></name>
+        <name><surname>Lymburner</surname><given-names>Leo</given-names></name>
+        <name><surname>Pahlevan</surname><given-names>Nima</given-names></name>
+        <name><surname>Pekel</surname><given-names>Jean-Francois</given-names></name>
+        <name><surname>Scambos</surname><given-names>Theodore A.</given-names></name>
+        <name><surname>Schaaf</surname><given-names>Crystal</given-names></name>
+        <name><surname>Strobl</surname><given-names>Peter</given-names></name>
+        <name><surname>Woodcock</surname><given-names>Curtis E.</given-names></name>
+        <name><surname>Zhang</surname><given-names>Hankui K.</given-names></name>
+        <name><surname>Zhu</surname><given-names>Zhe</given-names></name>
+      </person-group>
+      <article-title>Need and vision for global medium-resolution landsat and sentinel-2 data products</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2024-01-01">2024</year><month>01</month><day>01</day>
+      <volume>300</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0034425723004704</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2023.113918</pub-id>
+      <fpage>113918</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-matasci2018b-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Matasci</surname><given-names>Giona</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+        <name><surname>Zald</surname><given-names>Harold S. J.</given-names></name>
+      </person-group>
+      <article-title>Large-area mapping of Canadian boreal forest cover, height, biomass and other structural attributes using Landsat composites and lidar plots</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2018-05-01">2018</year><month>05</month><day>01</day>
+      <volume>209</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0034425717305953</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2017.12.020</pub-id>
+      <fpage>90</fpage>
+      <lpage>106</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-razenkova-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Razenkova</surname><given-names>Elena</given-names></name>
+        <name><surname>Lewińska</surname><given-names>Katarzyna E</given-names></name>
+        <name><surname>Yin</surname><given-names>He</given-names></name>
+        <name><surname>Farwell</surname><given-names>Laura S</given-names></name>
+        <name><surname>Pidgeon</surname><given-names>Anna M</given-names></name>
+        <name><surname>Hostert</surname><given-names>Patrick</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C</given-names></name>
+        <name><surname>Radeloff</surname><given-names>Volker C.</given-names></name>
+      </person-group>
+      <article-title>Medium-resolution dynamic habitat indices from landsat satellite imagery</article-title>
+      <source>Remote Sensing of Environment</source>
+    </element-citation>
+  </ref>
+  <ref id="ref-becker2023-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Becker</surname><given-names>Alexander</given-names></name>
+        <name><surname>Russo</surname><given-names>Stefania</given-names></name>
+        <name><surname>Puliti</surname><given-names>Stefano</given-names></name>
+        <name><surname>Lang</surname><given-names>Nico</given-names></name>
+        <name><surname>Schindler</surname><given-names>Konrad</given-names></name>
+        <name><surname>Wegner</surname><given-names>Jan Dirk</given-names></name>
+      </person-group>
+      <article-title>Country-wide retrieval of forest structure from optical and SAR satellite imagery with deep ensembles</article-title>
+      <source>ISPRS Journal of Photogrammetry and Remote Sensing</source>
+      <year iso-8601-date="2023-01-01">2023</year><month>01</month><day>01</day>
+      <volume>195</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0924271622003045</uri>
+      <pub-id pub-id-type="doi">10.1016/j.isprsjprs.2022.11.011</pub-id>
+      <fpage>269</fpage>
+      <lpage>286</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-reporto2023-nb-article">
+    <element-citation publication-type="report">
+      <article-title>Report of the conference of the parties to the convention on biological diversity on the second part of its fifteenth meeting</article-title>
+      <year iso-8601-date="2023">2023</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-venter2016-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Venter</surname><given-names>Oscar</given-names></name>
+        <name><surname>Sanderson</surname><given-names>Eric W.</given-names></name>
+        <name><surname>Magrach</surname><given-names>Ainhoa</given-names></name>
+        <name><surname>Allan</surname><given-names>James R.</given-names></name>
+        <name><surname>Beher</surname><given-names>Jutta</given-names></name>
+        <name><surname>Jones</surname><given-names>Kendall R.</given-names></name>
+        <name><surname>Possingham</surname><given-names>Hugh P.</given-names></name>
+        <name><surname>Laurance</surname><given-names>William F.</given-names></name>
+        <name><surname>Wood</surname><given-names>Peter</given-names></name>
+        <name><surname>Fekete</surname><given-names>Balázs M.</given-names></name>
+        <name><surname>Levy</surname><given-names>Marc A.</given-names></name>
+        <name><surname>Watson</surname><given-names>James E. M.</given-names></name>
+      </person-group>
+      <article-title>Sixteen years of change in the global terrestrial human footprint and implications for biodiversity conservation</article-title>
+      <source>Nature Communications</source>
+      <year iso-8601-date="2016-08-23">2016</year><month>08</month><day>23</day>
+      <volume>7</volume>
+      <issue>1</issue>
+      <uri>https://www.nature.com/articles/ncomms12558</uri>
+      <pub-id pub-id-type="doi">10.1038/ncomms12558</pub-id>
+      <fpage>12558</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-myers1988-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Myers</surname><given-names>Norman</given-names></name>
+      </person-group>
+      <article-title>Threatened biotas: &quot;Hot spots&quot; in tropical forests</article-title>
+      <source>Environmentalist</source>
+      <year iso-8601-date="1988-09-01">1988</year><month>09</month><day>01</day>
+      <volume>8</volume>
+      <issue>3</issue>
+      <uri>https://doi.org/10.1007/BF02240252</uri>
+      <pub-id pub-id-type="doi">10.1007/BF02240252</pub-id>
+      <fpage>187</fpage>
+      <lpage>208</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pimm2000-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pimm</surname><given-names>Stuart L.</given-names></name>
+        <name><surname>Raven</surname><given-names>Peter</given-names></name>
+      </person-group>
+      <article-title>Extinction by numbers</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2000-02">2000</year><month>02</month>
+      <volume>403</volume>
+      <issue>6772</issue>
+      <uri>https://www.nature.com/articles/35002708</uri>
+      <pub-id pub-id-type="doi">10.1038/35002708</pub-id>
+      <fpage>843</fpage>
+      <lpage>845</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-cardinale2012-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Cardinale</surname><given-names>Bradley J.</given-names></name>
+        <name><surname>Duffy</surname><given-names>J. Emmett</given-names></name>
+        <name><surname>Gonzalez</surname><given-names>Andrew</given-names></name>
+        <name><surname>Hooper</surname><given-names>David U.</given-names></name>
+        <name><surname>Perrings</surname><given-names>Charles</given-names></name>
+        <name><surname>Venail</surname><given-names>Patrick</given-names></name>
+        <name><surname>Narwani</surname><given-names>Anita</given-names></name>
+        <name><surname>Mace</surname><given-names>Georgina M.</given-names></name>
+        <name><surname>Tilman</surname><given-names>David</given-names></name>
+        <name><surname>Wardle</surname><given-names>David A.</given-names></name>
+        <name><surname>Kinzig</surname><given-names>Ann P.</given-names></name>
+        <name><surname>Daily</surname><given-names>Gretchen C.</given-names></name>
+        <name><surname>Loreau</surname><given-names>Michel</given-names></name>
+        <name><surname>Grace</surname><given-names>James B.</given-names></name>
+        <name><surname>Larigauderie</surname><given-names>Anne</given-names></name>
+        <name><surname>Srivastava</surname><given-names>Diane S.</given-names></name>
+        <name><surname>Naeem</surname><given-names>Shahid</given-names></name>
+      </person-group>
+      <article-title>Biodiversity loss and its impact on humanity</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2012-06">2012</year><month>06</month>
+      <volume>486</volume>
+      <issue>7401</issue>
+      <uri>https://www.nature.com/articles/nature11148</uri>
+      <pub-id pub-id-type="doi">10.1038/nature11148</pub-id>
+      <fpage>59</fpage>
+      <lpage>67</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-thompson2009-nb-article">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <name><surname>Thompson</surname><given-names>Ian D.</given-names></name>
+        <name><surname>Mackey</surname><given-names>Brendan</given-names></name>
+        <name><surname>McNulty</surname><given-names>Steven</given-names></name>
+        <name><surname>Mosseler</surname><given-names>Alex</given-names></name>
+      </person-group>
+      <source>Forest resilience, biodiversity, and climate change: a synthesis of the biodiversity / resiliende / stability relationship in forest ecosystems</source>
+      <publisher-name>Secretariat of the Convention on Biological Diversity</publisher-name>
+      <publisher-loc>Montreal</publisher-loc>
+      <year iso-8601-date="2009">2009</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-marín2021-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Marín</surname><given-names>Ana Isabel</given-names></name>
+        <name><surname>Abdul Malak</surname><given-names>Dania</given-names></name>
+        <name><surname>Bastrup-Birk</surname><given-names>Annemarie</given-names></name>
+        <name><surname>Chirici</surname><given-names>Gherardo</given-names></name>
+        <name><surname>Barbati</surname><given-names>Anna</given-names></name>
+        <name><surname>Kleeschulte</surname><given-names>Stefan</given-names></name>
+      </person-group>
+      <article-title>Mapping forest condition in europe: Methodological developments in support to forest biodiversity assessments</article-title>
+      <source>Ecological Indicators</source>
+      <year iso-8601-date="2021-09-01">2021</year><month>09</month><day>01</day>
+      <volume>128</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1470160X21005045</uri>
+      <pub-id pub-id-type="doi">10.1016/j.ecolind.2021.107839</pub-id>
+      <fpage>107839</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pinnegar2008-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pinnegar</surname><given-names>John K.</given-names></name>
+        <name><surname>Engelhard</surname><given-names>Georg H.</given-names></name>
+      </person-group>
+      <article-title>The ‘shifting baseline’ phenomenon: a global perspective</article-title>
+      <source>Reviews in Fish Biology and Fisheries</source>
+      <year iso-8601-date="2008-02">2008</year><month>02</month>
+      <volume>18</volume>
+      <issue>1</issue>
+      <uri>https://link.springer.com/10.1007/s11160-007-9058-6</uri>
+      <pub-id pub-id-type="doi">10.1007/s11160-007-9058-6</pub-id>
+      <fpage>1</fpage>
+      <lpage>16</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-nielsen2007-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Nielsen</surname><given-names>S. E.</given-names></name>
+        <name><surname>Bayne</surname><given-names>E. M.</given-names></name>
+        <name><surname>Schieck</surname><given-names>J.</given-names></name>
+        <name><surname>Herbers</surname><given-names>J.</given-names></name>
+        <name><surname>Boutin</surname><given-names>S.</given-names></name>
+      </person-group>
+      <article-title>A new method to estimate species and biodiversity intactness using empirically derived reference conditions</article-title>
+      <source>Biological Conservation</source>
+      <year iso-8601-date="2007-07">2007</year><month>07</month>
+      <volume>137</volume>
+      <issue>3</issue>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0006320707000912</uri>
+      <pub-id pub-id-type="doi">10.1016/j.biocon.2007.02.024</pub-id>
+      <fpage>403</fpage>
+      <lpage>414</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-winter2012-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Winter</surname><given-names>S.</given-names></name>
+      </person-group>
+      <article-title>Forest naturalness assessment as a component of biodiversity monitoring and conservation management</article-title>
+      <source>Forestry</source>
+      <year iso-8601-date="2012-04-01">2012</year><month>04</month><day>01</day>
+      <volume>85</volume>
+      <issue>2</issue>
+      <uri>https://academic.oup.com/forestry/article-lookup/doi/10.1093/forestry/cps004</uri>
+      <pub-id pub-id-type="doi">10.1093/forestry/cps004</pub-id>
+      <fpage>293</fpage>
+      <lpage>304</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hirsh-pearson2022-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hirsh-Pearson</surname><given-names>Kristen</given-names></name>
+        <name><surname>Johnson</surname><given-names>Chris J.</given-names></name>
+        <name><surname>Schuster</surname><given-names>Richard</given-names></name>
+        <name><surname>Wheate</surname><given-names>Roger D.</given-names></name>
+        <name><surname>Venter</surname><given-names>Oscar</given-names></name>
+      </person-group>
+      <article-title>Canada’s human footprint reveals large intact areas juxtaposed against areas under immense anthropogenic pressure</article-title>
+      <source>FACETS</source>
+      <year iso-8601-date="2022-01">2022</year><month>01</month>
+      <volume>7</volume>
+      <uri>https://www.facetsjournal.com/doi/10.1139/facets-2021-0063</uri>
+      <pub-id pub-id-type="doi">10.1139/facets-2021-0063</pub-id>
+      <fpage>398</fpage>
+      <lpage>419</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-tachikawa2011-nb-article">
+    <element-citation publication-type="report">
+      <person-group person-group-type="author">
+        <name><surname>Tachikawa</surname><given-names>Tetushi</given-names></name>
+        <name><surname>Kaku</surname><given-names>Manabu</given-names></name>
+        <name><surname>Iwasaki</surname><given-names>Akira</given-names></name>
+        <name><surname>Gesch</surname><given-names>Dean B.</given-names></name>
+        <name><surname>Oimoen</surname><given-names>Michael J.</given-names></name>
+        <name><surname>Zhang</surname><given-names>Z.</given-names></name>
+        <name><surname>Danielson</surname><given-names>Jeffrey J.</given-names></name>
+        <name><surname>Krieger</surname><given-names>Tabatha</given-names></name>
+        <name><surname>Curtis</surname><given-names>Bill</given-names></name>
+        <name><surname>Haase</surname><given-names>Jeff</given-names></name>
+        <name><surname>Abrams</surname><given-names>Michael</given-names></name>
+        <name><surname>Carabajal</surname><given-names>C.</given-names></name>
+      </person-group>
+      <article-title>ASTER global digital elevation model version 2 - summary of validation results</article-title>
+      <year iso-8601-date="2011">2011</year>
+      <uri>http://pubs.er.usgs.gov/publication/70005960</uri>
+      <fpage>27</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-arcese1997-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Arcese</surname><given-names>Peter</given-names></name>
+        <name><surname>Sinclair</surname><given-names>A. R. E.</given-names></name>
+      </person-group>
+      <article-title>The role of protected areas as ecological baselines</article-title>
+      <source>The Journal of Wildlife Management</source>
+      <year iso-8601-date="1997">1997</year>
+      <volume>61</volume>
+      <issue>3</issue>
+      <uri>https://www.jstor.org/stable/3802167</uri>
+      <pub-id pub-id-type="doi">10.2307/3802167</pub-id>
+      <fpage>587</fpage>
+      <lpage>602</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-balaguer2014-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Balaguer</surname><given-names>Luis</given-names></name>
+        <name><surname>Escudero</surname><given-names>Adrián</given-names></name>
+        <name><surname>Martín-Duque</surname><given-names>José F.</given-names></name>
+        <name><surname>Mola</surname><given-names>Ignacio</given-names></name>
+        <name><surname>Aronson</surname><given-names>James</given-names></name>
+      </person-group>
+      <article-title>The historical reference in restoration ecology: Re-defining a cornerstone concept</article-title>
+      <source>Biological Conservation</source>
+      <year iso-8601-date="2014-08-01">2014</year><month>08</month><day>01</day>
+      <volume>176</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0006320714001955</uri>
+      <pub-id pub-id-type="doi">10.1016/j.biocon.2014.05.007</pub-id>
+      <fpage>12</fpage>
+      <lpage>20</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-white2014-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>White</surname><given-names>Joanne. C.</given-names></name>
+        <name><surname>Wulder</surname><given-names>M. A.</given-names></name>
+        <name><surname>Hobart</surname><given-names>G. W.</given-names></name>
+        <name><surname>Luther</surname><given-names>J. E.</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>T.</given-names></name>
+        <name><surname>Griffiths</surname><given-names>P.</given-names></name>
+        <name><surname>Coops</surname><given-names>N. C.</given-names></name>
+        <name><surname>Hall</surname><given-names>R. J.</given-names></name>
+        <name><surname>Hostert</surname><given-names>P.</given-names></name>
+        <name><surname>Dyk</surname><given-names>A.</given-names></name>
+        <name><surname>Guindon</surname><given-names>L.</given-names></name>
+      </person-group>
+      <article-title>Pixel-based image compositing for large-area dense time series applications and science</article-title>
+      <source>Canadian Journal of Remote Sensing</source>
+      <year iso-8601-date="2014-05">2014</year><month>05</month>
+      <volume>40</volume>
+      <issue>3</issue>
+      <uri>http://www.tandfonline.com/doi/full/10.1080/07038992.2014.945827</uri>
+      <pub-id pub-id-type="doi">10.1080/07038992.2014.945827</pub-id>
+      <fpage>192212</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hermosilla2016-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+        <name><surname>Campbell</surname><given-names>Lorraine B.</given-names></name>
+      </person-group>
+      <article-title>Mass data processing of time series landsat imagery: Pixels to data products for forest monitoring</article-title>
+      <source>International Journal of Digital Earth</source>
+      <year iso-8601-date="2016-11">2016</year><month>11</month>
+      <volume>9</volume>
+      <issue>11</issue>
+      <uri>https://www.tandfonline.com/doi/full/10.1080/17538947.2016.1187673</uri>
+      <pub-id pub-id-type="doi">10.1080/17538947.2016.1187673</pub-id>
+      <fpage>10351054</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hermosilla2015-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hobart</surname><given-names>Geordie W.</given-names></name>
+      </person-group>
+      <article-title>Regional detection, characterization, and attribution of annual forest change from 1984 to 2012 using landsat-derived time-series metrics</article-title>
+      <source>Remote Sensing of Environment</source>
+      <year iso-8601-date="2015-12">2015</year><month>12</month>
+      <volume>170</volume>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0034425715301279</uri>
+      <pub-id pub-id-type="doi">10.1016/j.rse.2015.09.004</pub-id>
+      <fpage>121132</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-bolton2019-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bolton</surname><given-names>Douglas K.</given-names></name>
+        <name><surname>Coops</surname><given-names>Nicholas C.</given-names></name>
+        <name><surname>Hermosilla</surname><given-names>Txomin</given-names></name>
+        <name><surname>Wulder</surname><given-names>Michael A.</given-names></name>
+        <name><surname>White</surname><given-names>Joanne C.</given-names></name>
+        <name><surname>Ferster</surname><given-names>Colin J.</given-names></name>
+      </person-group>
+      <article-title>Uncovering regional variability in disturbance trends between parks and greater park ecosystems across canada (19852015)</article-title>
+      <source>Scientific Reports</source>
+      <year iso-8601-date="2019-12">2019</year><month>12</month>
+      <volume>9</volume>
+      <issue>1</issue>
+      <uri>http://www.nature.com/articles/s41598-018-37265-4</uri>
+      <pub-id pub-id-type="doi">10.1038/s41598-018-37265-4</pub-id>
+      <fpage>1323</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-R-base-nb-article">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <string-name>R Core Team</string-name>
+      </person-group>
+      <source>R: A language and environment for statistical computing</source>
+      <publisher-name>R Foundation for Statistical Computing</publisher-name>
+      <publisher-loc>Vienna, Austria</publisher-loc>
+      <year iso-8601-date="2024">2024</year>
+      <uri>https://www.R-project.org/</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-R-terra-nb-article">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <name><surname>Hijmans</surname><given-names>Robert J.</given-names></name>
+      </person-group>
+      <source>Terra: Spatial data analysis</source>
+      <year iso-8601-date="2024">2024</year>
+      <uri>https://rspatial.org/</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-wdpar2022a-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hanson</surname><given-names>Jeffrey O</given-names></name>
+      </person-group>
+      <article-title>Wdpar: Interface to the world database on protected areas</article-title>
+      <source>Journal of Open Source Software</source>
+      <year iso-8601-date="2022">2022</year>
+      <volume>7</volume>
+      <pub-id pub-id-type="doi">10.21105/joss.04594</pub-id>
+      <fpage>4594</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
 </ref-list>
 </back>
 
 
+</sub-article>
 
 </article>

@@ -188,7 +188,7 @@ matching, Essential Biodiversity Variables},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\journalname{Earth and Space Science}
+\journalname{Conservation Biology}
 
 \draftfalse
 
@@ -211,104 +211,225 @@ Probably am not doing a plain language summary
 
 
 
-\section{Introduction}\label{introduction}
+\subsection{Introduction}\label{introduction}
 
 A global biodiversity crisis is currently underway, driven by
-anthropogenic changes and pressures such as climate change, land-use
-changes, and invasive species, among others (Dirzo \& Raven, 2003).
-Protected areas have been demonstrated to be one of the most effective
-potential safeguards against these biodiversity losses (Chape et al.,
-2005). To assess the effectiveness of protected areas, it is necessary
-to collect data across entire jurisdictions and compare them to similar
-ecosystems that are not protected. However, collecting direct,
-field-derived information on biodiversity across large regions is simply
-not feasible due to financial and temporal constraints.
+anthropogenic changes (Dirzo \& Raven, 2003). Pressures such as climate
+change, land-use changes, and invasive species, are leading to species
+extinctions (Thomas et al., 2004; Urban, 2015) and the homogenization of
+biological communities (McGill et al., 2015). The Kunming-Montreal
+Global Biodiversity Framework (GBF) has been adopted as of December
+2022, with the goal of restoring global biodiversity (\emph{Report of
+the conference of the parties to the convention on biological diversity
+on the second part of its fifteenth meeting}, 2023). Targets within this
+framework include restoring 30\% of all degraded ecosystems, and
+protecting 30\% of of Earth's terrestrial, inland water, and marine
+areas (\emph{Report of the conference of the parties to the convention
+on biological diversity on the second part of its fifteenth meeting},
+2023). In the terrestrial environment, forest biomes have been shown to
+harbour the largest amount of biodiversity (Cardinale et al., 2012;
+Myers, 1988; Pimm \& Raven, 2000), and provide key ecosystem services
+(Thompson et al., 2009). To provide these services, it is integral that
+these forest ecosystems are in good ecological condition, as represented
+by natural or near-natural levels of forest structure, forest function,
+and forest composition (Marín et al., 2021).
 
-Remote sensing data, however, can provide a time-efficient,
-cost-effective alternative to field data, and can be used to generate
-Essential Biodiversity Variables (EBVs) which are comparable,
-standardized datasets capable of measuring biodiversity change across
-large spatial extents through time (Pereira et al., 2013; Skidmore et
-al., 2021). Two EBV classes are particularly well suited to be used at
-regional to national scales; ecosystem structure and ecosystem function.
-Ecosystem structure is defined as the physical organization of biotic
-and abiotic materials in the system, and is commonly assessed as land
-cover and forest structural attributes using remote sensing (Noss,
-1990). Ecosystem function are attributes related to ecosystem
-performance, such as the inflows or outflows of energy/nutrients
-(Pettorelli et al., 2018). Remote sensing of ecosystem function commonly
-includes productivity metrics such as GPP (Pettorelli et al., 2005,
-2018). Remote sensing-derived EBVs provide suitable spatial coverage,
-temporal depth, and temporal frequency to be used for biodiversity
-monitoring (Skidmore et al., 2021), and thus, protected area
-effectiveness assessments.
+While understanding forest condition is a key aspect of understanding
+biodiversity and the provision of ecosystem services due to their
+inherent linkages (Cardinale et al., 2012; Marín et al., 2021), it is
+difficult to acquire suitable field-derived data across wide expanses of
+land due to the extreme financial and temporal costs associated with
+field campaigns. Remote sensing data, however, can provide a
+time-efficient, cost-effective alternative to field data, providing
+access to new spatially explicit and exhaustive datasets that can be
+linked to ecological condition, with additional metrics being proposed
+at a rapid pace (Pereira et al., 2013; Volker C. Radeloff et al., 2024;
+Skidmore et al., 2021). Advances in lidar technologies and modelling
+methods are allowing wall-to-wall estimates of forest stand structure to
+be generated across entire countries (Becker et al., 2023; Matasci,
+Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al., 2018; Matasci,
+Hermosilla, Wulder, White, Coops, Hobart, \& Zald, 2018), serving as a
+finer scale indicator of ecosystem structure than the often previously
+used landscape fragmentation metrics (Andrew et al., 2012). Productivity
+metrics have been used as a proxy for ecosystem function for many years
+(Pettorelli et al., 2005, 2018), with new Landsat derived datasets
+providing integrative annual estimates of energy availability at a 30 m
+spatial resolution(V. C. Radeloff et al., 2019; Volker C. Radeloff et
+al., 2024; Razenkova et al., n.d.). Remote sensing is quickly providing
+access to a plethora of datasets suitable monitoring the various facets
+of biodiversity and ecological condition (Noss, 1990). Using these
+datasets in conjunction with information on the location of known or
+assumed natural forests can allow researchers to identify similar forest
+stands or ecosystems, thus locating high quality forests across entire
+jurisdictions, even when they are facing anthropogenic pressures.
 
-The use of impact assessment techniques such as matching is becoming
-increasingly prevalent in studies of the effectiveness of protected
-areas (Ferraro, 2009). Matching methods generally work by creating a
-counterfactual scenario in which conservation outcomes are compared
-between the protected area and what those outcomes would be if the given
-area were not protected (Ribas et al., 2021). This is achieved by
-comparing a given protected area to an unprotected area with similar
-covariates, such as climate, topography, and various anthropogenic data.
-Propensity score matching uses the covariates and protected status with
-a logit regression to create a propensity score, which is then used to
-match the protected area to an unprotected area (Austin, 2011).
-Coarsened exact matching (CEM) initially coarsens the covariates into
-bins (percentiles) and then performs exact matching on these bins, while
-retaining the original, uncoarsened data (Iacus et al., 2012). Other
-matching methods exist (see Schleicher et al., 2020), but one common
-issue common to these methods is that many data samples are dropped
-because there is no suitable match to be found. This can be problematic
-when attempting to create spatial counterfactuals, such as when
-evaluating the efficacy of protected areas across large regions, as it
-can lead to a loss of spatial coverage.
+However, identifying natural forests is not a simple task. There are
+many definitions of what constitutes `naturalness' in forest
+environments (Winter, 2012), and these difficulties are compounded by
+shifting baseline syndrome (Pinnegar \& Engelhard, 2008) and a lack of
+comprehensive historical data to generate reference states (Balaguer et
+al., 2014). Other proposed methods to delineate baseline conditions
+include protected areas (Arcese \& Sinclair, 1997), and empirical
+estimates of the reference state, generated by modelling outcomes
+(oftentimes species abundances and occurrence) in the absence of
+anthropogenic disturbance (Nielsen et al., 2007).
 
-In this study, we seek to enhance the spatial coverage of CEM using a
-two-step approach. Firstly, we coarsen the covariates into bins, and
-then perform exact matching on these bins. In the event that no suitable
-match can be found, a KNN (k = 1) approach is used to identify the
-nearest match. This two-step approach allows for a more comprehensive
-assessment of the effectiveness of protected areas, where no
-observations are discarded. This method is applied to the forested
-regions of British Columbia, Canada, and the effectiveness of protected
-areas to is compared to similar ecosystems that are not protected. We
-compare the spatial coverage of standard CEM method and our expanded CEM
-method, and also apply both methods for assessing protected area
-effectiveness at conserving two EBV classes; ecosystem structure and
-ecosystem function. Further, we generate bootstrap confidence intervals
-for each CEM bin for our two EBV classes and compare every forested area
-in BC to their respective confidence interval. This allows for the
-respatialization of the results, allowing for managers to identify
-regions in need of restoration (outside the confidence interval, in
-protected areas), or protection (inside the confidence interval, outside
-of protected areas).
+In this study, we seek to identify natural forests of good ecological
+condition at a 30 m spatial resolution across British Columbia, Canada.
+We first identify reference states for ecosystems across the province as
+protected areas with little-to-no anthropogenic disturbances. We then
+use an expanded coarsened exact matching (CEM) approach to compare the
+entire forested landscape of British Columbia to a reference state which
+accounts for forest type as well as topographic and climatic
+information. We expand the CEM technique to allow for the the spatially
+explicit reconstruction of natural ecosystem similarity, even when a
+perfect match is not available. We further examine how the coverage of
+natural forest areas varies between protected and unprotected areas in
+British Columbia. These methods will allow managers to identify regions
+in need of restoration, or that could be suitable for protection, and
+could be expanded to other regions.
 
-\section{Data \& Methods}\label{sec-data-methods}
+\subsection{Methods}\label{sec-data-methods}
 
-\section{Results}\label{results}
+\subsubsection{Data}\label{data}
 
-\section{Conclusion}\label{conclusion}
+\paragraph{Natural forests}\label{natural-forests}
 
-\section*{References}\label{references}
-\addcontentsline{toc}{section}{References}
+We defined natural forests as forests under formal protection with
+little-to-no anthropogenic pressure. We obtained boundaries for the
+protected areas of British Columbia using the \textbf{wdpar} R package
+(Hanson, 2022 version 1.3.7), and filtered these protected areas larger
+than 100 ha and in the IUCN categories Ia, Ib, II, and IV Muise et al.
+(2022). We use the Canadian Human Footprint generated by Hirsh-Pearson
+et al. (2022), a 300 m estimating of anthropogenic pressures across the
+entirety of Canada, which accounts for pressures included in the global
+human footprint (Venter et al., 2016), as well as pressures specific to
+the Canadian environment. The Canadian Human Footprint considers built
+environments, crop land, pasture land, human population density,
+nighttime lights, railways, roads, navigable waterways, dams and
+associated reservoirs, mining activity, oil and gas, and forestry
+pressures (Hirsh-Pearson et al., 2022). We consider any pixel within our
+protected area criteria with a Canadian Human Footprint score below four
+as representative of natural ecosystems, which balances the tradeoff
+between having a suitable number of high-quality pixels, and low
+anthropogenic pressures being represented in the natural areas.
+
+\paragraph{Forest Ecosystem Structure}\label{forest-ecosystem-structure}
+
+Wall-to-wall, 30 m forest structure metrics (canopy height, canopy
+cover, structural complexity, and aboveground biomass) were generated by
+Matasci, Hermosilla, Wulder, White, Coops, Hobart, Bolton, et al. (2018)
+for 2015 across the forested landscape of British Columbia. This data
+was generated by using a random forest-kNN approach, imputing airborne
+laser scanning derived forest structural attributes across the entirety
+of Canada using Landsat-derived best-available-pixel (BAP) composites
+(Hermosilla et al., 2016; White et al., 2014) and topographic
+information (Matasci, Hermosilla, Wulder, White, Coops, Hobart, Bolton,
+et al., 2018; Matasci, Hermosilla, Wulder, White, Coops, Hobart, \&
+Zald, 2018). The BAP composites were derived by selecting optical
+observations from the Landsat archive (including Landsat-5 Thematic
+Mapper, Landsat-7 Enhanced Thematic Mapper Plus, and Landsat-8
+Operational Land Imager imagery) over the course of the growing season,
+considering atmospheric effects (haze, clouds, cloud shadows) and
+distance from the desired composite date (in this case, August 31st).
+Details on the pixel scoring method can be found in White et al. (2014).
+The BAP composites were further refined by using a spectral trend
+analysis on the normalized burn ratio to remove noise, and missing
+pixels are infilled using temporally-interpolated values. This procedure
+results in gap-free, surface-reflectance image composites (Hermosilla et
+al., 2015).
+
+\paragraph{Forest Ecosystem Function}\label{forest-ecosystem-function}
+
+Landsat DHIs
+
+\paragraph{Auxiliary Datasets}\label{auxiliary-datasets}
+
+In our matching procedure (see Section ) we use two core datasets as our
+covariates. Firstly, we use a 30 m digital elevation model and derived
+slope dataset from the Advanced Spaceborne Thermal Emission and
+Reflection Radiometer (ASTER) Version 2 GDEM product (Tachikawa et al.,
+2011). We also match on four climate variables; mean annual
+precipitation (MAP), mean annual temperature (MAT), mean warmest month
+temperature (MWMT), and mean coldest month temperature (MCMT) calculated
+from 1990-2020 climate normals using the ClimateNA software package at a
+1 km spatial resolution, and downsampled to 30 m using cubic spline
+resampling in the \textbf{terra} R package (Hijmans, 2024 version
+1.7-71) in R (R Core Team, 2024 version 4.4.0).
+
+\subsubsection{Matching}\label{sec-matching}
+
+To identify natural forests across the province, we implement an
+expanded coarsened exact matching (CEM) technique (Iacus et al., 2012).
+This allows us to assess the similarity of all forested pixels in the
+province to known natural forests, while controlling for covariates such
+as climate and topography. CEM creates comparable groups of observation
+among covariates by first coarsening the covariates into meaningful
+bins. In our case, we coarsen all six of our covariates into 10
+quantile-based bins. As an example, elevation observations in the 0-10th
+percentile would be grouped into elevation bin one, the 10th-20th
+percentile of observations into bin two, and so on. Following the
+binning procedure, CEM performs exact matching on the coarsened
+covariates, and discards any unmatched samples. We diverge from this
+method by not dropping unmatched samples. Instead, we group our
+unmatched strata with their nearest neighbour in quartile space, up to a
+minimum of 30 samples, while minimizing the overall nearest neighbour
+distance. This method combines the advantages of CEM {[}no bias
+checking, simple computation; Iacus et al. (2012){]}, with the ability
+to generate wall-to-wall comparisons of our treated cells to all other
+cells in the province.
+
+\subsubsection{Analysis}\label{analysis}
+
+\subsection{Results}\label{results}
+
+\subsection{Discussion}\label{discussion}
+
+\subsection{Conclusion}\label{conclusion}
+
+\subsection*{References}\label{references}
+\addcontentsline{toc}{subsection}{References}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
 \vspace{1em}
 
-\bibitem[\citeproctext]{ref-austin2011}
-Austin, P. C. (2011). An introduction to propensity score methods for
-reducing the effects of confounding in observational studies.
-\emph{Multivariate Behavioral Research}, \emph{46}(3), 399--424.
-\url{https://doi.org/10.1080/00273171.2011.568786}
+\bibitem[\citeproctext]{ref-andrew2012}
+Andrew, M. E., Wulder, M. A., \& Coops, N. C. (2012). Identification of
+{\emph{de facto}} protected areas in boreal canada. \emph{Biological
+Conservation}, \emph{146}(1), 97--107.
+\url{https://doi.org/10.1016/j.biocon.2011.11.029}
 
-\bibitem[\citeproctext]{ref-chape2005}
-Chape, S., Harrison, J., Spalding, M., \& Lysenko, I. (2005). Measuring
-the extent and effectiveness of protected areas as an indicator for
-meeting global biodiversity targets. \emph{Philosophical Transactions of
-the Royal Society B: Biological Sciences}, \emph{360}(1454), 443455.
-\url{https://doi.org/10.1098/rstb.2004.1592}
+\bibitem[\citeproctext]{ref-arcese1997}
+Arcese, P., \& Sinclair, A. R. E. (1997). The role of protected areas as
+ecological baselines. \emph{The Journal of Wildlife Management},
+\emph{61}(3), 587--602. \url{https://doi.org/10.2307/3802167}
+
+\bibitem[\citeproctext]{ref-balaguer2014}
+Balaguer, L., Escudero, A., Martín-Duque, J. F., Mola, I., \& Aronson,
+J. (2014). The historical reference in restoration ecology: Re-defining
+a cornerstone concept. \emph{Biological Conservation}, \emph{176},
+12--20. \url{https://doi.org/10.1016/j.biocon.2014.05.007}
+
+\bibitem[\citeproctext]{ref-becker2023}
+Becker, A., Russo, S., Puliti, S., Lang, N., Schindler, K., \& Wegner,
+J. D. (2023). Country-wide retrieval of forest structure from optical
+and SAR satellite imagery with deep ensembles. \emph{ISPRS Journal of
+Photogrammetry and Remote Sensing}, \emph{195}, 269--286.
+\url{https://doi.org/10.1016/j.isprsjprs.2022.11.011}
+
+\bibitem[\citeproctext]{ref-bolton2019}
+Bolton, D. K., Coops, N. C., Hermosilla, T., Wulder, M. A., White, J.
+C., \& Ferster, C. J. (2019). Uncovering regional variability in
+disturbance trends between parks and greater park ecosystems across
+canada (1985{\textendash}2015). \emph{Scientific Reports}, \emph{9}(1),
+1323. \url{https://doi.org/10.1038/s41598-018-37265-4}
+
+\bibitem[\citeproctext]{ref-cardinale2012}
+Cardinale, B. J., Duffy, J. E., Gonzalez, A., Hooper, D. U., Perrings,
+C., Venail, P., et al. (2012). Biodiversity loss and its impact on
+humanity. \emph{Nature}, \emph{486}(7401), 59--67.
+\url{https://doi.org/10.1038/nature11148}
 
 \bibitem[\citeproctext]{ref-dirzo2003}
 Dirzo, R., \& Raven, P. H. (2003). Global State of Biodiversity and
@@ -316,15 +437,87 @@ Loss. \emph{Annual Review of Environment and Resources},
 \emph{28}(Volume 28, 2003), 137--167.
 \url{https://doi.org/10.1146/annurev.energy.28.050302.105532}
 
-\bibitem[\citeproctext]{ref-ferraro2009}
-Ferraro, P. J. (2009). Counterfactual thinking and impact evaluation in
-environmental policy. \emph{New Directions for Evaluation},
-\emph{2009}(122), 75--84. \url{https://doi.org/10.1002/ev.297}
+\bibitem[\citeproctext]{ref-wdpar2022a}
+Hanson, J. O. (2022). Wdpar: Interface to the world database on
+protected areas. \emph{Journal of Open Source Software}, \emph{7}, 4594.
+\url{https://doi.org/10.21105/joss.04594}
+
+\bibitem[\citeproctext]{ref-hermosilla2015}
+Hermosilla, T., Wulder, M. A., White, J. C., Coops, N. C., \& Hobart, G.
+W. (2015). Regional detection, characterization, and attribution of
+annual forest change from 1984 to 2012 using landsat-derived time-series
+metrics. \emph{Remote Sensing of Environment}, \emph{170}, 121132.
+\url{https://doi.org/10.1016/j.rse.2015.09.004}
+
+\bibitem[\citeproctext]{ref-hermosilla2016}
+Hermosilla, T., Wulder, M. A., White, J. C., Coops, N. C., Hobart, G.
+W., \& Campbell, L. B. (2016). Mass data processing of time series
+landsat imagery: Pixels to data products for forest monitoring.
+\emph{International Journal of Digital Earth}, \emph{9}(11), 10351054.
+\url{https://doi.org/10.1080/17538947.2016.1187673}
+
+\bibitem[\citeproctext]{ref-R-terra}
+Hijmans, R. J. (2024). \emph{Terra: Spatial data analysis}. Retrieved
+from \url{https://rspatial.org/}
+
+\bibitem[\citeproctext]{ref-hirsh-pearson2022}
+Hirsh-Pearson, K., Johnson, C. J., Schuster, R., Wheate, R. D., \&
+Venter, O. (2022). Canada{'}s human footprint reveals large intact areas
+juxtaposed against areas under immense anthropogenic pressure.
+\emph{FACETS}, \emph{7}, 398--419.
+\url{https://doi.org/10.1139/facets-2021-0063}
 
 \bibitem[\citeproctext]{ref-iacus2012}
 Iacus, S. M., King, G., \& Porro, G. (2012). Causal Inference without
 Balance Checking: Coarsened Exact Matching. \emph{Political Analysis},
 \emph{20}(1), 1--24. \url{https://doi.org/10.1093/pan/mpr013}
+
+\bibitem[\citeproctext]{ref-maruxedn2021}
+Marín, A. I., Abdul Malak, D., Bastrup-Birk, A., Chirici, G., Barbati,
+A., \& Kleeschulte, S. (2021). Mapping forest condition in europe:
+Methodological developments in support to forest biodiversity
+assessments. \emph{Ecological Indicators}, \emph{128}, 107839.
+\url{https://doi.org/10.1016/j.ecolind.2021.107839}
+
+\bibitem[\citeproctext]{ref-matasci2018b}
+Matasci, G., Hermosilla, T., Wulder, M. A., White, J. C., Coops, N. C.,
+Hobart, G. W., \& Zald, H. S. J. (2018). Large-area mapping of Canadian
+boreal forest cover, height, biomass and other structural attributes
+using Landsat composites and lidar plots. \emph{Remote Sensing of
+Environment}, \emph{209}, 90--106.
+\url{https://doi.org/10.1016/j.rse.2017.12.020}
+
+\bibitem[\citeproctext]{ref-matasci2018}
+Matasci, G., Hermosilla, T., Wulder, M. A., White, J. C., Coops, N. C.,
+Hobart, G. W., Bolton, D. K., et al. (2018). Three decades of forest
+structural dynamics over canada's forested ecosystems using landsat
+time-series and lidar plots. \emph{Remote Sensing of Environment},
+\emph{216}, 697714. \url{https://doi.org/10.1016/j.rse.2018.07.024}
+
+\bibitem[\citeproctext]{ref-mcgill2015}
+McGill, B. J., Dornelas, M., Gotelli, N. J., \& Magurran, A. E. (2015).
+Fifteen forms of biodiversity trend in the Anthropocene. \emph{Trends in
+Ecology \& Evolution}, \emph{30}(2), 104--113.
+\url{https://doi.org/10.1016/j.tree.2014.11.006}
+
+\bibitem[\citeproctext]{ref-muise2022}
+Muise, E. R., Coops, N. C., Hermosilla, T., \& Ban, S. S. (2022).
+Assessing representation of remote sensing derived forest structure and
+land cover across a network of protected areas. \emph{Ecological
+Applications}, \emph{32}(5), e2603.
+\url{https://doi.org/10.1002/eap.2603}
+
+\bibitem[\citeproctext]{ref-myers1988}
+Myers, N. (1988). Threatened biotas: {"}Hot spots{"} in tropical
+forests. \emph{Environmentalist}, \emph{8}(3), 187--208.
+\url{https://doi.org/10.1007/BF02240252}
+
+\bibitem[\citeproctext]{ref-nielsen2007}
+Nielsen, S. E., Bayne, E. M., Schieck, J., Herbers, J., \& Boutin, S.
+(2007). A new method to estimate species and biodiversity intactness
+using empirically derived reference conditions. \emph{Biological
+Conservation}, \emph{137}(3), 403--414.
+\url{https://doi.org/10.1016/j.biocon.2007.02.024}
 
 \bibitem[\citeproctext]{ref-noss1990}
 Noss, R. F. (1990). Indicators for Monitoring Biodiversity: A
@@ -351,23 +544,91 @@ of ecosystem functions: opportunities, challenges and way forward.
 \emph{Remote Sensing in Ecology and Conservation}, \emph{4}(2), 71--93.
 \url{https://doi.org/10.1002/rse2.59}
 
-\bibitem[\citeproctext]{ref-ribas2021}
-Ribas, L. G. S., Pressey, R. L., \& Bini, L. M. (2021). Estimating
-counterfactuals for evaluation of ecological and conservation impact: an
-introduction to matching methods. \emph{Biological Reviews},
-\emph{96}(4), 1186--1204. \url{https://doi.org/10.1111/brv.12697}
+\bibitem[\citeproctext]{ref-pimm2000}
+Pimm, S. L., \& Raven, P. (2000). Extinction by numbers. \emph{Nature},
+\emph{403}(6772), 843--845. \url{https://doi.org/10.1038/35002708}
 
-\bibitem[\citeproctext]{ref-schleicher2020}
-Schleicher, J., Eklund, J., D. Barnes, M., Geldmann, J., Oldekop, J. A.,
-\& Jones, J. P. G. (2020). Statistical matching for conservation
-science. \emph{Conservation Biology}, \emph{34}(3), 538--549.
-\url{https://doi.org/10.1111/cobi.13448}
+\bibitem[\citeproctext]{ref-pinnegar2008}
+Pinnegar, J. K., \& Engelhard, G. H. (2008). The {`}shifting baseline{'}
+phenomenon: a global perspective. \emph{Reviews in Fish Biology and
+Fisheries}, \emph{18}(1), 1--16.
+\url{https://doi.org/10.1007/s11160-007-9058-6}
+
+\bibitem[\citeproctext]{ref-R-base}
+R Core Team. (2024). \emph{R: A language and environment for statistical
+computing}. Vienna, Austria: R Foundation for Statistical Computing.
+Retrieved from \url{https://www.R-project.org/}
+
+\bibitem[\citeproctext]{ref-radeloff2019}
+Radeloff, V. C., Dubinin, M., Coops, N. C., Allen, A. M., Brooks, T. M.,
+Clayton, M. K., et al. (2019). The Dynamic Habitat Indices (DHIs) from
+MODIS and global biodiversity. \emph{Remote Sensing of Environment},
+\emph{222}, 204--214. \url{https://doi.org/10.1016/j.rse.2018.12.009}
+
+\bibitem[\citeproctext]{ref-radeloff2024}
+Radeloff, Volker C., Roy, D. P., Wulder, M. A., Anderson, M., Cook, B.,
+Crawford, C. J., et al. (2024). Need and vision for global
+medium-resolution landsat and sentinel-2 data products. \emph{Remote
+Sensing of Environment}, \emph{300}, 113918.
+\url{https://doi.org/10.1016/j.rse.2023.113918}
+
+\bibitem[\citeproctext]{ref-razenkova}
+Razenkova, E., Lewińska, K. E., Yin, H., Farwell, L. S., Pidgeon, A. M.,
+Hostert, P., et al. (n.d.). Medium-resolution dynamic habitat indices
+from landsat satellite imagery. \emph{Remote Sensing of Environment}.
+
+\bibitem[\citeproctext]{ref-reporto2023}
+\emph{Report of the conference of the parties to the convention on
+biological diversity on the second part of its fifteenth meeting}.
+(2023).
 
 \bibitem[\citeproctext]{ref-skidmore2021}
 Skidmore, A. K., Coops, N. C., Neinavaz, E., Ali, A., Schaepman, M. E.,
 Paganini, M., et al. (2021). Priority list of biodiversity metrics to
 observe from space. \emph{Nature Ecology \& Evolution}.
 \url{https://doi.org/10.1038/s41559-021-01451-x}
+
+\bibitem[\citeproctext]{ref-tachikawa2011}
+Tachikawa, T., Kaku, M., Iwasaki, A., Gesch, D. B., Oimoen, M. J.,
+Zhang, Z., et al. (2011). \emph{ASTER global digital elevation model
+version 2 - summary of validation results} (p. 27). Retrieved from
+\url{http://pubs.er.usgs.gov/publication/70005960}
+
+\bibitem[\citeproctext]{ref-thomas2004}
+Thomas, C. D., Cameron, A., Green, R. E., Bakkenes, M., Beaumont, L. J.,
+Collingham, Y. C., et al. (2004). Extinction risk from climate change.
+\emph{Nature}, \emph{427}, 5.
+
+\bibitem[\citeproctext]{ref-thompson2009}
+Thompson, I. D., Mackey, B., McNulty, S., \& Mosseler, A. (2009).
+\emph{Forest resilience, biodiversity, and climate change: a synthesis
+of the biodiversity / resiliende / stability relationship in forest
+ecosystems}. Montreal: Secretariat of the Convention on Biological
+Diversity.
+
+\bibitem[\citeproctext]{ref-urban2015}
+Urban, M. C. (2015). Accelerating extinction risk from climate change.
+\emph{Science}, \emph{348}(6234), 571--573.
+\url{https://doi.org/10.1126/science.aaa4984}
+
+\bibitem[\citeproctext]{ref-venter2016}
+Venter, O., Sanderson, E. W., Magrach, A., Allan, J. R., Beher, J.,
+Jones, K. R., et al. (2016). Sixteen years of change in the global
+terrestrial human footprint and implications for biodiversity
+conservation. \emph{Nature Communications}, \emph{7}(1), 12558.
+\url{https://doi.org/10.1038/ncomms12558}
+
+\bibitem[\citeproctext]{ref-white2014}
+White, Joanne. C., Wulder, M. A., Hobart, G. W., Luther, J. E.,
+Hermosilla, T., Griffiths, P., et al. (2014). Pixel-based image
+compositing for large-area dense time series applications and science.
+\emph{Canadian Journal of Remote Sensing}, \emph{40}(3), 192212.
+\url{https://doi.org/10.1080/07038992.2014.945827}
+
+\bibitem[\citeproctext]{ref-winter2012}
+Winter, S. (2012). Forest naturalness assessment as a component of
+biodiversity monitoring and conservation management. \emph{Forestry},
+\emph{85}(2), 293--304. \url{https://doi.org/10.1093/forestry/cps004}
 
 \end{CSLReferences}
 
