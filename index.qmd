@@ -32,27 +32,74 @@ key-points:
   - We compare our expanded method to normal CEM, and find...
   - 
 date: last-modified
-bibliography: references.bib
+bibliography: [references.bib, packages.bib]
 citation:
-  container-title: Earth and Space Science
+  container-title: Conservation Biology
 number-sections: true
 notebook-links: false
 reference-doc: my-styles.docx
 ---
 
+```{r}
+#| warning: false
+#| echo: false
+#| output: false
+
+
+# include all libraries required by the R chunks here
+
+library(terra)
+library(bcmaps)
+library(wdpar)
+
+
+# generate package citations
+loaded_pkgs = (.packages())
+base_pkgs = getOption("defaultPackages")
+contrib_pkgs = loaded_pkgs[!(loaded_pkgs %in% base_pkgs)]
+pkgs_file = "packages.bib"
+knitr::write_bib(contrib_pkgs, pkgs_file)
+```
+
 ## Introduction
 
-A global biodiversity crisis is currently underway, driven by anthropogenic changes and pressures such as climate change, land-use changes, and invasive species, among others [@dirzo2003]. Protected areas have been demonstrated to be one of the most effective potential safeguards against these biodiversity losses [@chape2005]. To assess the effectiveness of protected areas, it is necessary to collect data across entire jurisdictions and compare them to similar ecosystems that are not protected. However, collecting direct, field-derived information on biodiversity across large regions is simply not feasible due to financial and temporal constraints.
+A global biodiversity crisis is currently underway, driven by anthropogenic changes [@dirzo2003]. Pressures such as climate change, land-use changes, and invasive species, are leading to species extinctions [@thomas2004; @urban2015] and the homogenization of biological communities [@mcgill2015]. The Kunming-Montreal Global Biodiversity Framework (GBF) has been adopted as of December 2022, with the goal of restoring global biodiversity [@reporto2023]. Targets within this framework include restoring 30% of all degraded ecosystems, and protecting 30% of of Earth's terrestrial, inland water, and marine areas [@reporto2023]. In the terrestrial environment, forest biomes have been shown to harbour the largest amount of biodiversity [@myers1988; @pimm2000; @cardinale2012], and provide key ecosystem services [@thompson2009]. To provide these services, it is integral that these forest ecosystems are in good ecological condition, as represented by natural or near-natural levels of forest structure, forest function, and forest composition [@marín2021].
 
-Remote sensing data, however, can provide a time-efficient, cost-effective alternative to field data, and can be used to generate Essential Biodiversity Variables (EBVs) which are comparable, standardized datasets capable of measuring biodiversity change across large spatial extents through time [@skidmore2021; @pereira2013]. Two EBV classes are particularly well suited to be used at regional to national scales; ecosystem structure and ecosystem function. Ecosystem structure is defined as the physical organization of biotic and abiotic materials in the system, and is commonly assessed as land cover and forest structural attributes using remote sensing [@noss1990]. Ecosystem function are attributes related to ecosystem performance, such as the inflows or outflows of energy/nutrients [@pettorelli2018]. Remote sensing of ecosystem function commonly includes productivity metrics such as GPP [@pettorelli2005; @pettorelli2018]. Remote sensing-derived EBVs provide suitable spatial coverage, temporal depth, and temporal frequency to be used for biodiversity monitoring [@skidmore2021], and thus, protected area effectiveness assessments.
+While understanding forest condition is a key aspect of understanding biodiversity and the provision of ecosystem services due to their inherent linkages [@marín2021; @cardinale2012], it is difficult to acquire suitable field-derived data across wide expanses of land due to the extreme financial and temporal costs associated with field campaigns. Remote sensing data, however, can provide a time-efficient, cost-effective alternative to field data, providing access to new spatially explicit and exhaustive datasets that can be linked to ecological condition, with additional metrics being proposed at a rapid pace [@skidmore2021; @pereira2013; @radeloff2024]. Advances in lidar technologies and modelling methods are allowing wall-to-wall estimates of forest stand structure to be generated across entire countries [@matasci2018; @matasci2018b; @becker2023], serving as a finer scale indicator of ecosystem structure than the often previously used landscape fragmentation metrics [@andrew2012]. Productivity metrics have been used as a proxy for ecosystem function for many years [@pettorelli2005; @pettorelli2018], with new Landsat derived datasets providing integrative annual estimates of energy availability at a 30 m spatial resolution[@radeloff2024; @radeloff2019; @razenkova]. Remote sensing is quickly providing access to a plethora of datasets suitable monitoring the various facets of biodiversity and ecological condition [@noss1990]. Using these datasets in conjunction with information on the location of known or assumed natural forests can allow researchers to identify similar forest stands or ecosystems, thus locating high quality forests across entire jurisdictions, even when they are facing anthropogenic pressures.
 
-The use of impact assessment techniques such as matching is becoming increasingly prevalent in studies of the effectiveness of protected areas [@ferraro2009]. Matching methods generally work by creating a counterfactual scenario in which conservation outcomes are compared between the protected area and what those outcomes would be if the given area were not protected [@ribas2021]. This is achieved by comparing a given protected area to an unprotected area with similar covariates, such as climate, topography, and various anthropogenic data. Propensity score matching uses the covariates and protected status with a logit regression to create a propensity score, which is then used to match the protected area to an unprotected area [@austin2011]. Coarsened exact matching (CEM) initially coarsens the covariates into bins (percentiles) and then performs exact matching on these bins, while retaining the original, uncoarsened data [@iacus2012]. Other matching methods exist [see @schleicher2020], but one common issue common to these methods is that many data samples are dropped because there is no suitable match to be found. This can be problematic when attempting to create spatial counterfactuals, such as when evaluating the efficacy of protected areas across large regions, as it can lead to a loss of spatial coverage.
+However, identifying natural forests is not a simple task. There are many definitions of what constitutes 'naturalness' in forest environments [@winter2012], and these difficulties are compounded by shifting baseline syndrome [@pinnegar2008] and a lack of comprehensive historical data to generate reference states [@balaguer2014]. Other proposed methods to delineate baseline conditions include protected areas [@arcese1997], and empirical estimates of the reference state, generated by modelling outcomes (oftentimes species abundances and occurrence) in the absence of anthropogenic disturbance [@nielsen2007].
 
-In this study, we seek to enhance the spatial coverage of CEM using a two-step approach. Firstly, we coarsen the covariates into bins, and then perform exact matching on these bins. In the event that no suitable match can be found, a KNN (k = 1) approach is used to identify the nearest match. This two-step approach allows for a more comprehensive assessment of the effectiveness of protected areas, where no observations are discarded. This method is applied to the forested regions of British Columbia, Canada, and the effectiveness of protected areas to is compared to similar ecosystems that are not protected. We compare the spatial coverage of standard CEM method and our expanded CEM method, and also apply both methods for assessing protected area effectiveness at conserving two EBV classes; ecosystem structure and ecosystem function. Further, we generate bootstrap confidence intervals for each CEM bin for our two EBV classes and compare every forested area in BC to their respective confidence interval. This allows for the respatialization of the results, allowing for managers to identify regions in need of restoration (outside the confidence interval, in protected areas), or protection (inside the confidence interval, outside of protected areas).
+In this study, we seek to identify natural forests of good ecological condition at a 30 m spatial resolution across British Columbia, Canada. We first identify reference states for ecosystems across the province as protected areas with little-to-no anthropogenic disturbances. We then use an expanded coarsened exact matching (CEM) approach to compare the entire forested landscape of British Columbia to a reference state which accounts for forest type as well as topographic and climatic information. We expand the CEM technique to allow for the the spatially explicit reconstruction of natural ecosystem similarity, even when a perfect match is not available. We further examine how the coverage of natural forest areas varies between protected and unprotected areas in British Columbia. These methods will allow managers to identify regions in need of restoration, or that could be suitable for protection, and could be expanded to other regions.
 
-## Data & Methods {#sec-data-methods}
+## Methods {#sec-data-methods}
+
+### Data
+
+#### Natural forests
+
+We defined natural forests as forests under formal protection with little-to-no anthropogenic pressure. We obtained boundaries for the protected areas of British Columbia using the **wdpar** R package [@wdpar2022a version 1.3.7], and filtered these protected areas larger than 100 ha and in the IUCN categories Ia, Ib, II, and IV [following @bolton2019 and @muise2022]. We use the Canadian Human Footprint generated by @hirsh-pearson2022, a 300 m estimating of anthropogenic pressures across the entirety of Canada, which accounts for pressures included in the global human footprint [@venter2016], as well as pressures specific to the Canadian environment. The Canadian Human Footprint considers built environments, crop land, pasture land, human population density, nighttime lights, railways, roads, navigable waterways, dams and associated reservoirs, mining activity, oil and gas, and forestry pressures [@hirsh-pearson2022]. We consider any pixel within our protected area criteria with a Canadian Human Footprint score below four as representative of natural ecosystems, which balances the tradeoff between having a suitable number of high-quality pixels, and low anthropogenic pressures being represented in the natural areas.
+
+#### Forest Ecosystem Structure
+
+Wall-to-wall, 30 m forest structure metrics (canopy height, canopy cover, structural complexity, and aboveground biomass) were generated by @matasci2018 for 2015 across the forested landscape of British Columbia. This data was generated by using a random forest-kNN approach, imputing airborne laser scanning derived forest structural attributes across the entirety of Canada using Landsat-derived best-available-pixel (BAP) composites [@white2014; @hermosilla2016] and topographic information [@matasci2018; @matasci2018b]. The BAP composites were derived by selecting optical observations from the Landsat archive (including Landsat-5 Thematic Mapper, Landsat-7 Enhanced Thematic Mapper Plus, and Landsat-8 Operational Land Imager imagery) over the course of the growing season, considering atmospheric effects (haze, clouds, cloud shadows) and distance from the desired composite date (in this case, August 31st). Details on the pixel scoring method can be found in @white2014. The BAP composites were further refined by using a spectral trend analysis on the normalized burn ratio to remove noise, and missing pixels are infilled using temporally-interpolated values. This procedure results in gap-free, surface-reflectance image composites [@hermosilla2015].
+
+#### Forest Ecosystem Function
+
+Landsat DHIs
+
+#### Auxiliary Datasets
+
+In our matching procedure (see Section ) we use two core datasets as our covariates. Firstly, we use a 30 m digital elevation model and derived slope dataset from the Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) Version 2 GDEM product [@tachikawa2011]. We also match on four climate variables; mean annual precipitation (MAP), mean annual temperature (MAT), mean warmest month temperature (MWMT), and mean coldest month temperature (MCMT) calculated from 1990-2020 climate normals using the ClimateNA software package at a 1 km spatial resolution, and downsampled to 30 m using cubic spline resampling in the **terra** R package [@R-terra version 1.7-71] in R [@R-base version 4.4.0].
+
+### Matching {#sec-matching}
+
+To identify natural forests across the province, we implement an expanded coarsened exact matching (CEM) technique [@iacus2012]. This allows us to assess the similarity of all forested pixels in the province to known natural forests, while controlling for covariates such as climate and topography. CEM creates comparable groups of observation among covariates by first coarsening the covariates into meaningful bins. In our case, we coarsen all six of our covariates into 10 quantile-based bins. As an example, elevation observations in the 0-10th percentile would be grouped into elevation bin one, the 10th-20th percentile of observations into bin two, and so on. Following the binning procedure, CEM performs exact matching on the coarsened covariates, and discards any unmatched samples. We diverge from this method by not dropping unmatched samples. Instead, we group our unmatched strata with their nearest neighbour in quartile space, up to a minimum of 30 samples, while minimizing the overall nearest neighbour distance. This method combines the advantages of CEM [no bias checking, simple computation; @iacus2012], with the ability to generate wall-to-wall comparisons of our treated cells to all other cells in the province.
+
+### Analysis
 
 ## Results
+
+## Discussion
 
 ## Conclusion
 
