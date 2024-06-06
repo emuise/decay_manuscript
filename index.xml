@@ -351,10 +351,11 @@ Canada</institution>
     group our unmatched strata with their nearest neighbour in quartile
     space, up to a minimum of 30 samples, while minimizing the overall
     nearest neighbour distance. This method combines the advantages of
-    CEM [no bias checking, simple computation; Iacus, King, and Porro
-    (<xref alt="2012" rid="ref-iacus2012" ref-type="bibr">2012</xref>)],
-    with the ability to generate wall-to-wall comparisons of our treated
-    cells to all other cells in the province.</p>
+    CEM (no bias checking, simple computation
+    <xref alt="Iacus, King, and Porro 2012" rid="ref-iacus2012" ref-type="bibr">Iacus,
+    King, and Porro 2012</xref>), with the ability to generate
+    wall-to-wall comparisons of our treated cells to all other cells in
+    the province.</p>
   </sec>
   <sec id="analysis">
     <title>2.3 Analysis</title>
@@ -1550,10 +1551,11 @@ knitr::write_bib(contrib_pkgs, pkgs_file)</code>
     group our unmatched strata with their nearest neighbour in quartile
     space, up to a minimum of 30 samples, while minimizing the overall
     nearest neighbour distance. This method combines the advantages of
-    CEM [no bias checking, simple computation; Iacus, King, and Porro
-    (<xref alt="2012" rid="ref-iacus2012-nb-article" ref-type="bibr">2012</xref>)],
-    with the ability to generate wall-to-wall comparisons of our treated
-    cells to all other cells in the province.</p>
+    CEM (no bias checking, simple computation
+    <xref alt="Iacus, King, and Porro 2012" rid="ref-iacus2012-nb-article" ref-type="bibr">Iacus,
+    King, and Porro 2012</xref>), with the ability to generate
+    wall-to-wall comparisons of our treated cells to all other cells in
+    the province.</p>
   </sec>
   <sec id="analysis-nb-article">
     <title>2.3 Analysis</title>
